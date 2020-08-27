@@ -1,0 +1,9 @@
+baseURL = "http://example.org/"
+languageCode = "en-us"
+title = "Damian Czaja"
+theme = "coder"
+
+[params]
+    author = "Damian Czaja"
+    info = "DevOps and open source enthusiast"
+    keywords = "blog,devops,personal"
