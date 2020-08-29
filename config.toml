@@ -2,8 +2,29 @@ baseURL = "https://myhightech.org"
 languageCode = "en-us"
 title = "Damian Czaja"
 theme = "coder"
+inverted = true
 
 [params]
     author = "Damian Czaja"
     info = "DevOps and open source enthusiast"
     keywords = "blog,devops,personal"
+
+[[params.social]]
+    name = "Github"
+    icon = "fab fa-github fa-2x"
+    weight = 1
+    url = "https://github.com/trojan295/"
+[[params.social]]
+    name = "LinkedIn"
+    icon = "fab fa-linkedin fa-2x"
+    weight = 3
+    url = "https://www.linkedin.com/in/damian-czaja-01418a104/"
+
+[[menu.main]]
+    name = "Blog"
+    weight = 1
+    url  = "/posts/"
+[[menu.main]]
+    name = "About"
+    weight = 2
+    url = "/about/"
