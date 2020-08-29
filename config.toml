@@ -1,8 +1,6 @@
-baseURL = "https://myhightech.org"
 languageCode = "en-us"
 title = "Damian Czaja"
 theme = "coder"
-inverted = true
 
 [params]
     author = "Damian Czaja"
