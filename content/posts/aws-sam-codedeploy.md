@@ -131,7 +131,7 @@ Commands you can use next
 [*] Deploy: sam deploy --guided
 {{</ highlight >}}
 
-A nice feature of SAM CLI is that you can run the Lambda function locally or even deploy the whole API defined in the template. For this you will need to have Docker installed.
+A nice feature of SAM CLI is that you can run the Lambda function locally or even run a server, which simulates whole API in the template. For this you will need to have Docker installed.
 
 To invoke a single function use `sam local invoke <function-name>`:
 {{< highlight bash >}}
@@ -177,7 +177,7 @@ capabilities = "CAPABILITY_IAM"
 
 {{< / highlight >}}
 
-You can either provisiong the S3 bucket and create the `samconfig.toml` file manually or use the `--guided` flag in the `sam deploy` command, so SAM will create it for you.
+You can either provision the S3 bucket and create the `samconfig.toml` file manually or use the `--guided` flag in the `sam deploy` command, so SAM will create it for you.
 
 What `sam deploy` does is:
 1. Detect, which functions must be updated
@@ -396,14 +396,14 @@ Successfully created/updated stack - sam-app in eu-west-1
 
 A more advanced example is available on my Github [aws-dev-ops-preparation repo](https://github.com/Trojan295/aws-dev-ops-preparation/tree/master/lambda-sam/backend). It shows also how to use and implement an [lifecycle hook function](https://github.com/Trojan295/aws-dev-ops-preparation/blob/master/lambda-sam/backend/notes/handlers/validateApi/main.go) to validate the deployment. 
 
-## Notes about SAM
+## Additional notes about SAM
 
 A few things I would like to mention, because I lost a few hours by not knowing them:
 - Hook functions must start with prefix `CodeDeployHook_` or you have to provide an custom IAM role for the CodeDeploy in DeploymentPreference
-- The hook functions must call the AWS API `codedeploy:PutLifecycleEventHookExecutionStatus` to inform CodeDeploy, if the hook passed or failed. In other case it will wait for 1 hour and fail.
+- The hook functions must call the AWS API `codedeploy:PutLifecycleEventHookExecutionStatus` to inform CodeDeploy, if the hook passed or failed. In other case it will wait for 1 hour and fail
 - The Alarms in DeploymentPreference can be used to rollback the deployment on Cloudwatch Alarm. The AWS docs suggest the other way - that they are triggered by a failed deployment
 
-Docs to read:
+## Read more
 - [AWS SAM documentation](https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/what-is-sam.html)
 - [AWS SAM CloudFormation resources specification](https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/sam-specification-resources-and-properties.html)
 - [AWS CodeDeploy documentation](https://docs.aws.amazon.com/codedeploy/index.html)
