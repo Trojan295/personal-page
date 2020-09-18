@@ -1,5 +1,5 @@
 +++
-date = "2020-09-17"
+date = "2020-09-18"
 title = "Using AWS SAM and CodeDeploy to deploy serverless applications"
 tags = [
     "aws",
@@ -19,7 +19,7 @@ categories = [
 
 I was recently preparing for my AWS DevOps Engineer exam and I wanted to give AWS Serverless Application Model a try. AWS Serverless Application Model is a framework to build and deploy serverless application on AWS using Lambda, API Gateway and DynamoDB.
 
-Under the hood it is a AWS CloudFormation transform, which expands the CloudFormation syntax, by adding additional resources under the `AWS::Serverless` namespace. During the template provisioning those resources get expanded to basic CloudFormation resources.
+Under the hood it is a AWS CloudFormation transform, which expands the CloudFormation syntax and adds additional resources under the `AWS::Serverless` namespace. During the template provisioning those resources get expanded to basic CloudFormation resources.
 
 The `sam` CLI has commands to build, test, package and deploy your serverless applications. It makes deploying serverless application much easier than packaging your application by yourself and using generic CloudFormation templates.
 
@@ -27,7 +27,7 @@ The `sam` CLI has commands to build, test, package and deploy your serverless ap
 
 To initialize the project you use the `sam init` command. It will ask a few questions and prepare a boilerplate project.
 
-{{< highlight shell "hl_lines=1 43" >}}
+{{< highlight shell >}}
 $ sam init 
 Which template source would you like to use?
         1 - AWS Quick Start Templates
@@ -131,8 +131,9 @@ Commands you can use next
 [*] Deploy: sam deploy --guided
 {{</ highlight >}}
 
-A nice feature of SAM CLI is, that you can run the Lambda function locally or even deploy the whole API. For this you will need to have Docker installed.
+A nice feature of SAM CLI is that you can run the Lambda function locally or even deploy the whole API defined in the template. For this you will need to have Docker installed.
 
+To invoke a single function use `sam local invoke <function-name>`:
 {{< highlight bash >}}
 $ sam local invoke HelloWorldFunction
 Invoking hello-world (go1.x)
@@ -145,6 +146,7 @@ REPORT RequestId: 861e0e67-1567-104f-55ba-5ee5b7c63eeb  Init Duration: 49.63 ms 
 {"statusCode":200,"headers":null,"multiValueHeaders":null,"body":"Hello, 178.43.131.97\n"}
 {{</ highlight >}}
 
+You can also start a server, which simulates the AWS API Gateway:
 {{< highlight bash >}}
 $ sam local start-api                
 Mounting HelloWorldFunction at http://127.0.0.1:3000/hello [GET]
@@ -158,7 +160,7 @@ Hello, 178.43.131.97
 
 ## Deploy the application
 
-To deploy Lambda functions you need package and upload your code to S3. AWS SAM will handle this for you, but it requires an additonal configuration file `samconfig.toml` to know what bucket it should use.
+To deploy Lambda functions you need to package and upload your code to S3. AWS SAM will handle this for you, but it requires an additonal configuration file `samconfig.toml` to know what bucket it should use.
 
 {{< highlight toml "linenos=table" >}}
 # samconfig.toml
@@ -182,7 +184,7 @@ What `sam deploy` does is:
 2. Upload the CloudFormation template and Lambda deployment packages to S3
 3. Generate the ChangeSet and deploy it
 
-{{< highlight bash "hl_lines=1" >}}
+{{< highlight bash >}}
 $ sam deploy --guided
 
 Configuring SAM deploy
@@ -297,15 +299,25 @@ Value               arn:aws:lambda:eu-west-1:146986152083:function:sam-app-Hello
 Successfully created/updated stack - sam-app in eu-west-1
 {{< / highlight >}}
 
-{{< figure src="/images/aws-sam-codedeploy/aws_sam_cf_stacks.png" caption="CloudFormation stacks created by AWS SAM. `aws-sam-cli-managed-default` stack was created, because we used `--guided` and SAM provisioned the missing S3 bucket. `sam-app` stack is the actual serverless application" >}}
+{{< figure
+  src="/images/aws-sam-codedeploy/aws_sam_cf_stacks.png"
+  link="/images/aws-sam-codedeploy/aws_sam_cf_stacks.png"
+  target="_blank"
+  caption="SAM created the following CloudFormation stacks. `aws-sam-cli-managed-default` stack was created, because we used `--guided` and SAM provisioned the missing S3 bucket. `sam-app` stack is the actual serverless application"
+>}}
 
-{{< figure src="/images/aws-sam-codedeploy/aws_sam_stack_resources.png" caption="Resources in the `sam-app` stack. The `AWS::Serverless::*` resources were transformed into other CloudFormation resources. SAM also implicitly created an API Gateway for us" >}}
+{{< figure
+  src="/images/aws-sam-codedeploy/aws_sam_stack_resources.png"
+  link="/images/aws-sam-codedeploy/aws_sam_stack_resources.png"
+  target="_blank"
+  caption="The `AWS::Serverless::*` resources were transformed into other CloudFormation resources. SAM also implicitly created an API Gateway for us"
+>}}
 
 ## Enhance the template and add canary deployment
 
 The nice thing in AWS SAM is, that it's just an extension of CloudFormation templates, so you can define other resources, export output values or reference values in other stacks. It also gives an option to define the deployment strategy for Lambda functions and set triggers for rollbacks. You can perform canary deployment on the AWS Lambda level by using Lambda aliases. Let's change the HelloWorld function, add `DeploymentPreference` and `AutoPublishAlias` parameters and define all CloudWatch alarm to rollback the deployment in case your function does not work during the CodeDeploy `AllowTraffic` phase.
 
-{{< highlight yaml "linenos=table,hl_lines=3-22 31-35">}}
+{{< highlight yaml "linenos=table" >}}
 # template.yaml
 [...]
 Resources:
@@ -349,3 +361,50 @@ Resources:
             Method: GET
 [...]
 {{</ highlight >}}
+
+{{< figure
+  src="/images/aws-sam-codedeploy/sam-codedeploy.png"
+  link="/images/aws-sam-codedeploy/sam-codedeploy.png"
+  target="_blank"
+  caption="After defining `DeploymentPreference` SAM creates an CodeDeploy application with a deployment group for every Lambda function. `sam deploy` will upload the Lambda deployment packages to S3 and trigger an CodeDeploy deployment to release the new Lambda function version"
+>}}
+
+Now, let's make a small change in the source code, rebuild the package and deploy it. This can take a bit, cause the command waits, till the CodeDeploy deployment is finished:
+```
+$ sam build
+...
+$ sam deploy
+...
+Successfully created/updated stack - sam-app in eu-west-1
+```
+
+{{< figure
+  src="/images/aws-sam-codedeploy/sam-codedeploy-deployment.png"
+  link="/images/aws-sam-codedeploy/sam-codedeploy-deployment.png"
+  target="_blank"
+  caption="During the `sam deploy` a CodeDeploy deployment is triggered"
+>}}
+
+{{< figure
+  src="/images/aws-sam-codedeploy/sam-codedeploy-lambda.png"
+  link="/images/aws-sam-codedeploy/sam-codedeploy-lambda.png"
+  target="_blank"
+  caption="CodeDeploy performs the canary release using an Lambda alias. Here we can see, that 10% of the requests are directed to the 4 version of the Lambda, while the rest goes to version 3"
+>}}
+
+## More advanced example
+
+A more advanced example is available on my Github [aws-dev-ops-preparation repo](https://github.com/Trojan295/aws-dev-ops-preparation/tree/master/lambda-sam/backend). It shows also how to use and implement an [lifecycle hook function](https://github.com/Trojan295/aws-dev-ops-preparation/blob/master/lambda-sam/backend/notes/handlers/validateApi/main.go) to validate the deployment. 
+
+## Notes about SAM
+
+A few things I would like to mention, because I lost a few hours by not knowing them:
+- Hook functions must start with prefix `CodeDeployHook_` or you have to provide an custom IAM role for the CodeDeploy in DeploymentPreference
+- The hook functions must call the AWS API `codedeploy:PutLifecycleEventHookExecutionStatus` to inform CodeDeploy, if the hook passed or failed. In other case it will wait for 1 hour and fail.
+- The Alarms in DeploymentPreference can be used to rollback the deployment on Cloudwatch Alarm. The AWS docs suggest the other way - that they are triggered by a failed deployment
+
+Docs to read:
+- [AWS SAM documentation](https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/what-is-sam.html)
+- [AWS SAM CloudFormation resources specification](https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/sam-specification-resources-and-properties.html)
+- [AWS CodeDeploy documentation](https://docs.aws.amazon.com/codedeploy/index.html)
+- [AWS Lambda aliases](https://docs.aws.amazon.com/lambda/latest/dg/configuration-aliases.html)

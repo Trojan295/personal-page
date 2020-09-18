@@ -1,8 +1,36 @@
 languageCode = "en-us"
-title = "Damian Czaja"
-theme = "coder"
-inverted = true
+title = "myhightech.org"
+theme = "papermod"
 staticDir = ["static"]
+googleAnalytics = "UA-44256981-9"
+
+[params]
+    ShowShareButtons = true
+    ShowReadingTime = true
+    comments = true
+
+[params.homeInfoParams]
+    Title = "My name is Damian Czaja"
+    Content = "A blog about PCs, programming, open source and more"
+
+[[params.socialIcons]]
+    name = "github"
+    url = "https://github.com/trojan295/"
+[[params.socialIcons]]
+    name = "linkedin"
+    url = "https://www.linkedin.com/in/damian-czaja-01418a104/"
+[[params.socialIcons]]
+    name = "twitter"
+    url = "https://twitter.com/damczaja"
+
+[[menu.main]]
+    name = "Blog"
+    weight = 1
+    url  = "/posts/"
+[[menu.main]]
+    name = "About me"
+    weight = 2
+    url = "/about/"
 
 [markup]
   [markup.highlight]
@@ -18,27 +46,3 @@ staticDir = ["static"]
     style = "monokai"
     tabWidth = 4
 
-[params]
-    author = "Damian Czaja"
-    info = "DevOps and open source enthusiast"
-    keywords = "blog,devops,personal"
-
-[[params.social]]
-    name = "Github"
-    icon = "fab fa-github fa-2x"
-    weight = 1
-    url = "https://github.com/trojan295/"
-[[params.social]]
-    name = "LinkedIn"
-    icon = "fab fa-linkedin fa-2x"
-    weight = 3
-    url = "https://www.linkedin.com/in/damian-czaja-01418a104/"
-
-[[menu.main]]
-    name = "Blog"
-    weight = 1
-    url  = "/posts/"
-[[menu.main]]
-    name = "About"
-    weight = 2
-    url = "/about/"
