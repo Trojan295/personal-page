@@ -28,8 +28,12 @@ googleAnalytics = "UA-44256981-9"
     weight = 1
     url  = "/posts/"
 [[menu.main]]
-    name = "About me"
+    name = "Categories"
     weight = 2
+    url = "/categories/"
+[[menu.main]]
+    name = "About me"
+    weight = 3
     url = "/about/"
 
 [markup]
