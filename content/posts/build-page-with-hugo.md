@@ -126,3 +126,10 @@ I'm pretty happy with the experiance Hugo and Amplify provided. After you tweak 
 6. Check the post is available on the blog
 
 I don't have to worry about any server maintenance, patching, database backups. The price is also low compared to buying a server ($0.15 per GB served), although I can imagine it could skyrocket, if you serve for eg. videos or large images and have a large user base.
+
+## Read more
+
+- [Hugo documentation](https://gohugo.io/documentation/)
+- [AWS Amplify Console documentation](https://docs.aws.amazon.com/amplify/latest/userguide/welcome.html)
+- [AWS Amplify documentation](https://docs.amplify.aws/)
+- [Best static website hostings on Slant](https://www.slant.co/topics/2256/~best-static-website-hosting-provider)
