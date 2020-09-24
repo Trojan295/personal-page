@@ -29,7 +29,7 @@ You either made this by yourself or bought a managed solution from some provider
 
 When the user interaction with the website is limited only to reading and only you are providing content for the website such solutions are a overkill. Inspired by the old times, when pages were only a bunch of HTML and CSS code, people created tools, where you can write the content you want to present, pick or create a theme and this gets compiled to HTML, CSS and (sometimes) Javascript.
 
-You can store the code for your page in git, so backups are easy. As there is no server-side code execution or database, the surface for potential cyberattacks is small. In this post I would like to show you, how I created this blog and hosted it using AWS Amplify. The repository for the project is [hosted on GitHub](https://github.com/Trojan295/personal-page)
+You can store the code for your page in git, so backups are easy. As there is no server-side code execution or database, the surface for potential cyberattack is small. In this post I would like to show you, how I created this blog and hosted it using AWS Amplify. The repository for the project is [hosted on GitHub](https://github.com/Trojan295/personal-page)
 
 ## Hugo - static site generator
 
@@ -51,7 +51,7 @@ $ git submodule add https://github.com/adityatelange/hugo-PaperMod themes/paperm
 echo 'theme = "papermoc"' >> config.toml
 ```
 
-After you init the project you'll endup with a few directories and files:
+After you initialize the project you'll end up with a few directories and files:
 - `config.toml` - Hugo configuration file. Here you defined the Hugo configuration, theme and theme parameters. You can find more information [here](https://gohugo.io/getting-started/configuration/)
 - `content` - your page content, posts, etc. If you want to create a new page on your site or write a new blog post, you'll do this here
 - `themes` - directory for themes
