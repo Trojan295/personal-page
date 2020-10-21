@@ -57,7 +57,7 @@ Proton is integrated with Steam through Steam Play. It allows for a native-like 
 On the webpage [ProtonDB](https://www.protondb.com/) you can check user reviews and ratings for the performance of games. Witcher 3, Skyrim and Elder Scrolls Online have the **Platinum** rating, which means they run perfectly out of the box with no or small differences compared to Windows. I use that page quite often before buying a new game, to verify, if I will be able to play it. It's also helpful to check the reviews, as people write, what's working, what's not and how to optimize the game.
 
 {{<
-    image src="/images/20201012-gaming-on-linux/steamplay.png"
+    image src="/images/20201012-gaming-on-linux/steamplay.jpg"
     link="true"
 >}}
 
@@ -82,14 +82,14 @@ When running a new game, I always start with the newest Steam Proton and change 
 OK, Steam is a huge game library, but what about other launchers, like Battle.net, EA Origin, Epic Store Games? For this I have [Lutris](https://lutris.net/). If you remember PlayOnLinux, then Lutris is very similar. It's basically a manager and automated installer for many games.
 
 {{<
-    image src="/images/20201012-gaming-on-linux/lutris.png"
+    image src="/images/20201012-gaming-on-linux/lutris.jpg"
     link="true"
 >}}
 
 After you installed it, you can open the Lutris page for the game (let's take [ESO](https://lutris.net/games/the-elder-scrolls-online-tamriel-unlimited/) as example). There you can select one of the prepared installation modes (it could be a standalone installation, through Steam, Battle.net or other launchers). Basically people are writting installation scripts, which install the launcher, then the game, may preconfigure the Wine prefix somehow. In my experience it is not so polished like SteamPlay, but for popular games (like ESO or Overwatch) the scripts are well prepared and work out of the box. There is a comment section under each game, so if something's wrong, you can look there for help.
 
 {{<
-    image src="/images/20201012-gaming-on-linux/lutris-diablo3.png"
+    image src="/images/20201012-gaming-on-linux/lutris-diablo3.jpg"
     link="true"
 >}}
 
