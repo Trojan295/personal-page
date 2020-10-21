@@ -5,6 +5,9 @@ staticDir = ["static"]
 googleAnalytics = "UA-44256981-9"
 disqusShortname = "myhightech-blog"
 
+[markup.goldmark.renderer]
+unsafe = true
+
 [params]
     ShowShareButtons = true
     ShowReadingTime = true
