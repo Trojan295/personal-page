@@ -1,5 +1,5 @@
 +++
-date = "2020-10-12"
+date = "2020-10-19"
 title = "Gaming on Linux? Is it possible in 2020?"
 tags = [
     "linux",
@@ -24,7 +24,7 @@ categories = [
 
 The biggest issue I had with switching completely to a Linux based OS were games. Game studios do not really care about Linux support, as the market share for this OS is around 2%. Moreover, OpenGL, the graphics library supported in Linux, is not developer friendly, so they did not want to use it. Of course, there are some games with a native port, like the Total Wars and Tomb Raider series, but this is a minority.
 
-Gamers tried to use compatibility layers like [Wine](https://www.winehq.org/) or [CrossOver](https://www.codeweavers.com/) to run Windows applications, but sometimes it did not work or the performance loss was too big. Thankfully, things changed with the creation of (Vulkan)[https://wikipedia.org/wiki/Vulkan_(API)] and Valve's forked Wine: [Proton](https://github.com/ValveSoftware/Proton). In the meantime, an application called [Lutris](https://lutris.net/) appeared and thanks to the Linux gamer community, more and more games can be run on it with a satisfactory performance, sometimes even better!
+Gamers tried to use compatibility layers like [Wine](https://www.winehq.org/) or [CrossOver](https://www.codeweavers.com/) to run Windows applications, but sometimes it did not work or the performance loss was too big. Thankfully, things changed with the creation of [Vulkan](https://wikipedia.org/wiki/Vulkan_(API)) and Valve's forked Wine: [Proton](https://github.com/ValveSoftware/Proton). In the meantime, an application called [Lutris](https://lutris.net/) appeared and thanks to the Linux gamer community, more and more games can be run on it with a satisfactory performance, sometimes even better!
 
 In this article I would like to show you, how I play on Linux and present the different tools I use. At the end, you will see my benchmarks from different games, so you can develop your own opinion on this.
 
@@ -199,6 +199,8 @@ Still, not everything is working. If you looks at the ["Fix Wanted" list on Prot
 Some other pain points I see:
 - some anti-cheat systems do not work, especially those, which are working on the kernel level. EAC and BattleEye are not supported in Wine. Riot announced it plans to introduce a kernel-level anti-cheat system in League of Legends. In this case, without support of the developer, I don't think we can do much. Putting the compatibility issue aside: I personally don't like the idea of such low-level anti-cheat systems
 - missing "gamer" software - overclocking/motherboard applications, controlling RGB, etc. For streaming there is [OBS](https://obsproject.com/). For FPS meter there is [MangoHUD](https://github.com/flightlessmango/MangoHud). Still, CPU, GPU, motherboard manufacturers don't port their apps to Linux and it's hard to control the RGB or overclock your system. Personally, I don't think they will, because the user base is too small. Hopefully the community will come up will some programs for that.
+
+*Edit 23.10.2020: for overclocking there is [CoreCtrl](https://gitlab.com/corectrl/corectrl). Thanks [beko](https://beko.famkos.net/) for pointing me to the tool!*
 
 If you want to try to switch to Linux, I recommend joining the Discord channel GamingOnLinux (https://discord.gg/PH66Gm) and following https://www.gamingonlinux.com/. You can seek there for help or find new mates for multiplayer games.
 
