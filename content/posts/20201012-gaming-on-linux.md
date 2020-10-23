@@ -200,7 +200,7 @@ Some other pain points I see:
 - some anti-cheat systems do not work, especially those, which are working on the kernel level. EAC and BattleEye are not supported in Wine. Riot announced it plans to introduce a kernel-level anti-cheat system in League of Legends. In this case, without support of the developer, I don't think we can do much. Putting the compatibility issue aside: I personally don't like the idea of such low-level anti-cheat systems
 - missing "gamer" software - overclocking/motherboard applications, controlling RGB, etc. For streaming there is [OBS](https://obsproject.com/). For FPS meter there is [MangoHUD](https://github.com/flightlessmango/MangoHud). Still, CPU, GPU, motherboard manufacturers don't port their apps to Linux and it's hard to control the RGB or overclock your system. Personally, I don't think they will, because the user base is too small. Hopefully the community will come up will some programs for that.
 
-*Edit 21.10.2020: for overclocking there is [CoreCtrl](https://gitlab.com/corectrl/corectrl). Thanks [beko](https://beko.famkos.net/) for pointing me to the tool!*
+*Edit 23.10.2020: for overclocking there is [CoreCtrl](https://gitlab.com/corectrl/corectrl). Thanks [beko](https://beko.famkos.net/) for pointing me to the tool!*
 
 If you want to try to switch to Linux, I recommend joining the Discord channel GamingOnLinux (https://discord.gg/PH66Gm) and following https://www.gamingonlinux.com/. You can seek there for help or find new mates for multiplayer games.
 
