@@ -16,7 +16,10 @@ categories = [
 +++
 
 
-![](/images/20201012-gaming-on-linux/header.jpg)
+{{<
+    figure
+    src="/images/20201012-gaming-on-linux/header.jpg"
+>}}
 
 ## Is gaming on Linux possible?
 
@@ -31,7 +34,8 @@ In this article I would like to show you, how I play on Linux and present the di
 ## Wine Is Not an Emulator
 
 {{<
-    image src="/images/20201012-gaming-on-linux/wine.png"
+    figure
+    src="/images/20201012-gaming-on-linux/wine.png"
     class="alignleft"
 >}}
 
@@ -44,10 +48,10 @@ Wine is not focused on games, although it also supports translating DirectX call
 ## What is Proton?
 
 {{<
-    image src="/images/20201012-gaming-on-linux/protondb.svg"
+    figure
+    src="/images/20201012-gaming-on-linux/protondb.svg"
     width="200px"
-    class="alignleft"
-    margin="10px"
+    class="alignleft margin-8"
 >}}
 
 Things changed a lot with Valve's contribution to the Linux community in 2017: **Proton** and **Steam Play**. According to Wikipedia, "Proton is a compatibility layer for Microsoft Windows games to run on Linux-based operating systems". Sound like Wine, right? In fact, Proton is a project forked from Wine, but focuses more on 3D graphics and sound libraries used in games. For example, it contains [dxvk](https://github.com/doitsujin/dxvk), which translates DirectX 9, 10 and 11 to Vulkan calls. Unfortunately, DirectX 12 is currently not supported, but there is work ongoing on [vkd3d](https://wiki.winehq.org/Vkd3d), which should bring DirectX 12 support.
@@ -57,8 +61,8 @@ Proton is integrated with Steam through Steam Play. It allows for a native-like 
 On the webpage [ProtonDB](https://www.protondb.com/) you can check user reviews and ratings for the performance of games. Witcher 3, Skyrim and Elder Scrolls Online have the **Platinum** rating, which means they run perfectly out of the box with no or small differences compared to Windows. I use that page quite often before buying a new game, to verify, if I will be able to play it. It's also helpful to check the reviews, as people write, what's working, what's not and how to optimize the game.
 
 {{<
-    image src="/images/20201012-gaming-on-linux/steamplay.jpg"
-    link="true"
+    figure
+    src="/images/20201012-gaming-on-linux/steamplay.jpg"
 >}}
 
 ## Glorious Eggroll
@@ -82,15 +86,15 @@ When running a new game, I always start with the newest Steam Proton and change 
 OK, Steam is a huge game library, but what about other launchers, like Battle.net, EA Origin, Epic Store Games? For this I have [Lutris](https://lutris.net/). If you remember PlayOnLinux, then Lutris is very similar. It's basically a manager and automated installer for many games.
 
 {{<
-    image src="/images/20201012-gaming-on-linux/lutris.jpg"
-    link="true"
+    figure
+    src="/images/20201012-gaming-on-linux/lutris.jpg"
 >}}
 
 After you installed it, you can open the Lutris page for the game (let's take [ESO](https://lutris.net/games/the-elder-scrolls-online-tamriel-unlimited/) as example). There you can select one of the prepared installation modes (it could be a standalone installation, through Steam, Battle.net or other launchers). Basically people are writting installation scripts, which install the launcher, then the game, may preconfigure the Wine prefix somehow. In my experience it is not so polished like SteamPlay, but for popular games (like ESO or Overwatch) the scripts are well prepared and work out of the box. There is a comment section under each game, so if something's wrong, you can look there for help.
 
 {{<
-    image src="/images/20201012-gaming-on-linux/lutris-diablo3.jpg"
-    link="true"
+    figure
+    src="/images/20201012-gaming-on-linux/lutris-diablo3.jpg"
 >}}
 
 Lutris also supports custom Proton builds and uses the Steam directory in `$HOME/.steam/root/compatibilitytools.d/`, so you can use the same Proton builds in Steam and Lutris. In this case I also prefer the default Lutris Proton and use the GE only, if there are problems.
