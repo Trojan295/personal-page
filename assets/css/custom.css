@@ -5,3 +5,7 @@
 .alignright {
 	float:right;
 }
+
+.margin-8 {
+	margin: 8px;
+}
