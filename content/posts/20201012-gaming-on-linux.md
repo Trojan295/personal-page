@@ -23,7 +23,7 @@ categories = [
 
 ## Is gaming on Linux possible?
 
-*tldr; Yes, it it! In many cases the user experience is like on Windows!*
+*tldr; Yes, it is! In many cases the user experience is like on Windows!*
 
 The biggest issue I had with switching completely to a Linux based OS were games. Game studios do not really care about Linux support, as the market share for this OS is around 2%. Moreover, OpenGL, the graphics library supported in Linux, is not developer friendly, so they did not want to use it. Of course, there are some games with a native port, like the Total Wars and Tomb Raider series, but this is a minority.
 

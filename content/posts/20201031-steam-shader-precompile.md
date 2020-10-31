@@ -17,7 +17,7 @@ categories = [
 
 In some shader heavy OpenGL and Vulkan games you can experience shuttering, when running the game for the first time. An example is Overwatch or Path of Exile.
 
-What's happening in the first minutes of the game is shader cache pre-compilation. It's a process of compiling shader code into GPU instructions and the final cache code is dependent on the specific GPU you have.
+What's happening in the first minutes of the game is shader cache pre-compilation. It's a process of compiling shader code into GPU instructions .The final cache code is dependent on the specific GPU you have, so this cannot be baked into the game files.
 
 As said above, normally the cache is built, when running the game, but in Steam you can trigger it manually. In my case it removed the shuttering in Path of Exile.
 
