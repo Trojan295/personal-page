@@ -19,5 +19,4 @@ file=$1
 size=$2
 quality=$3
 
-mogrify -resize $size $file
-mogrify -strip -quality $quality $file
+mogrify -strip -quality $quality -resize $size $file
