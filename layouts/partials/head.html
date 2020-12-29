@@ -41,18 +41,19 @@
 <!-- Scripts -->
 <script src="/js/Chart.bundle.min.js"></script>
 <!-- Favicons -->
-<link rel="apple-touch-icon" href="{{ "apple-touch-icon.png" | absURL }}">
-<link rel="icon" href="{{ .Site.Params.assets.favicon | default "favicon.ico" | absURL }}">
+<link rel="apple-touch-icon" href="{{ " apple-touch-icon.png" | absURL }}">
+<link rel="icon" href="{{ .Site.Params.assets.favicon | default " favicon.ico" | absURL }}">
 <!-- Generator -->
 {{- hugo.Generator }}
 <!-- RSS -->
 {{- range .AlternativeOutputFormats -}}
 <link rel="{{ .Rel }}" type="{{ .MediaType.Type }}" href="{{ .Permalink | safeURL }}">
 {{ end -}}
+{{- partial "extend_head.html" . -}}
 <!-- Misc -->
 {{- if eq (getenv "HUGO_ENV") "production" | or (eq .Site.Params.env "production") }}
 {{- template "_internal/google_analytics_async.html" . }}
-{{- template "_internal/opengraph.html" . }}
-{{- template "_internal/twitter_cards.html" . }}
-{{- template "_internal/schema.html" . }}
+{{- template "partials/templates/opengraph.html" . }}
+{{- template "partials/templates/twitter_cards.html" . }}
+{{- template "partials/templates/schema_json.html" . }}
 {{- end }}
