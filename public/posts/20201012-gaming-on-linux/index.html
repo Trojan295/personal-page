@@ -1,0 +1,1755 @@
+<!DOCTYPE html>
+<html lang="en" class="direction-ltr">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<title>Gaming on Linux? Is it possible in 2020? - myhightech.org</title>
+
+<meta name="description" content="Is gaming on Linux possible? tldr; Yes, it is! In many cases the user experience is like on Windows!
+The biggest issue I had with switching completely to a Linux based OS were games. Game studios do not really care about Linux support, as the market share for this OS is around 2%. Moreover, OpenGL, the graphics library supported in Linux, is not developer friendly, so they did not want to use it.">
+<meta name="keywords" content= />
+<meta name="author" content="">
+<link rel="canonical" href="/posts/20201012-gaming-on-linux/" />
+<link href="/assets/css/stylesheet.min.87066ffbb2170258c470f7afccdae0416379fd09fb46cb2bcff638a8a677075a.css" integrity="sha256-hwZv&#43;7IXAljEcPevzNrgQWN5/Qn7Rssrz/Y4qKZ3B1o=" rel="preload stylesheet"
+    as="style">
+<script src="/js/Chart.bundle.min.js"></script>
+
+<link rel="apple-touch-icon" href="%20apple-touch-icon.png">
+<link rel="icon" href="%20favicon.ico">
+<meta name="generator" content="Hugo 0.82.0" />
+
+
+
+</head>
+
+<body class="single" id="top">
+<script>
+    
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else {
+        if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            document.body.classList.add('dark');
+        }
+    }
+
+</script>
+<noscript>
+    <style type="text/css">
+        .theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+</noscript>
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="">myhightech.org</a>
+            <span class="logo-switches">
+                <span class="theme-toggle">
+                    <a id="theme-toggle">
+                        <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                            fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                            stroke-linejoin="round">
+                            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                        </svg>
+                        <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                            fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                            stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="5"></circle>
+                            <line x1="12" y1="1" x2="12" y2="3"></line>
+                            <line x1="12" y1="21" x2="12" y2="23"></line>
+                            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                            <line x1="1" y1="12" x2="3" y2="12"></line>
+                            <line x1="21" y1="12" x2="23" y2="12"></line>
+                            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                        </svg>
+                    </a>
+                </span>
+                
+            </span>
+        </div>
+        <ul class="menu" id="menu" onscroll="menu_on_scroll()">
+            <li>
+                <a href="/posts/">
+                    <span>
+                        Blog
+                    </span>
+                </a>
+            </li>
+            <li>
+                <a href="/categories/">
+                    <span>
+                        Categories
+                    </span>
+                </a>
+            </li>
+            <li>
+                <a href="/about/">
+                    <span>
+                        About me
+                    </span>
+                </a>
+            </li></ul>
+    </nav>
+</header>
+
+    <main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    <h1 class="post-title">
+      Gaming on Linux? Is it possible in 2020?
+    </h1>
+    <div class="post-meta">October 19, 2020&nbsp;·&nbsp;21 min
+
+    </div>
+  </header> 
+
+  <div class="post-content"><figure>
+    <img src="/images/20201012-gaming-on-linux/header.jpg"/> 
+</figure>
+
+<h2 id="is-gaming-on-linux-possible">Is gaming on Linux possible?</h2>
+<p><em>tldr; Yes, it is! In many cases the user experience is like on Windows!</em></p>
+<p>The biggest issue I had with switching completely to a Linux based OS were games. Game studios do not really care about Linux support, as the market share for this OS is around 2%. Moreover, OpenGL, the graphics library supported in Linux, is not developer friendly, so they did not want to use it. Of course, there are some games with a native port, like the Total Wars and Tomb Raider series, but this is a minority.</p>
+<p>Gamers tried to use compatibility layers like <a href="https://www.winehq.org/">Wine</a> or <a href="https://www.codeweavers.com/">CrossOver</a> to run Windows applications, but sometimes it did not work or the performance loss was too big. Thankfully, things changed with the creation of <a href="https://wikipedia.org/wiki/Vulkan_(API)">Vulkan</a> and Valve&rsquo;s forked Wine: <a href="https://github.com/ValveSoftware/Proton">Proton</a>. In the meantime, an application called <a href="https://lutris.net/">Lutris</a> appeared and thanks to the Linux gamer community, more and more games can be run on it with a satisfactory performance, sometimes even better!</p>
+<p>In this article I would like to show you, how I play on Linux and present the different tools I use. At the end, you will see my benchmarks from different games, so you can develop your own opinion on this.</p>
+<h2 id="wine-is-not-an-emulator">Wine Is Not an Emulator</h2>
+<figure class="alignleft">
+    <img src="/images/20201012-gaming-on-linux/wine.png"/> 
+</figure>
+
+<p>The story started in 1993, when Bob Amstadt and Eric Youngdale released the first version of Wine. It is an compatibility layer for Microsoft Windows, which allows to run Windows binaries on Unix-like operating systems. What it does, it translates the Windows system calls to Unix system calls and provides various components like the registry, the directory structure and system libraries. You can think about the amount of reverse-engineering, which has been done, to create this piece of software, as Windows source code is not available publicly.</p>
+<p>Wine uses something called <strong>Wine prefixes</strong> to create separate Wine configurations for the Windows components. You could ask: &ldquo;Why would I need that? When I use Windows I only have one OS installation on my hard drive?&rdquo;. Right, but sometimes you can have conflicts between different DLL libraries or specific registry configuration. In Wine it more often became a problem, as it&rsquo;s only a reverse-engineered solution to create a runtime for Windows binaries. Often people had to use a specific version of some DLLs to run an applications and prefixes allow to create an isolated environment for these.</p>
+<p>Wine is not focused on games, although it also supports translating DirectX calls into OpenGL. By the time I tried to use it for games in 2012 the results were not as great. It was hard to configure Wine and the prefixes, you had to manually add some DLLs or install some additional stuff like .NET frameworks. There was <a href="https://www.playonlinux.com/">PlayOnLinux</a>, which had scripts for many games and configured the Wine prefixes for you, but still, there were too many problems for me and I stayed on Windows.</p>
+<h2 id="what-is-proton">What is Proton?</h2>
+<figure class="alignleft margin-8">
+    <img src="/images/20201012-gaming-on-linux/protondb.svg" width="200px"/> 
+</figure>
+
+<p>Things changed a lot with Valve&rsquo;s contribution to the Linux community in 2017: <strong>Proton</strong> and <strong>Steam Play</strong>. According to Wikipedia, &ldquo;Proton is a compatibility layer for Microsoft Windows games to run on Linux-based operating systems&rdquo;. Sound like Wine, right? In fact, Proton is a project forked from Wine, but focuses more on 3D graphics and sound libraries used in games. For example, it contains <a href="https://github.com/doitsujin/dxvk">dxvk</a>, which translates DirectX 9, 10 and 11 to Vulkan calls. Unfortunately, DirectX 12 is currently not supported, but there is work ongoing on <a href="https://wiki.winehq.org/Vkd3d">vkd3d</a>, which should bring DirectX 12 support.</p>
+<p>Proton is integrated with Steam through Steam Play. It allows for a native-like experience for playing Steam games available only for Windows. Valve doesn&rsquo;t guarantee games will work, but from my experience most of the games do. A few examples are Skyrim, Divinity: Original Sin 2 and Monster Train, which was playable right from the release day.</p>
+<p>On the webpage <a href="https://www.protondb.com/">ProtonDB</a> you can check user reviews and ratings for the performance of games. Witcher 3, Skyrim and Elder Scrolls Online have the <strong>Platinum</strong> rating, which means they run perfectly out of the box with no or small differences compared to Windows. I use that page quite often before buying a new game, to verify, if I will be able to play it. It&rsquo;s also helpful to check the reviews, as people write, what&rsquo;s working, what&rsquo;s not and how to optimize the game.</p>
+<figure>
+    <img src="/images/20201012-gaming-on-linux/steamplay.jpg"/> 
+</figure>
+
+<h2 id="glorious-eggroll">Glorious Eggroll</h2>
+<p>Even though Proton and SteamPlay is a huge improvement over Wine and it raised the gamer experience to an near Windows level, can be issues in some games. Valve focuses on stability and isn&rsquo;t shipping the latest Wine in Steam Play (currently the newest Steam included is 5.13-1), but as Proton is open source, the community is making their own patches and builds. The most popular build is <a href="https://github.com/GloriousEggroll/proton-ge-custom">GloriousEggroll&rsquo;s Proton build</a>. It&rsquo;s basically a Proton build with additional patches for some games and newer version of the components used in Proton.</p>
+<p>Installing a new Proton build is very easy. You have to download the release package and put in <code>$HOME/.steam/root/compatibilitytools.d/</code>. It will automatically be available to select from a dropdown in Steam. As I&rsquo;m too lazy for this, I have written a <a href="https://gist.github.com/Trojan295/b5d2c7fe43914f49345e52b7d2570216">Python script</a> to manage the GE builds. :P</p>
+<p>Why would you use the GE build? In some games the Steam included Proton has issues. I had to use Proton-5.9-GE-7-ST for Borderlands 3, because the default one does not support Media Foundation for now, which was required to play some in-game videos. You can get a frame rate increase of a few percent in some cases.</p>
+<p>Currently on my PC I have:</p>
+<ul>
+<li>Steam included Proton builds</li>
+<li>Proton-5.9-GE-8-ST</li>
+<li>Proton-5.11-GE-3-MF</li>
+<li>Proton-5.6-GE-2</li>
+</ul>
+<p>When running a new game, I always start with the newest Steam Proton and change only, if there are issues. In like 80% of cases &ldquo;it just works™&rdquo;.</p>
+<h2 id="lutris">Lutris</h2>
+<p>OK, Steam is a huge game library, but what about other launchers, like Battle.net, EA Origin, Epic Store Games? For this I have <a href="https://lutris.net/">Lutris</a>. If you remember PlayOnLinux, then Lutris is very similar. It&rsquo;s basically a manager and automated installer for many games.</p>
+<figure>
+    <img src="/images/20201012-gaming-on-linux/lutris.jpg"/> 
+</figure>
+
+<p>After you installed it, you can open the Lutris page for the game (let&rsquo;s take <a href="https://lutris.net/games/the-elder-scrolls-online-tamriel-unlimited/">ESO</a> as example). There you can select one of the prepared installation modes (it could be a standalone installation, through Steam, Battle.net or other launchers). Basically people are writting installation scripts, which install the launcher, then the game, may preconfigure the Wine prefix somehow. In my experience it is not so polished like SteamPlay, but for popular games (like ESO or Overwatch) the scripts are well prepared and work out of the box. There is a comment section under each game, so if something&rsquo;s wrong, you can look there for help.</p>
+<figure>
+    <img src="/images/20201012-gaming-on-linux/lutris-diablo3.jpg"/> 
+</figure>
+
+<p>Lutris also supports custom Proton builds and uses the Steam directory in <code>$HOME/.steam/root/compatibilitytools.d/</code>, so you can use the same Proton builds in Steam and Lutris. In this case I also prefer the default Lutris Proton and use the GE only, if there are problems.</p>
+<p>Through Lutris I&rsquo;m playing:</p>
+<ul>
+<li>Elder Scrolls Online</li>
+<li>Minecraft</li>
+<li>Battle.net games: Overwatch and Diablo III</li>
+</ul>
+<p>Special case: Epic Store Games. For this I use <a href="https://github.com/derrod/legendary">https://github.com/derrod/legendary</a>. It&rsquo;s a command line ESG replacement and works very good IMO:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Capnip is the alias for Borderlands 3 in legendary</span>
+$ legendary install Capnip <span style="color:#75715e"># install Borderlands 3</span>
+$ legendary launch Capnip  <span style="color:#75715e"># run Borderlands 3</span>
+</code></pre></div><h2 id="some-benchmarks-and-comparison">Some benchmarks and comparison</h2>
+<p>To show you the differences in performance, I did a few benchmarks. The graphs compare the framerate, CPU and GPU load in Linux and Windows. For measuring the FPS I used <a href="https://github.com/flightlessmango/MangoHud">MangoHUD</a> on Linux and MSI Afterburner on Windows.</p>
+<p>My PC specs are:</p>
+<ul>
+<li>Mobo: MSI B450M MORTAR MAX</li>
+<li>CPU: Ryzen 7 3700X</li>
+<li>GPU: Palit GeForce RTX 2070 SUPER JetStream 8GB</li>
+<li>RAM: G.Skill Trident Z RGB, 32GB, 3600 MHz, CL16</li>
+<li>OS: Windows 10 and Pop_OS! 20.04</li>
+</ul>
+<h3 id="elder-scrolls-online-ultra-3440x1440p">Elder Scrolls Online, Ultra, 3440x1440p</h3>
+<p>I&rsquo;m playing ESO on Lutris. It works without problems, there is a significant frame drop of around 20-30%, but the game is still enjoyable.</p>
+<p>
+
+<div>
+  <canvas id="eso_fps" width="" height=""></canvas>
+  <script>
+    var ctx = document.getElementById("eso_fps").getContext('2d');
+    var myChart = new Chart.Line(ctx, {
+      data: {
+        datasets: [
+   {
+            pointRadius: 0,
+            fill: false,
+            backgroundColor: "rgb(255,0,0)",
+            borderColor: "rgb(255,0,0)",
+            borderWidth: 2,
+            label: 'Linux',
+            data: [{"x":0,"y":86.47446},{"x":1,"y":85.43686},{"x":2,"y":82.11439},{"x":3,"y":75.50944000000001},{"x":4,"y":72.77790999999998},{"x":5,"y":80.62522999999999},{"x":6,"y":79.09275},{"x":7,"y":78.78045},{"x":8,"y":67.77865},{"x":9,"y":68.07118},{"x":10,"y":65.50361999999998},{"x":11,"y":64.88208},{"x":12,"y":65.6671},{"x":13,"y":64.63152},{"x":14,"y":59.68417999999999},{"x":15,"y":60.68335},{"x":16,"y":53.976569999999995},{"x":17,"y":57.59858000000001},{"x":18,"y":58.32806000000001},{"x":19,"y":63.11993000000001},{"x":20,"y":64.26046},{"x":21,"y":60.28677000000001},{"x":22,"y":60.80192999999999},{"x":23,"y":58.83924999999999},{"x":24,"y":62.90058000000001},{"x":25,"y":62.05412},{"x":26,"y":61.01342999999999},{"x":27,"y":44.85614},{"x":28,"y":49.88775},{"x":29,"y":59.07062},{"x":30,"y":55.975620000000006},{"x":31,"y":57.39428},{"x":32,"y":58.33883},{"x":33,"y":59.817890000000006},{"x":34,"y":55.78815000000001},{"x":35,"y":50.73005},{"x":36,"y":61.90998},{"x":37,"y":63.23476000000001},{"x":38,"y":67.22560999999999},{"x":39,"y":72.71091999999999},{"x":40,"y":70.92009999999998},{"x":41,"y":72.83129999999998},{"x":42,"y":73.09188},{"x":43,"y":67.86585},{"x":44,"y":55.94668000000001},{"x":45,"y":64.24678},{"x":46,"y":67.9694},{"x":47,"y":70.57938000000001},{"x":48,"y":70.04565},{"x":49,"y":70.07556},{"x":50,"y":72.94561000000002},{"x":51,"y":72.34056},{"x":52,"y":69.48706999999999},{"x":53,"y":72.00731},{"x":54,"y":66.82562},{"x":55,"y":62.374140000000004},{"x":56,"y":56.38038999999999},{"x":57,"y":62.54756999999999},{"x":58,"y":61.95919},{"x":59,"y":62.41693000000001},{"x":60,"y":67.55462000000001},{"x":61,"y":70.09743333333333}],
+          }, {
+            pointRadius: 0,
+            fill: false,
+            backgroundColor: "rgb(0,255,0)",
+            borderColor: "rgb(0,255,0)",
+            borderWidth: 2,
+            label: 'Windows',
+            data: [{"x":0,"y":63.84},{"x":1,"y":63.98},{"x":2,"y":63},{"x":3,"y":70.47},{"x":4,"y":73.45},{"x":5,"y":91.34},{"x":6,"y":98.23},{"x":7,"y":75.00999999999998},{"x":8,"y":72.49},{"x":9,"y":90.91},{"x":10,"y":72.2},{"x":11,"y":68.53999999999999},{"x":12,"y":66.07},{"x":13,"y":63.67},{"x":14,"y":63.66},{"x":15,"y":82.71000000000002},{"x":16,"y":98.18},{"x":17,"y":98.12000000000003},{"x":18,"y":92.5},{"x":19,"y":92.45},{"x":20,"y":97.14},{"x":21,"y":91.51},{"x":22,"y":85.98999999999998},{"x":23,"y":88.78999999999998},{"x":24,"y":92.99},{"x":25,"y":94.81},{"x":26,"y":90.7},{"x":27,"y":89.72999999999998},{"x":28,"y":92.92},{"x":29,"y":91.65},{"x":30,"y":89.16999999999999},{"x":31,"y":82.35999999999999},{"x":32,"y":69.66},{"x":33,"y":74.72999999999998},{"x":34,"y":77.28},{"x":35,"y":81.47},{"x":36,"y":84.77000000000002},{"x":37,"y":78.02000000000002},{"x":38,"y":73.9},{"x":39,"y":78.11000000000001},{"x":40,"y":85.96},{"x":41,"y":91.37},{"x":42,"y":96.94},{"x":43,"y":97.28},{"x":44,"y":98.1},{"x":45,"y":90.94},{"x":46,"y":91.95},{"x":47,"y":91.13},{"x":48,"y":94.24},{"x":49,"y":93.32999999999998},{"x":50,"y":94.72},{"x":51,"y":89.37999999999998},{"x":52,"y":92.73},{"x":53,"y":91.22},{"x":54,"y":82.75},{"x":55,"y":93.06},{"x":56,"y":92.37},{"x":57,"y":78.13},{"x":58,"y":96.54},{"x":59,"y":97.94},{"x":60,"y":97.27},{"x":61,"y":99.75714285714285}],
+          },
+        ]
+      },
+    options: {
+      title: {
+        display: true,
+        fontSize: 16,
+        text: 'FPS',
+      },
+      scales: {
+        xAxes: [{
+          type: 'linear',
+          scaleLabel: {
+            display: true,
+            labelString: ''
+          }
+        }],
+          yAxes: [{
+            type: 'linear',
+            scaleLabel: {
+              display: true,
+              labelString: ''
+            },
+            ticks: {
+              beginAtZero: true,
+            }
+          }]
+      }
+    }
+    });
+  </script>
+</div>
+
+
+<div>
+  <canvas id="eso_cpu" width="" height=""></canvas>
+  <script>
+    var ctx = document.getElementById("eso_cpu").getContext('2d');
+    var myChart = new Chart.Line(ctx, {
+      data: {
+        datasets: [
+   {
+            pointRadius: 0,
+            fill: false,
+            backgroundColor: "rgb(255,0,0)",
+            borderColor: "rgb(255,0,0)",
+            borderWidth: 2,
+            label: 'Linux',
+            data: [{"x":0,"y":21.9},{"x":1,"y":20.5},{"x":2,"y":21.2},{"x":3,"y":20.5},{"x":4,"y":21.1},{"x":5,"y":21.1},{"x":6,"y":19.6},{"x":7,"y":21.7},{"x":8,"y":20.2},{"x":9,"y":20},{"x":10,"y":21},{"x":11,"y":18},{"x":12,"y":19.5},{"x":13,"y":20},{"x":14,"y":19},{"x":15,"y":19.1},{"x":16,"y":20.3},{"x":17,"y":21.7},{"x":18,"y":19},{"x":19,"y":20.2},{"x":20,"y":20.5},{"x":21,"y":20.5},{"x":22,"y":20.8},{"x":23,"y":20.6},{"x":24,"y":21.4},{"x":25,"y":21.2},{"x":26,"y":25.6},{"x":27,"y":24.9},{"x":28,"y":26.2},{"x":29,"y":26.1},{"x":30,"y":24.8},{"x":31,"y":27.2},{"x":32,"y":28.6},{"x":33,"y":26.9},{"x":34,"y":29.2},{"x":35,"y":30.6},{"x":36,"y":31},{"x":37,"y":27.9},{"x":38,"y":27},{"x":39,"y":28.7},{"x":40,"y":28.2},{"x":41,"y":28.3},{"x":42,"y":28.8},{"x":43,"y":28},{"x":44,"y":28.5},{"x":45,"y":32.5},{"x":46,"y":27.5},{"x":47,"y":27},{"x":48,"y":29},{"x":49,"y":30.4},{"x":50,"y":27.9},{"x":51,"y":27.5},{"x":52,"y":27.8},{"x":53,"y":30},{"x":54,"y":27.9},{"x":55,"y":26.4},{"x":56,"y":28.7},{"x":57,"y":28},{"x":58,"y":27.5},{"x":59,"y":26.4},{"x":60,"y":26.8},{"x":61,"y":28.33333333333333}],
+          }, {
+            pointRadius: 0,
+            fill: false,
+            backgroundColor: "rgb(0,255,0)",
+            borderColor: "rgb(0,255,0)",
+            borderWidth: 2,
+            label: 'Windows',
+            data: [{"x":0,"y":13.7641},{"x":1,"y":14.2296},{"x":2,"y":8.8059},{"x":3,"y":13.758599999999998},{"x":4,"y":15.3102},{"x":5,"y":15.372},{"x":6,"y":16.0777},{"x":7,"y":13.886599999999998},{"x":8,"y":11.7426},{"x":9,"y":18.8354},{"x":10,"y":12.9803},{"x":11,"y":13.0439},{"x":12,"y":6.568400000000001},{"x":13,"y":9.2408},{"x":14,"y":22.659000000000002},{"x":15,"y":14.321000000000002},{"x":16,"y":12.5836},{"x":17,"y":21.1126},{"x":18,"y":18.4649},{"x":19,"y":18.823799999999995},{"x":20,"y":18.0971},{"x":21,"y":15.6232},{"x":22,"y":16.8671},{"x":23,"y":13.487799999999998},{"x":24,"y":18.5443},{"x":25,"y":17.7307},{"x":26,"y":16.854300000000002},{"x":27,"y":20.4818},{"x":28,"y":18.934},{"x":29,"y":18.8345},{"x":30,"y":21.7287},{"x":31,"y":18.6662},{"x":32,"y":19.6744},{"x":33,"y":23.361300000000004},{"x":34,"y":17.795300000000005},{"x":35,"y":15.461199999999995},{"x":36,"y":23.835400000000003},{"x":37,"y":24.5889},{"x":38,"y":29.8252},{"x":39,"y":20.3117},{"x":40,"y":23.196},{"x":41,"y":21.112},{"x":42,"y":20.678800000000006},{"x":43,"y":21.7254},{"x":44,"y":19.4476},{"x":45,"y":20.1293},{"x":46,"y":26.240700000000004},{"x":47,"y":20.6484},{"x":48,"y":20.8784},{"x":49,"y":20.589000000000002},{"x":50,"y":20.1169},{"x":51,"y":21.8923},{"x":52,"y":21.732},{"x":53,"y":24.3662},{"x":54,"y":22.670300000000005},{"x":55,"y":22.6179},{"x":56,"y":14.0256},{"x":57,"y":17.685200000000005},{"x":58,"y":20.3705},{"x":59,"y":27.0007},{"x":60,"y":19.9399},{"x":61,"y":19.39514285714285}],
+          },
+        ]
+      },
+    options: {
+      title: {
+        display: true,
+        fontSize: 16,
+        text: 'CPU load',
+      },
+      scales: {
+        xAxes: [{
+          type: 'linear',
+          scaleLabel: {
+            display: true,
+            labelString: ''
+          }
+        }],
+          yAxes: [{
+            type: 'linear',
+            scaleLabel: {
+              display: true,
+              labelString: ''
+            },
+            ticks: {
+              beginAtZero: true,
+              suggestedMax: 100,
+            }
+          }]
+      }
+    }
+    });
+  </script>
+</div>
+
+
+<div>
+  <canvas id="eso_gpu" width="" height=""></canvas>
+  <script>
+    var ctx = document.getElementById("eso_gpu").getContext('2d');
+    var myChart = new Chart.Line(ctx, {
+      data: {
+        datasets: [
+   {
+            pointRadius: 0,
+            fill: false,
+            backgroundColor: "rgb(255,0,0)",
+            borderColor: "rgb(255,0,0)",
+            borderWidth: 2,
+            label: 'Linux',
+            data: [{"x":0,"y":76.2},{"x":1,"y":76.8},{"x":2,"y":75.8},{"x":3,"y":73.6},{"x":4,"y":67},{"x":5,"y":66.8},{"x":6,"y":68},{"x":7,"y":68.6},{"x":8,"y":66.6},{"x":9,"y":60.5},{"x":10,"y":54.5},{"x":11,"y":52},{"x":12,"y":52.5},{"x":13,"y":57},{"x":14,"y":58},{"x":15,"y":57},{"x":16,"y":59.6},{"x":17,"y":56.6},{"x":18,"y":56.2},{"x":19,"y":62.6},{"x":20,"y":64.2},{"x":21,"y":63},{"x":22,"y":61.8},{"x":23,"y":58.1},{"x":24,"y":56.9},{"x":25,"y":58.7},{"x":26,"y":56.5},{"x":27,"y":51.2},{"x":28,"y":43},{"x":29,"y":40.2},{"x":30,"y":44.8},{"x":31,"y":43.6},{"x":32,"y":43},{"x":33,"y":47.5},{"x":34,"y":51.1},{"x":35,"y":43.1},{"x":36,"y":44.1},{"x":37,"y":45.3},{"x":38,"y":48.1},{"x":39,"y":49.7},{"x":40,"y":56.4},{"x":41,"y":59.6},{"x":42,"y":56},{"x":43,"y":55},{"x":44,"y":50},{"x":45,"y":46},{"x":46,"y":44},{"x":47,"y":51},{"x":48,"y":51},{"x":49,"y":52},{"x":50,"y":58.2},{"x":51,"y":60.4},{"x":52,"y":60.6},{"x":53,"y":59.2},{"x":54,"y":57.6},{"x":55,"y":54.2},{"x":56,"y":48.8},{"x":57,"y":50},{"x":58,"y":57},{"x":59,"y":56.4},{"x":60,"y":58},{"x":61,"y":65}],
+          }, {
+            pointRadius: 0,
+            fill: false,
+            backgroundColor: "rgb(0,255,0)",
+            borderColor: "rgb(0,255,0)",
+            borderWidth: 2,
+            label: 'Windows',
+            data: [{"x":0,"y":45.2},{"x":1,"y":45.8},{"x":2,"y":47},{"x":3,"y":50.6},{"x":4,"y":53},{"x":5,"y":62.6},{"x":6,"y":71.5},{"x":7,"y":63.5},{"x":8,"y":51},{"x":9,"y":59},{"x":10,"y":59},{"x":11,"y":48},{"x":12,"y":46.5},{"x":13,"y":45.5},{"x":14,"y":44.5},{"x":15,"y":51},{"x":16,"y":63},{"x":17,"y":66.5},{"x":18,"y":65.5},{"x":19,"y":67.5},{"x":20,"y":71},{"x":21,"y":74.5},{"x":22,"y":74.5},{"x":23,"y":76.2},{"x":24,"y":81.4},{"x":25,"y":80.8},{"x":26,"y":79.4},{"x":27,"y":77.2},{"x":28,"y":73.4},{"x":29,"y":72.8},{"x":30,"y":69.8},{"x":31,"y":65.2},{"x":32,"y":57.4},{"x":33,"y":52.8},{"x":34,"y":53.6},{"x":35,"y":57},{"x":36,"y":63.8},{"x":37,"y":62.2},{"x":38,"y":57.2},{"x":39,"y":58.4},{"x":40,"y":62.9},{"x":41,"y":65},{"x":42,"y":67.7},{"x":43,"y":74.3},{"x":44,"y":73.2},{"x":45,"y":67.5},{"x":46,"y":65.5},{"x":47,"y":68.7},{"x":48,"y":68.3},{"x":49,"y":69.9},{"x":50,"y":72.9},{"x":51,"y":72.9},{"x":52,"y":68},{"x":53,"y":67.1},{"x":54,"y":65},{"x":55,"y":65.8},{"x":56,"y":67.8},{"x":57,"y":59.8},{"x":58,"y":51.8},{"x":59,"y":70.8},{"x":60,"y":70.8},{"x":61,"y":74}],
+          },
+        ]
+      },
+    options: {
+      title: {
+        display: true,
+        fontSize: 16,
+        text: 'GPU load',
+      },
+      scales: {
+        xAxes: [{
+          type: 'linear',
+          scaleLabel: {
+            display: true,
+            labelString: ''
+          }
+        }],
+          yAxes: [{
+            type: 'linear',
+            scaleLabel: {
+              display: true,
+              labelString: ''
+            },
+            ticks: {
+              beginAtZero: true,
+              suggestedMax: 100,
+            }
+          }]
+      }
+    }
+    });
+  </script>
+</div></p>
+<h3 id="assassins-creed-odyssey-ultra-3440x1440p">Assassins Creed: Odyssey, Ultra, 3440x1440p</h3>
+<p>This one was surprising for me! On my PC the built-in benchmark shows 10% higher framerates on Linux! I verified the graphics setting and they were the same on both OSes. I&rsquo;m not really sure how this is possible.</p>
+<p>
+
+<div>
+  <canvas id="aso_fps" width="" height=""></canvas>
+  <script>
+    var ctx = document.getElementById("aso_fps").getContext('2d');
+    var myChart = new Chart.Line(ctx, {
+      data: {
+        datasets: [
+   {
+            pointRadius: 0,
+            fill: false,
+            backgroundColor: "rgb(255,0,0)",
+            borderColor: "rgb(255,0,0)",
+            borderWidth: 2,
+            label: 'Linux',
+            data: [{"x":0,"y":69.84473},{"x":1,"y":69.56504000000001},{"x":2,"y":69.68266},{"x":3,"y":69.25018},{"x":4,"y":68.86963999999999},{"x":5,"y":69.87509},{"x":6,"y":68.93997999999999},{"x":7,"y":66.57545999999999},{"x":8,"y":64.74316},{"x":9,"y":62.16404},{"x":10,"y":58.83787000000001},{"x":11,"y":49.84091},{"x":12,"y":48.10036},{"x":13,"y":47.62153},{"x":14,"y":48.4197},{"x":15,"y":47.11143},{"x":16,"y":49.76244000000001},{"x":17,"y":49.67219},{"x":18,"y":50.02953},{"x":19,"y":49.72738},{"x":20,"y":50.00332999999999},{"x":21,"y":49.33008},{"x":22,"y":50.26960999999999},{"x":23,"y":50.69154},{"x":24,"y":51.66993},{"x":25,"y":51.26765},{"x":26,"y":51.09295999999999},{"x":27,"y":52.54468999999999},{"x":28,"y":53.433330000000005},{"x":29,"y":55.05043000000001},{"x":30,"y":54.3295},{"x":31,"y":54.20148},{"x":32,"y":56.19631},{"x":33,"y":54.82029},{"x":34,"y":54.0221},{"x":35,"y":54.92366000000001},{"x":36,"y":55.736309999999996},{"x":37,"y":56.08773000000001},{"x":38,"y":54.11405000000001},{"x":39,"y":54.48861000000001},{"x":40,"y":53.29576000000001},{"x":41,"y":52.9486},{"x":42,"y":53.26291},{"x":43,"y":51.99068},{"x":44,"y":52.19687},{"x":45,"y":52.07359},{"x":46,"y":53.746280000000006},{"x":47,"y":54.7623},{"x":48,"y":55.94187000000001},{"x":49,"y":56.30603000000001},{"x":50,"y":55.71884},{"x":51,"y":54.6321},{"x":52,"y":51.27252},{"x":53,"y":51.24064},{"x":54,"y":49.610200000000006},{"x":55,"y":49.76808},{"x":56,"y":51.150209999999994},{"x":57,"y":49.2919},{"x":58,"y":50.36498},{"x":59,"y":52.65124000000001},{"x":60,"y":52.29732},{"x":61,"y":51.18794000000001},{"x":62,"y":55.04104},{"x":63,"y":54.91324999999999},{"x":64,"y":55.92719},{"x":65,"y":48.87895999999999},{"x":66,"y":56.6563}],
+          }, {
+            pointRadius: 0,
+            fill: false,
+            backgroundColor: "rgb(0,255,0)",
+            borderColor: "rgb(0,255,0)",
+            borderWidth: 2,
+            label: 'Windows',
+            data: [{"x":0,"y":61.61999999999999},{"x":1,"y":61.73},{"x":2,"y":61.06999999999999},{"x":3,"y":61.06},{"x":4,"y":61.30999999999999},{"x":5,"y":60.75999999999999},{"x":6,"y":58.65},{"x":7,"y":55.44},{"x":8,"y":52.73},{"x":9,"y":51.45},{"x":10,"y":47.05},{"x":11,"y":44.36},{"x":12,"y":43.83},{"x":13,"y":43.83000000000001},{"x":14,"y":44.73},{"x":15,"y":45.46000000000001},{"x":16,"y":44.97000000000001},{"x":17,"y":44.87000000000001},{"x":18,"y":44.540000000000006},{"x":19,"y":44.83000000000001},{"x":20,"y":45.21},{"x":21,"y":45.81},{"x":22,"y":46.00000000000001},{"x":23,"y":45.95},{"x":24,"y":46.4},{"x":25,"y":46.36000000000001},{"x":26,"y":46.76},{"x":27,"y":48.07},{"x":28,"y":48.06},{"x":29,"y":48.36},{"x":30,"y":48},{"x":31,"y":49.26000000000001},{"x":32,"y":48.47000000000001},{"x":33,"y":48.05},{"x":34,"y":47.96999999999999},{"x":35,"y":48.95},{"x":36,"y":48.37},{"x":37,"y":47.19000000000001},{"x":38,"y":47.21000000000002},{"x":39,"y":46.65},{"x":40,"y":46.2},{"x":41,"y":46.36000000000001},{"x":42,"y":45.67},{"x":43,"y":45.93000000000001},{"x":44,"y":46.31},{"x":45,"y":47.1},{"x":46,"y":49.02},{"x":47,"y":49.84},{"x":48,"y":51.66},{"x":49,"y":51.92},{"x":50,"y":51.48},{"x":51,"y":48.94},{"x":52,"y":46.88},{"x":53,"y":45.52},{"x":54,"y":44.33},{"x":55,"y":44.5},{"x":56,"y":44.22},{"x":57,"y":43.4},{"x":58,"y":44.5},{"x":59,"y":45.93000000000001},{"x":60,"y":46.08},{"x":61,"y":47.11},{"x":62,"y":48.05},{"x":63,"y":49.42999999999999},{"x":64,"y":49.73333333333333}],
+          },
+        ]
+      },
+    options: {
+      title: {
+        display: true,
+        fontSize: 16,
+        text: 'FPS',
+      },
+      scales: {
+        xAxes: [{
+          type: 'linear',
+          scaleLabel: {
+            display: true,
+            labelString: ''
+          }
+        }],
+          yAxes: [{
+            type: 'linear',
+            scaleLabel: {
+              display: true,
+              labelString: ''
+            },
+            ticks: {
+              beginAtZero: true,
+            }
+          }]
+      }
+    }
+    });
+  </script>
+</div>
+
+
+<div>
+  <canvas id="aso_cpu" width="" height=""></canvas>
+  <script>
+    var ctx = document.getElementById("aso_cpu").getContext('2d');
+    var myChart = new Chart.Line(ctx, {
+      data: {
+        datasets: [
+   {
+            pointRadius: 0,
+            fill: false,
+            backgroundColor: "rgb(255,0,0)",
+            borderColor: "rgb(255,0,0)",
+            borderWidth: 2,
+            label: 'Linux',
+            data: [{"x":0,"y":33.5},{"x":1,"y":32.5},{"x":2,"y":32.2},{"x":3,"y":33.9},{"x":4,"y":32.7},{"x":5,"y":34},{"x":6,"y":35},{"x":7,"y":36.2},{"x":8,"y":35.7},{"x":9,"y":35.5},{"x":10,"y":36},{"x":11,"y":33},{"x":12,"y":33},{"x":13,"y":32},{"x":14,"y":32},{"x":15,"y":31.5},{"x":16,"y":32.5},{"x":17,"y":32.3},{"x":18,"y":33.2},{"x":19,"y":35.1},{"x":20,"y":33.9},{"x":21,"y":34.5},{"x":22,"y":33.8},{"x":23,"y":35.3},{"x":24,"y":35.6},{"x":25,"y":33.9},{"x":26,"y":36},{"x":27,"y":36.5},{"x":28,"y":33.8},{"x":29,"y":35.4},{"x":30,"y":35.5},{"x":31,"y":34.1},{"x":32,"y":34.5},{"x":33,"y":35.5},{"x":34,"y":33.4},{"x":35,"y":34.6},{"x":36,"y":33.9},{"x":37,"y":33.5},{"x":38,"y":34.5},{"x":39,"y":33.5},{"x":40,"y":35},{"x":41,"y":34},{"x":42,"y":35},{"x":43,"y":34.2},{"x":44,"y":33.4},{"x":45,"y":33.4},{"x":46,"y":34.1},{"x":47,"y":33.4},{"x":48,"y":33.3},{"x":49,"y":33},{"x":50,"y":34.8},{"x":51,"y":32.7},{"x":52,"y":34},{"x":53,"y":35},{"x":54,"y":35},{"x":55,"y":34.9},{"x":56,"y":34.1},{"x":57,"y":34.1},{"x":58,"y":33},{"x":59,"y":32.9},{"x":60,"y":32.1},{"x":61,"y":30.1},{"x":62,"y":31.6},{"x":63,"y":31.8},{"x":64,"y":29.4},{"x":65,"y":31},{"x":66,"y":35}],
+          }, {
+            pointRadius: 0,
+            fill: false,
+            backgroundColor: "rgb(0,255,0)",
+            borderColor: "rgb(0,255,0)",
+            borderWidth: 2,
+            label: 'Windows',
+            data: [{"x":0,"y":24.5371},{"x":1,"y":80.00549999999998},{"x":2,"y":63.55219999999999},{"x":3,"y":29.3616},{"x":4,"y":30.920500000000004},{"x":5,"y":33.749700000000004},{"x":6,"y":51.3285},{"x":7,"y":47.986},{"x":8,"y":36.63430000000001},{"x":9,"y":32.230599999999995},{"x":10,"y":65.2328},{"x":11,"y":85.3693},{"x":12,"y":53.12579999999999},{"x":13,"y":32.47019999999999},{"x":14,"y":33.91010000000001},{"x":15,"y":31.838800000000006},{"x":16,"y":40.76240000000001},{"x":17,"y":33.178000000000004},{"x":18,"y":38.828799999999994},{"x":19,"y":33.1552},{"x":20,"y":31.827000000000005},{"x":21,"y":38.1708},{"x":22,"y":31.1395},{"x":23,"y":31.8529},{"x":24,"y":33.5684},{"x":25,"y":29.9798},{"x":26,"y":36.0827},{"x":27,"y":33.05309999999999},{"x":28,"y":32.4894},{"x":29,"y":31.7098},{"x":30,"y":32.4505},{"x":31,"y":33.9267},{"x":32,"y":32.5957},{"x":33,"y":31.7802},{"x":34,"y":34.6074},{"x":35,"y":41.6729},{"x":36,"y":39.94930000000001},{"x":37,"y":30.676800000000004},{"x":38,"y":31.51},{"x":39,"y":29.587},{"x":40,"y":29.869800000000005},{"x":41,"y":28.572700000000005},{"x":42,"y":29.6396},{"x":43,"y":30.381800000000005},{"x":44,"y":32.10379999999999},{"x":45,"y":30.0526},{"x":46,"y":32.1229},{"x":47,"y":28.546700000000005},{"x":48,"y":33.6816},{"x":49,"y":31.7244},{"x":50,"y":25.7547},{"x":51,"y":32.6401},{"x":52,"y":29.636499999999995},{"x":53,"y":34.472500000000004},{"x":54,"y":38.01649999999999},{"x":55,"y":33.636700000000005},{"x":56,"y":29.8804},{"x":57,"y":27.682},{"x":58,"y":27.504},{"x":59,"y":24.901000000000003},{"x":60,"y":27.3073},{"x":61,"y":28.958200000000005},{"x":62,"y":26.5059},{"x":63,"y":25.842},{"x":64,"y":33.00216666666667}],
+          },
+        ]
+      },
+    options: {
+      title: {
+        display: true,
+        fontSize: 16,
+        text: 'CPU load',
+      },
+      scales: {
+        xAxes: [{
+          type: 'linear',
+          scaleLabel: {
+            display: true,
+            labelString: ''
+          }
+        }],
+          yAxes: [{
+            type: 'linear',
+            scaleLabel: {
+              display: true,
+              labelString: ''
+            },
+            ticks: {
+              beginAtZero: true,
+              suggestedMax: 100,
+            }
+          }]
+      }
+    }
+    });
+  </script>
+</div>
+
+
+<div>
+  <canvas id="aso_gpu" width="" height=""></canvas>
+  <script>
+    var ctx = document.getElementById("aso_gpu").getContext('2d');
+    var myChart = new Chart.Line(ctx, {
+      data: {
+        datasets: [
+   {
+            pointRadius: 0,
+            fill: false,
+            backgroundColor: "rgb(255,0,0)",
+            borderColor: "rgb(255,0,0)",
+            borderWidth: 2,
+            label: 'Linux',
+            data: [{"x":0,"y":97.4},{"x":1,"y":97},{"x":2,"y":97},{"x":3,"y":97},{"x":4,"y":97},{"x":5,"y":97},{"x":6,"y":97},{"x":7,"y":97},{"x":8,"y":97},{"x":9,"y":97.5},{"x":10,"y":98},{"x":11,"y":98},{"x":12,"y":98},{"x":13,"y":98},{"x":14,"y":98},{"x":15,"y":98},{"x":16,"y":98},{"x":17,"y":98},{"x":18,"y":98},{"x":19,"y":98},{"x":20,"y":98},{"x":21,"y":98},{"x":22,"y":98},{"x":23,"y":98},{"x":24,"y":98},{"x":25,"y":98},{"x":26,"y":98},{"x":27,"y":98},{"x":28,"y":98},{"x":29,"y":98},{"x":30,"y":98},{"x":31,"y":98},{"x":32,"y":98},{"x":33,"y":98},{"x":34,"y":98},{"x":35,"y":98},{"x":36,"y":98},{"x":37,"y":98},{"x":38,"y":98},{"x":39,"y":98},{"x":40,"y":98},{"x":41,"y":98},{"x":42,"y":98},{"x":43,"y":98},{"x":44,"y":98},{"x":45,"y":98},{"x":46,"y":98},{"x":47,"y":98},{"x":48,"y":98},{"x":49,"y":98},{"x":50,"y":98},{"x":51,"y":98},{"x":52,"y":98},{"x":53,"y":98},{"x":54,"y":98},{"x":55,"y":98},{"x":56,"y":98},{"x":57,"y":98},{"x":58,"y":98},{"x":59,"y":98},{"x":60,"y":98},{"x":61,"y":98},{"x":62,"y":98},{"x":63,"y":98},{"x":64,"y":98},{"x":65,"y":98},{"x":66,"y":98}],
+          }, {
+            pointRadius: 0,
+            fill: false,
+            backgroundColor: "rgb(0,255,0)",
+            borderColor: "rgb(0,255,0)",
+            borderWidth: 2,
+            label: 'Windows',
+            data: [{"x":0,"y":96},{"x":1,"y":96},{"x":2,"y":96},{"x":3,"y":96},{"x":4,"y":96},{"x":5,"y":96},{"x":6,"y":95},{"x":7,"y":95},{"x":8,"y":95},{"x":9,"y":94},{"x":10,"y":95},{"x":11,"y":95},{"x":12,"y":95},{"x":13,"y":95},{"x":14,"y":96},{"x":15,"y":96},{"x":16,"y":96},{"x":17,"y":96},{"x":18,"y":96},{"x":19,"y":96},{"x":20,"y":96},{"x":21,"y":96},{"x":22,"y":96},{"x":23,"y":96},{"x":24,"y":96},{"x":25,"y":96},{"x":26,"y":96},{"x":27,"y":96},{"x":28,"y":96},{"x":29,"y":96},{"x":30,"y":96},{"x":31,"y":96},{"x":32,"y":96},{"x":33,"y":96},{"x":34,"y":96},{"x":35,"y":96},{"x":36,"y":96},{"x":37,"y":96},{"x":38,"y":96},{"x":39,"y":96},{"x":40,"y":96},{"x":41,"y":96},{"x":42,"y":96},{"x":43,"y":96},{"x":44,"y":96},{"x":45,"y":96},{"x":46,"y":96},{"x":47,"y":96},{"x":48,"y":96},{"x":49,"y":96},{"x":50,"y":96.8},{"x":51,"y":96.2},{"x":52,"y":96},{"x":53,"y":96},{"x":54,"y":95.2},{"x":55,"y":95},{"x":56,"y":95},{"x":57,"y":95},{"x":58,"y":95},{"x":59,"y":95},{"x":60,"y":95.7},{"x":61,"y":96},{"x":62,"y":96},{"x":63,"y":96},{"x":64,"y":96}],
+          },
+        ]
+      },
+    options: {
+      title: {
+        display: true,
+        fontSize: 16,
+        text: 'GPU load',
+      },
+      scales: {
+        xAxes: [{
+          type: 'linear',
+          scaleLabel: {
+            display: true,
+            labelString: ''
+          }
+        }],
+          yAxes: [{
+            type: 'linear',
+            scaleLabel: {
+              display: true,
+              labelString: ''
+            },
+            ticks: {
+              beginAtZero: true,
+              suggestedMax: 100,
+            }
+          }]
+      }
+    }
+    });
+  </script>
+</div></p>
+<h3 id="shadow-of-the-tomb-raider-ultra-3440x1440p">Shadow of the Tomb Raider, Ultra, 3440x1440p</h3>
+<p>This one has actually a native Linux port. When playing, I get a few more frames compared to running on Windows with DirectX 11. What I noticed here, the available display settings are different in each systems. On Linux there are no HDR and stereoscopy. IMO, nothing really important.</p>
+<p>
+
+<div>
+  <canvas id="sottr_fps" width="" height=""></canvas>
+  <script>
+    var ctx = document.getElementById("sottr_fps").getContext('2d');
+    var myChart = new Chart.Line(ctx, {
+      data: {
+        datasets: [
+   {
+            pointRadius: 0,
+            fill: false,
+            backgroundColor: "rgb(255,0,0)",
+            borderColor: "rgb(255,0,0)",
+            borderWidth: 2,
+            label: 'Linux',
+            data: [{"x":0,"y":64.60193000000001},{"x":1,"y":64.95385},{"x":2,"y":64.7689},{"x":3,"y":65.43924999999999},{"x":4,"y":65.29124},{"x":5,"y":67.31876},{"x":6,"y":67.30960000000002},{"x":7,"y":67.71557},{"x":8,"y":66.80003},{"x":9,"y":64.89204000000001},{"x":10,"y":65.65708000000001},{"x":11,"y":64.59038000000001},{"x":12,"y":63.41204000000001},{"x":13,"y":61.73067},{"x":14,"y":65.84223},{"x":15,"y":63.58969999999999},{"x":16,"y":64.89050999999999},{"x":17,"y":64.53744999999999},{"x":18,"y":65.14856},{"x":19,"y":64.41561},{"x":20,"y":64.40562},{"x":21,"y":63.59891},{"x":22,"y":62.93727999999999},{"x":23,"y":63.22082999999999},{"x":24,"y":62.00970000000001},{"x":25,"y":61.77840000000001},{"x":26,"y":61.79551000000002},{"x":27,"y":61.46306},{"x":28,"y":67.34856999999998},{"x":29,"y":61.8012},{"x":30,"y":59.87600000000001},{"x":31,"y":59.58027},{"x":32,"y":59.33221000000001},{"x":33,"y":58.36512000000001},{"x":34,"y":58.62557999999999},{"x":35,"y":57.57815},{"x":36,"y":57.739320000000006},{"x":37,"y":57.94848},{"x":38,"y":57.39359},{"x":39,"y":57.412940000000006},{"x":40,"y":65.60254},{"x":41,"y":71.05940000000002},{"x":42,"y":73.11006},{"x":43,"y":74.54355000000002},{"x":44,"y":74.52011999999998},{"x":45,"y":74.22391},{"x":46,"y":73.70222},{"x":47,"y":71.46894},{"x":48,"y":75.99075},{"x":49,"y":73.92623},{"x":50,"y":73.6947},{"x":51,"y":70.40039},{"x":52,"y":69.56854},{"x":53,"y":69.31115},{"x":54,"y":68.46591000000001},{"x":55,"y":67.3069},{"x":56,"y":68.21265},{"x":57,"y":68.40871},{"x":58,"y":68.4169},{"x":59,"y":68.62224},{"x":60,"y":67.89556999999999},{"x":61,"y":66.81033000000001},{"x":62,"y":67.29084999999999},{"x":63,"y":67.45272},{"x":64,"y":67.58291999999999},{"x":65,"y":68.24795},{"x":66,"y":69.02214999999998},{"x":67,"y":68.51509},{"x":68,"y":68.94503},{"x":69,"y":68.17429000000001},{"x":70,"y":69.09571000000001},{"x":71,"y":68.88467},{"x":72,"y":69.48585},{"x":73,"y":69.0438},{"x":74,"y":69.48895999999999},{"x":75,"y":71.04493000000001},{"x":76,"y":70.66461000000002},{"x":77,"y":70.40438},{"x":78,"y":70.48425999999998},{"x":79,"y":70.53569},{"x":80,"y":69.69789},{"x":81,"y":70.75078},{"x":82,"y":70.94458},{"x":83,"y":72.42505},{"x":84,"y":73.62906},{"x":85,"y":74.45794000000001},{"x":86,"y":75.64617},{"x":87,"y":77.38937000000001},{"x":88,"y":79.01974},{"x":89,"y":68.57333000000001},{"x":90,"y":67.10907999999999},{"x":91,"y":67.57611},{"x":92,"y":66.52982},{"x":93,"y":89.25035},{"x":94,"y":110.9887},{"x":95,"y":109.8617},{"x":96,"y":106.5296},{"x":97,"y":100.87312},{"x":98,"y":99.04149},{"x":99,"y":98.00469},{"x":100,"y":97.52791},{"x":101,"y":97.42812999999998},{"x":102,"y":97.21095},{"x":103,"y":96.64005999999999},{"x":104,"y":95.97837},{"x":105,"y":94.13472},{"x":106,"y":96.23297},{"x":107,"y":94.26462},{"x":108,"y":95.12362},{"x":109,"y":96.00956},{"x":110,"y":95.41454},{"x":111,"y":92.86722},{"x":112,"y":90.9284},{"x":113,"y":90.28171},{"x":114,"y":87.28108000000002},{"x":115,"y":85.81571},{"x":116,"y":83.59732},{"x":117,"y":81.44791000000002},{"x":118,"y":80.26531999999999},{"x":119,"y":77.21883000000001},{"x":120,"y":74.69305},{"x":121,"y":74.01735},{"x":122,"y":71.84745999999998},{"x":123,"y":72.26705},{"x":124,"y":72.04195},{"x":125,"y":71.54602},{"x":126,"y":72.41171999999999},{"x":127,"y":72.59742000000001},{"x":128,"y":69.67021},{"x":129,"y":68.38043},{"x":130,"y":68.15276999999999},{"x":131,"y":67.96049000000001},{"x":132,"y":67.12656},{"x":133,"y":66.47},{"x":134,"y":66.04651},{"x":135,"y":65.20088},{"x":136,"y":63.4337},{"x":137,"y":63.64876999999999},{"x":138,"y":62.900209999999994},{"x":139,"y":63.23913000000001},{"x":140,"y":63.67298},{"x":141,"y":63.86248000000001},{"x":142,"y":63.63669000000001},{"x":143,"y":63.249669999999995},{"x":144,"y":62.81134999999999},{"x":145,"y":63.6032},{"x":146,"y":65.87647},{"x":147,"y":63.77247},{"x":148,"y":63.18904444444443},{"x":149,"y":64.8844},{"x":150,"y":65.86570999999999},{"x":151,"y":65.95445000000001},{"x":152,"y":66.32820999999998},{"x":153,"y":66.46966},{"x":154,"y":65.59676},{"x":155,"y":65.22909},{"x":156,"y":66.23083000000001},{"x":157,"y":64.72767000000002},{"x":158,"y":64.35394000000001},{"x":159,"y":62.65252},{"x":160,"y":63.11632999999999},{"x":161,"y":62.90896},{"x":162,"y":62.56689},{"x":163,"y":62.23629999999999},{"x":164,"y":62.16297999999999},{"x":165,"y":62.193430000000006},{"x":166,"y":62.89781000000001},{"x":167,"y":62.95788999999999},{"x":168,"y":64.46994000000001},{"x":169,"y":66.93571999999999},{"x":170,"y":65.43937999999999},{"x":171,"y":66.65259},{"x":172,"y":67.24213},{"x":173,"y":68.42271},{"x":174,"y":69.91704},{"x":175,"y":71.71034}],
+          }, {
+            pointRadius: 0,
+            fill: false,
+            backgroundColor: "rgb(0,255,0)",
+            borderColor: "rgb(0,255,0)",
+            borderWidth: 2,
+            label: 'Windows',
+            data: [{"x":0,"y":55.62000000000001},{"x":1,"y":57.54},{"x":2,"y":58.97000000000001},{"x":3,"y":61.06999999999999},{"x":4,"y":63.11999999999999},{"x":5,"y":63.28},{"x":6,"y":65.77777777777777},{"x":7,"y":63.46},{"x":8,"y":66.71000000000001},{"x":9,"y":66.35999999999999},{"x":10,"y":64.83},{"x":11,"y":63.16},{"x":12,"y":61.10999999999999},{"x":13,"y":56.92},{"x":14,"y":55.44},{"x":15,"y":55.76000000000001},{"x":16,"y":57.33},{"x":17,"y":59.68000000000001},{"x":18,"y":60.75999999999999},{"x":19,"y":61.53000000000001},{"x":20,"y":62.15},{"x":21,"y":62.21},{"x":22,"y":61.59},{"x":23,"y":60.61},{"x":24,"y":60.15},{"x":25,"y":59.33},{"x":26,"y":57.99},{"x":27,"y":57.04},{"x":28,"y":56.2},{"x":29,"y":54.71999999999999},{"x":30,"y":53.17999999999999},{"x":31,"y":51.49},{"x":32,"y":49.98},{"x":33,"y":47.34},{"x":34,"y":48.33},{"x":35,"y":48.53000000000001},{"x":36,"y":47.78999999999999},{"x":37,"y":47.59},{"x":38,"y":49.3},{"x":39,"y":50},{"x":40,"y":49.98},{"x":41,"y":49.65},{"x":42,"y":63.86999999999999},{"x":43,"y":69.18},{"x":44,"y":70.63000000000002},{"x":45,"y":70.95},{"x":46,"y":70.94},{"x":47,"y":72.99},{"x":48,"y":74.48},{"x":49,"y":71.85},{"x":50,"y":70.39},{"x":51,"y":68.57000000000001},{"x":52,"y":65.12},{"x":53,"y":63.60999999999999},{"x":54,"y":62.73},{"x":55,"y":62.43000000000001},{"x":56,"y":62.06},{"x":57,"y":61.92999999999999},{"x":58,"y":62.12000000000001},{"x":59,"y":62.21},{"x":60,"y":62.17999999999999},{"x":61,"y":61.86},{"x":62,"y":61.05999999999999},{"x":63,"y":60.83},{"x":64,"y":60.93000000000001},{"x":65,"y":60.96},{"x":66,"y":61.22000000000001},{"x":67,"y":61.540000000000006},{"x":68,"y":61.92},{"x":69,"y":62.16},{"x":70,"y":61.53000000000001},{"x":71,"y":61.67},{"x":72,"y":62.290000000000006},{"x":73,"y":62.81999999999999},{"x":74,"y":63.31},{"x":75,"y":65.33000000000001},{"x":76,"y":66.72},{"x":77,"y":66.82000000000002},{"x":78,"y":66.41999999999999},{"x":79,"y":66.58000000000001},{"x":80,"y":66.72},{"x":81,"y":66.92999999999999},{"x":82,"y":66.88},{"x":83,"y":67.17},{"x":84,"y":68.03},{"x":85,"y":69.01000000000002},{"x":86,"y":68.85},{"x":87,"y":70.08000000000001},{"x":88,"y":70.97000000000001},{"x":89,"y":71.36999999999998},{"x":90,"y":65.24000000000001},{"x":91,"y":53.99},{"x":92,"y":55.83},{"x":93,"y":48.8},{"x":94,"y":65.97000000000001},{"x":95,"y":102.47},{"x":96,"y":102.58},{"x":97,"y":102.03},{"x":98,"y":97.8},{"x":99,"y":95.52},{"x":100,"y":93.87},{"x":101,"y":93.11},{"x":102,"y":92.36},{"x":103,"y":92.19},{"x":104,"y":91.75},{"x":105,"y":90.81},{"x":106,"y":89.70000000000002},{"x":107,"y":89.32000000000002},{"x":108,"y":88.61999999999998},{"x":109,"y":87.89},{"x":110,"y":87.84},{"x":111,"y":86.52},{"x":112,"y":84.72},{"x":113,"y":83.11999999999998},{"x":114,"y":82.40999999999998},{"x":115,"y":80.77000000000002},{"x":116,"y":76.86000000000001},{"x":117,"y":75.46000000000002},{"x":118,"y":74.08},{"x":119,"y":72.59},{"x":120,"y":69.63000000000001},{"x":121,"y":68.44999999999999},{"x":122,"y":65.74999999999999},{"x":123,"y":64.83000000000001},{"x":124,"y":63.23},{"x":125,"y":62.92},{"x":126,"y":60.55999999999999},{"x":127,"y":60.17999999999999},{"x":128,"y":61.01000000000001},{"x":129,"y":59.39},{"x":130,"y":55.21},{"x":131,"y":52.23999999999999},{"x":132,"y":50.54},{"x":133,"y":49.57000000000001},{"x":134,"y":48.14},{"x":135,"y":46.74},{"x":136,"y":45.56},{"x":137,"y":44.58000000000001},{"x":138,"y":44.8},{"x":139,"y":45.32},{"x":140,"y":45.81},{"x":141,"y":46.35},{"x":142,"y":46.13},{"x":143,"y":45.96},{"x":144,"y":46.5},{"x":145,"y":45.75000000000001},{"x":146,"y":44.58999999999999},{"x":147,"y":43.66},{"x":148,"y":43.26000000000001},{"x":149,"y":43.42},{"x":150,"y":44.16},{"x":151,"y":45.28},{"x":152,"y":46.88},{"x":153,"y":48.21},{"x":154,"y":48.77},{"x":155,"y":49.62},{"x":156,"y":50.24},{"x":157,"y":51.26000000000001},{"x":158,"y":51.3},{"x":159,"y":51.290000000000006},{"x":160,"y":51.29},{"x":161,"y":51.46},{"x":162,"y":52.24},{"x":163,"y":53.33},{"x":164,"y":54.43000000000001},{"x":165,"y":51.39000000000001},{"x":166,"y":51.54},{"x":167,"y":52.96},{"x":168,"y":53.81},{"x":169,"y":55.06},{"x":170,"y":56.93000000000001},{"x":171,"y":55.96},{"x":172,"y":57.1},{"x":173,"y":57.99},{"x":174,"y":60.96},{"x":175,"y":62.422222222222224}],
+          },
+        ]
+      },
+    options: {
+      title: {
+        display: true,
+        fontSize: 16,
+        text: 'FPS',
+      },
+      scales: {
+        xAxes: [{
+          type: 'linear',
+          scaleLabel: {
+            display: true,
+            labelString: ''
+          }
+        }],
+          yAxes: [{
+            type: 'linear',
+            scaleLabel: {
+              display: true,
+              labelString: ''
+            },
+            ticks: {
+              beginAtZero: true,
+            }
+          }]
+      }
+    }
+    });
+  </script>
+</div>
+
+
+<div>
+  <canvas id="sottr_cpu" width="" height=""></canvas>
+  <script>
+    var ctx = document.getElementById("sottr_cpu").getContext('2d');
+    var myChart = new Chart.Line(ctx, {
+      data: {
+        datasets: [
+   {
+            pointRadius: 0,
+            fill: false,
+            backgroundColor: "rgb(255,0,0)",
+            borderColor: "rgb(255,0,0)",
+            borderWidth: 2,
+            label: 'Linux',
+            data: [{"x":0,"y":29.1},{"x":1,"y":28.4},{"x":2,"y":24.9},{"x":3,"y":24.3},{"x":4,"y":20.8},{"x":5,"y":21.2},{"x":6,"y":22.9},{"x":7,"y":25.2},{"x":8,"y":25.7},{"x":9,"y":27.7},{"x":10,"y":29.1},{"x":11,"y":31.4},{"x":12,"y":36.1},{"x":13,"y":38.9},{"x":14,"y":39.4},{"x":15,"y":37.8},{"x":16,"y":36},{"x":17,"y":32.5},{"x":18,"y":32.5},{"x":19,"y":31},{"x":20,"y":27.5},{"x":21,"y":27.5},{"x":22,"y":28.4},{"x":23,"y":29.4},{"x":24,"y":32.1},{"x":25,"y":32},{"x":26,"y":30.4},{"x":27,"y":33.1},{"x":28,"y":35.2},{"x":29,"y":37.1},{"x":30,"y":38.4},{"x":31,"y":38.8},{"x":32,"y":40.9},{"x":33,"y":42.4},{"x":34,"y":41.6},{"x":35,"y":43.3},{"x":36,"y":45.8},{"x":37,"y":43.9},{"x":38,"y":43.6},{"x":39,"y":44.5},{"x":40,"y":44.9},{"x":41,"y":40.2},{"x":42,"y":32.4},{"x":43,"y":35.1},{"x":44,"y":33.3},{"x":45,"y":33},{"x":46,"y":29.7},{"x":47,"y":33.5},{"x":48,"y":32},{"x":49,"y":25.5},{"x":50,"y":25},{"x":51,"y":25.5},{"x":52,"y":26},{"x":53,"y":28.5},{"x":54,"y":28.4},{"x":55,"y":32.2},{"x":56,"y":29.4},{"x":57,"y":30.3},{"x":58,"y":29.6},{"x":59,"y":29},{"x":60,"y":29.1},{"x":61,"y":29.2},{"x":62,"y":29.5},{"x":63,"y":30.8},{"x":64,"y":30},{"x":65,"y":30.2},{"x":66,"y":29.1},{"x":67,"y":28.9},{"x":68,"y":28.9},{"x":69,"y":28.9},{"x":70,"y":29.8},{"x":71,"y":28.7},{"x":72,"y":28.3},{"x":73,"y":29.3},{"x":74,"y":28},{"x":75,"y":27.8},{"x":76,"y":27.7},{"x":77,"y":26.5},{"x":78,"y":21.8},{"x":79,"y":22.1},{"x":80,"y":21.9},{"x":81,"y":20.6},{"x":82,"y":22},{"x":83,"y":23},{"x":84,"y":22},{"x":85,"y":21},{"x":86,"y":22},{"x":87,"y":21.5},{"x":88,"y":21.5},{"x":89,"y":23.6},{"x":90,"y":45.1},{"x":91,"y":49.4},{"x":92,"y":48.4},{"x":93,"y":40.2},{"x":94,"y":22.8},{"x":95,"y":21.7},{"x":96,"y":20.4},{"x":97,"y":20.9},{"x":98,"y":20.2},{"x":99,"y":20.8},{"x":100,"y":21.8},{"x":101,"y":22.6},{"x":102,"y":21.4},{"x":103,"y":23.5},{"x":104,"y":21.8},{"x":105,"y":21.1},{"x":106,"y":21},{"x":107,"y":23.1},{"x":108,"y":22.8},{"x":109,"y":23},{"x":110,"y":24.2},{"x":111,"y":25.2},{"x":112,"y":25.2},{"x":113,"y":28.1},{"x":114,"y":28.5},{"x":115,"y":30.4},{"x":116,"y":31.7},{"x":117,"y":33.3},{"x":118,"y":36.7},{"x":119,"y":37.5},{"x":120,"y":38.1},{"x":121,"y":38.9},{"x":122,"y":39.3},{"x":123,"y":42.5},{"x":124,"y":41},{"x":125,"y":42.5},{"x":126,"y":43},{"x":127,"y":42.5},{"x":128,"y":43},{"x":129,"y":44},{"x":130,"y":44.3},{"x":131,"y":45.9},{"x":132,"y":45},{"x":133,"y":46},{"x":134,"y":46.8},{"x":135,"y":47.9},{"x":136,"y":48.8},{"x":137,"y":50.6},{"x":138,"y":48.5},{"x":139,"y":48.2},{"x":140,"y":48.6},{"x":141,"y":47.6},{"x":142,"y":47.7},{"x":143,"y":48.8},{"x":144,"y":47},{"x":145,"y":48.4},{"x":146,"y":47.6},{"x":147,"y":50.1},{"x":148,"y":50.88888888888889},{"x":149,"y":49.5},{"x":150,"y":50.4},{"x":151,"y":49.2},{"x":152,"y":47.7},{"x":153,"y":48.5},{"x":154,"y":47},{"x":155,"y":47.5},{"x":156,"y":46},{"x":157,"y":46.5},{"x":158,"y":44.5},{"x":159,"y":42},{"x":160,"y":44.9},{"x":161,"y":42.7},{"x":162,"y":43.4},{"x":163,"y":40.8},{"x":164,"y":43.5},{"x":165,"y":40.1},{"x":166,"y":40.3},{"x":167,"y":41.8},{"x":168,"y":41.3},{"x":169,"y":42.5},{"x":170,"y":43.3},{"x":171,"y":43.4},{"x":172,"y":41.5},{"x":173,"y":41.4},{"x":174,"y":39},{"x":175,"y":39.8}],
+          }, {
+            pointRadius: 0,
+            fill: false,
+            backgroundColor: "rgb(0,255,0)",
+            borderColor: "rgb(0,255,0)",
+            borderWidth: 2,
+            label: 'Windows',
+            data: [{"x":0,"y":71.2773},{"x":1,"y":38.0845},{"x":2,"y":33.427800000000005},{"x":3,"y":13.9644},{"x":4,"y":18.636200000000006},{"x":5,"y":36.2873},{"x":6,"y":19.25844444444445},{"x":7,"y":26.0072},{"x":8,"y":20.900600000000004},{"x":9,"y":24.0362},{"x":10,"y":11.7925},{"x":11,"y":32.1977},{"x":12,"y":28.93430000000001},{"x":13,"y":64.7809},{"x":14,"y":32.15339999999999},{"x":15,"y":30.826500000000006},{"x":16,"y":23.6211},{"x":17,"y":22.472900000000006},{"x":18,"y":24.84},{"x":19,"y":28.6208},{"x":20,"y":20.4904},{"x":21,"y":28.871},{"x":22,"y":30.8787},{"x":23,"y":26.8417},{"x":24,"y":32.481100000000005},{"x":25,"y":31.491999999999997},{"x":26,"y":26.588300000000004},{"x":27,"y":26.7459},{"x":28,"y":32.6721},{"x":29,"y":34.063900000000004},{"x":30,"y":30.7089},{"x":31,"y":40.84229999999999},{"x":32,"y":41.66779999999999},{"x":33,"y":37.06070000000001},{"x":34,"y":38.525},{"x":35,"y":36.5363},{"x":36,"y":40.0207},{"x":37,"y":31.3507},{"x":38,"y":34.448899999999995},{"x":39,"y":27.7264},{"x":40,"y":31.84040000000001},{"x":41,"y":45.0074},{"x":42,"y":38.8436},{"x":43,"y":37.6357},{"x":44,"y":26.096300000000006},{"x":45,"y":24.3403},{"x":46,"y":33.64139999999999},{"x":47,"y":32.415699999999994},{"x":48,"y":13.994000000000005},{"x":49,"y":19.5127},{"x":50,"y":12.9156},{"x":51,"y":22.4159},{"x":52,"y":16.970100000000002},{"x":53,"y":20.5733},{"x":54,"y":19.527700000000006},{"x":55,"y":14.894900000000002},{"x":56,"y":14.0024},{"x":57,"y":17.2177},{"x":58,"y":17.0529},{"x":59,"y":15.460599999999996},{"x":60,"y":26.5005},{"x":61,"y":19.5443},{"x":62,"y":32.05130000000001},{"x":63,"y":28.708800000000004},{"x":64,"y":18.833400000000005},{"x":65,"y":25.9405},{"x":66,"y":24.9932},{"x":67,"y":32.58749999999999},{"x":68,"y":24.765899999999995},{"x":69,"y":20.3094},{"x":70,"y":17.7787},{"x":71,"y":16.563200000000002},{"x":72,"y":17.0236},{"x":73,"y":14.1683},{"x":74,"y":18.9262},{"x":75,"y":18.6515},{"x":76,"y":18.6662},{"x":77,"y":12.9558},{"x":78,"y":24.4586},{"x":79,"y":11.0334},{"x":80,"y":30.3732},{"x":81,"y":20.6878},{"x":82,"y":17.375700000000002},{"x":83,"y":20.3234},{"x":84,"y":16.4782},{"x":85,"y":20.4802},{"x":86,"y":24.9122},{"x":87,"y":26.3292},{"x":88,"y":30.92290000000001},{"x":89,"y":17.1477},{"x":90,"y":56.9131},{"x":91,"y":40.6159},{"x":92,"y":22.7695},{"x":93,"y":42.80030000000001},{"x":94,"y":72.66109999999998},{"x":95,"y":31.4019},{"x":96,"y":29.253300000000007},{"x":97,"y":28.2714},{"x":98,"y":26.997200000000007},{"x":99,"y":36.80619999999999},{"x":100,"y":38.0955},{"x":101,"y":31.940500000000004},{"x":102,"y":39.845},{"x":103,"y":39.79449999999999},{"x":104,"y":37.3797},{"x":105,"y":36.6384},{"x":106,"y":38.0913},{"x":107,"y":39.09310000000001},{"x":108,"y":38.5184},{"x":109,"y":45.0106},{"x":110,"y":41.7218},{"x":111,"y":48.61840000000001},{"x":112,"y":39.79700000000001},{"x":113,"y":45.52200000000001},{"x":114,"y":52.1478},{"x":115,"y":38.8685},{"x":116,"y":51.32719999999999},{"x":117,"y":46.8195},{"x":118,"y":45.3582},{"x":119,"y":41.9202},{"x":120,"y":53.1142},{"x":121,"y":49.4705},{"x":122,"y":39.0543},{"x":123,"y":35.1876},{"x":124,"y":52.3517},{"x":125,"y":40.0148},{"x":126,"y":33.7969},{"x":127,"y":36.955},{"x":128,"y":24.001300000000004},{"x":129,"y":29.6128},{"x":130,"y":23.886000000000006},{"x":131,"y":24.0354},{"x":132,"y":28.321},{"x":133,"y":29.064000000000004},{"x":134,"y":26.3345},{"x":135,"y":31.3675},{"x":136,"y":25.3869},{"x":137,"y":27.7075},{"x":138,"y":28.5092},{"x":139,"y":28.7551},{"x":140,"y":30.0953},{"x":141,"y":31.8037},{"x":142,"y":29.8259},{"x":143,"y":29.1232},{"x":144,"y":28.6649},{"x":145,"y":32.4412},{"x":146,"y":27.82389999999999},{"x":147,"y":28.9398},{"x":148,"y":30.6624},{"x":149,"y":29.4136},{"x":150,"y":30.1017},{"x":151,"y":31.79139999999999},{"x":152,"y":40.3597},{"x":153,"y":36.0566},{"x":154,"y":26.405700000000003},{"x":155,"y":32.6169},{"x":156,"y":35.80089999999999},{"x":157,"y":38.3292},{"x":158,"y":29.934700000000007},{"x":159,"y":28.7973},{"x":160,"y":26.520100000000006},{"x":161,"y":33.2058},{"x":162,"y":30.579},{"x":163,"y":31.791500000000006},{"x":164,"y":24.5405},{"x":165,"y":40.0458},{"x":166,"y":38.02410000000001},{"x":167,"y":44.86890000000001},{"x":168,"y":47.0718},{"x":169,"y":41.6184},{"x":170,"y":36.2121},{"x":171,"y":35.6613},{"x":172,"y":33.4934},{"x":173,"y":38.9089},{"x":174,"y":52.088},{"x":175,"y":37.447222222222216}],
+          },
+        ]
+      },
+    options: {
+      title: {
+        display: true,
+        fontSize: 16,
+        text: 'CPU load',
+      },
+      scales: {
+        xAxes: [{
+          type: 'linear',
+          scaleLabel: {
+            display: true,
+            labelString: ''
+          }
+        }],
+          yAxes: [{
+            type: 'linear',
+            scaleLabel: {
+              display: true,
+              labelString: ''
+            },
+            ticks: {
+              beginAtZero: true,
+              suggestedMax: 100,
+            }
+          }]
+      }
+    }
+    });
+  </script>
+</div>
+
+
+<div>
+  <canvas id="sottr_gpu" width="" height=""></canvas>
+  <script>
+    var ctx = document.getElementById("sottr_gpu").getContext('2d');
+    var myChart = new Chart.Line(ctx, {
+      data: {
+        datasets: [
+   {
+            pointRadius: 0,
+            fill: false,
+            backgroundColor: "rgb(255,0,0)",
+            borderColor: "rgb(255,0,0)",
+            borderWidth: 2,
+            label: 'Linux',
+            data: [{"x":0,"y":96},{"x":1,"y":100},{"x":2,"y":100},{"x":3,"y":100},{"x":4,"y":100},{"x":5,"y":100},{"x":6,"y":100},{"x":7,"y":99.8},{"x":8,"y":99},{"x":9,"y":99.1},{"x":10,"y":100},{"x":11,"y":100},{"x":12,"y":100},{"x":13,"y":100},{"x":14,"y":100},{"x":15,"y":100},{"x":16,"y":100},{"x":17,"y":100},{"x":18,"y":100},{"x":19,"y":100},{"x":20,"y":100},{"x":21,"y":100},{"x":22,"y":100},{"x":23,"y":100},{"x":24,"y":100},{"x":25,"y":100},{"x":26,"y":100},{"x":27,"y":100},{"x":28,"y":100},{"x":29,"y":100},{"x":30,"y":100},{"x":31,"y":100},{"x":32,"y":100},{"x":33,"y":100},{"x":34,"y":100},{"x":35,"y":100},{"x":36,"y":100},{"x":37,"y":100},{"x":38,"y":100},{"x":39,"y":100},{"x":40,"y":99.6},{"x":41,"y":98},{"x":42,"y":98.2},{"x":43,"y":100},{"x":44,"y":100},{"x":45,"y":100},{"x":46,"y":99.7},{"x":47,"y":97},{"x":48,"y":95},{"x":49,"y":97},{"x":50,"y":100},{"x":51,"y":100},{"x":52,"y":100},{"x":53,"y":100},{"x":54,"y":100},{"x":55,"y":100},{"x":56,"y":100},{"x":57,"y":100},{"x":58,"y":100},{"x":59,"y":100},{"x":60,"y":100},{"x":61,"y":100},{"x":62,"y":100},{"x":63,"y":100},{"x":64,"y":100},{"x":65,"y":100},{"x":66,"y":100},{"x":67,"y":100},{"x":68,"y":100},{"x":69,"y":100},{"x":70,"y":100},{"x":71,"y":100},{"x":72,"y":100},{"x":73,"y":100},{"x":74,"y":100},{"x":75,"y":100},{"x":76,"y":100},{"x":77,"y":100},{"x":78,"y":100},{"x":79,"y":100},{"x":80,"y":100},{"x":81,"y":100},{"x":82,"y":100},{"x":83,"y":100},{"x":84,"y":100},{"x":85,"y":100},{"x":86,"y":100},{"x":87,"y":100},{"x":88,"y":100},{"x":89,"y":100},{"x":90,"y":93.7},{"x":91,"y":90.3},{"x":92,"y":99},{"x":93,"y":100},{"x":94,"y":100},{"x":95,"y":100},{"x":96,"y":100},{"x":97,"y":100},{"x":98,"y":100},{"x":99,"y":99.2},{"x":100,"y":99.8},{"x":101,"y":100},{"x":102,"y":100},{"x":103,"y":100},{"x":104,"y":100},{"x":105,"y":100},{"x":106,"y":100},{"x":107,"y":100},{"x":108,"y":99.3},{"x":109,"y":99.7},{"x":110,"y":100},{"x":111,"y":100},{"x":112,"y":99.3},{"x":113,"y":99.7},{"x":114,"y":100},{"x":115,"y":100},{"x":116,"y":100},{"x":117,"y":100},{"x":118,"y":100},{"x":119,"y":100},{"x":120,"y":100},{"x":121,"y":100},{"x":122,"y":100},{"x":123,"y":100},{"x":124,"y":100},{"x":125,"y":100},{"x":126,"y":100},{"x":127,"y":100},{"x":128,"y":100},{"x":129,"y":100},{"x":130,"y":100},{"x":131,"y":100},{"x":132,"y":100},{"x":133,"y":100},{"x":134,"y":100},{"x":135,"y":100},{"x":136,"y":100},{"x":137,"y":100},{"x":138,"y":100},{"x":139,"y":100},{"x":140,"y":100},{"x":141,"y":100},{"x":142,"y":100},{"x":143,"y":100},{"x":144,"y":100},{"x":145,"y":100},{"x":146,"y":100},{"x":147,"y":100},{"x":148,"y":100},{"x":149,"y":100},{"x":150,"y":100},{"x":151,"y":100},{"x":152,"y":100},{"x":153,"y":100},{"x":154,"y":100},{"x":155,"y":100},{"x":156,"y":100},{"x":157,"y":100},{"x":158,"y":100},{"x":159,"y":100},{"x":160,"y":100},{"x":161,"y":100},{"x":162,"y":100},{"x":163,"y":100},{"x":164,"y":100},{"x":165,"y":100},{"x":166,"y":100},{"x":167,"y":100},{"x":168,"y":100},{"x":169,"y":100},{"x":170,"y":100},{"x":171,"y":100},{"x":172,"y":100},{"x":173,"y":100},{"x":174,"y":100},{"x":175,"y":100}],
+          }, {
+            pointRadius: 0,
+            fill: false,
+            backgroundColor: "rgb(0,255,0)",
+            borderColor: "rgb(0,255,0)",
+            borderWidth: 2,
+            label: 'Windows',
+            data: [{"x":0,"y":90},{"x":1,"y":96},{"x":2,"y":98},{"x":3,"y":98},{"x":4,"y":98},{"x":5,"y":98},{"x":6,"y":98},{"x":7,"y":93.5},{"x":8,"y":97.5},{"x":9,"y":98},{"x":10,"y":98},{"x":11,"y":98},{"x":12,"y":98},{"x":13,"y":98},{"x":14,"y":97.1},{"x":15,"y":97.9},{"x":16,"y":98},{"x":17,"y":98},{"x":18,"y":98},{"x":19,"y":98},{"x":20,"y":98},{"x":21,"y":98},{"x":22,"y":98},{"x":23,"y":98},{"x":24,"y":98},{"x":25,"y":98},{"x":26,"y":98},{"x":27,"y":98},{"x":28,"y":98},{"x":29,"y":98},{"x":30,"y":98},{"x":31,"y":98},{"x":32,"y":98},{"x":33,"y":96.4},{"x":34,"y":97.6},{"x":35,"y":98},{"x":36,"y":98},{"x":37,"y":98},{"x":38,"y":98},{"x":39,"y":98},{"x":40,"y":98},{"x":41,"y":97.3},{"x":42,"y":95.6},{"x":43,"y":97.1},{"x":44,"y":98},{"x":45,"y":98},{"x":46,"y":98},{"x":47,"y":98},{"x":48,"y":98},{"x":49,"y":98},{"x":50,"y":98},{"x":51,"y":98},{"x":52,"y":98},{"x":53,"y":98},{"x":54,"y":98},{"x":55,"y":98},{"x":56,"y":98},{"x":57,"y":98},{"x":58,"y":98},{"x":59,"y":98},{"x":60,"y":98},{"x":61,"y":98},{"x":62,"y":98},{"x":63,"y":98},{"x":64,"y":98},{"x":65,"y":98},{"x":66,"y":98},{"x":67,"y":98},{"x":68,"y":98},{"x":69,"y":98},{"x":70,"y":98},{"x":71,"y":98},{"x":72,"y":98},{"x":73,"y":98},{"x":74,"y":98},{"x":75,"y":98},{"x":76,"y":98},{"x":77,"y":98},{"x":78,"y":98},{"x":79,"y":98},{"x":80,"y":98},{"x":81,"y":98},{"x":82,"y":98},{"x":83,"y":98},{"x":84,"y":98},{"x":85,"y":98},{"x":86,"y":97.5},{"x":87,"y":97.4},{"x":88,"y":98},{"x":89,"y":98},{"x":90,"y":96.4},{"x":91,"y":90.8},{"x":92,"y":88.4},{"x":93,"y":88.4},{"x":94,"y":85},{"x":95,"y":92},{"x":96,"y":96.8},{"x":97,"y":96.2},{"x":98,"y":98},{"x":99,"y":98},{"x":100,"y":98},{"x":101,"y":98},{"x":102,"y":97.7},{"x":103,"y":97.3},{"x":104,"y":98},{"x":105,"y":98},{"x":106,"y":98},{"x":107,"y":98},{"x":108,"y":98},{"x":109,"y":98},{"x":110,"y":98},{"x":111,"y":98},{"x":112,"y":98},{"x":113,"y":98},{"x":114,"y":98},{"x":115,"y":98},{"x":116,"y":97.8},{"x":117,"y":97},{"x":118,"y":97},{"x":119,"y":97.2},{"x":120,"y":97.8},{"x":121,"y":97},{"x":122,"y":97},{"x":123,"y":97.2},{"x":124,"y":97.8},{"x":125,"y":97},{"x":126,"y":96.2},{"x":127,"y":93},{"x":128,"y":93.4},{"x":129,"y":94.8},{"x":130,"y":92.6},{"x":131,"y":88.8},{"x":132,"y":86.9},{"x":133,"y":85.8},{"x":134,"y":83.9},{"x":135,"y":82.9},{"x":136,"y":81.8},{"x":137,"y":79.9},{"x":138,"y":79.3},{"x":139,"y":82.1},{"x":140,"y":83},{"x":141,"y":82.9},{"x":142,"y":81.9},{"x":143,"y":81.1},{"x":144,"y":82},{"x":145,"y":82},{"x":146,"y":80},{"x":147,"y":80},{"x":148,"y":78},{"x":149,"y":78},{"x":150,"y":78},{"x":151,"y":79},{"x":152,"y":80},{"x":153,"y":83},{"x":154,"y":83},{"x":155,"y":84},{"x":156,"y":86},{"x":157,"y":88},{"x":158,"y":88},{"x":159,"y":91},{"x":160,"y":92},{"x":161,"y":92},{"x":162,"y":93},{"x":163,"y":95},{"x":164,"y":96.8},{"x":165,"y":97},{"x":166,"y":90.7},{"x":167,"y":96.3},{"x":168,"y":94.3},{"x":169,"y":96.7},{"x":170,"y":97},{"x":171,"y":94.3},{"x":172,"y":94.9},{"x":173,"y":95.9},{"x":174,"y":96.9},{"x":175,"y":97.88888888888887}],
+          },
+        ]
+      },
+    options: {
+      title: {
+        display: true,
+        fontSize: 16,
+        text: 'GPU load',
+      },
+      scales: {
+        xAxes: [{
+          type: 'linear',
+          scaleLabel: {
+            display: true,
+            labelString: ''
+          }
+        }],
+          yAxes: [{
+            type: 'linear',
+            scaleLabel: {
+              display: true,
+              labelString: ''
+            },
+            ticks: {
+              beginAtZero: true,
+              suggestedMax: 100,
+            }
+          }]
+      }
+    }
+    });
+  </script>
+</div></p>
+<h3 id="diablo-iii-highest-3440x1440p">Diablo III, Highest, 3440x1440p</h3>
+<p>Works without any problems, with a 20% FPS loss to Windows.
+I installed Battle.net through Lutris and then Diablo III in the launcher.</p>
+<p>
+
+<div>
+  <canvas id="diablo3_fps" width="" height=""></canvas>
+  <script>
+    var ctx = document.getElementById("diablo3_fps").getContext('2d');
+    var myChart = new Chart.Line(ctx, {
+      data: {
+        datasets: [
+   {
+            pointRadius: 0,
+            fill: false,
+            backgroundColor: "rgb(255,0,0)",
+            borderColor: "rgb(255,0,0)",
+            borderWidth: 2,
+            label: 'Linux',
+            data: [{"x":0,"y":161.04519999999997},{"x":1,"y":182.8166},{"x":2,"y":169.18669999999997},{"x":3,"y":167.2973},{"x":4,"y":175.8245},{"x":5,"y":175.9886},{"x":6,"y":168.36856},{"x":7,"y":134.8185},{"x":8,"y":142.02159999999995},{"x":9,"y":128.2165},{"x":10,"y":125.84710000000004},{"x":11,"y":128.7234},{"x":12,"y":140.52680000000004},{"x":13,"y":121.54371999999998},{"x":14,"y":140.0394},{"x":15,"y":137.71519999999998},{"x":16,"y":142.3162},{"x":17,"y":157.9685},{"x":18,"y":159.98229999999995},{"x":19,"y":160.4011},{"x":20,"y":148.56640000000004},{"x":21,"y":155.993},{"x":22,"y":135.8943},{"x":23,"y":142.317},{"x":24,"y":150.0611},{"x":25,"y":150.1351},{"x":26,"y":151.59300000000005},{"x":27,"y":161.15399999999997},{"x":28,"y":162.3636},{"x":29,"y":180.7332},{"x":30,"y":180.3092},{"x":31,"y":207.5968},{"x":32,"y":204.1798},{"x":33,"y":202.0896},{"x":34,"y":207.3971},{"x":35,"y":205.1839},{"x":36,"y":206.4629},{"x":37,"y":186.972},{"x":38,"y":178.4608},{"x":39,"y":166.7136},{"x":40,"y":171.7311},{"x":41,"y":168.1658},{"x":42,"y":159.7638},{"x":43,"y":174.53670000000002},{"x":44,"y":177.76539999999997},{"x":45,"y":175.25040000000004},{"x":46,"y":164.0924},{"x":47,"y":166.7551},{"x":48,"y":183.0475},{"x":49,"y":182.1216},{"x":50,"y":174.49380000000005},{"x":51,"y":175.0048},{"x":52,"y":178.49},{"x":53,"y":173.4604},{"x":54,"y":168.7768},{"x":55,"y":182.9947},{"x":56,"y":159.45409999999995},{"x":57,"y":150.8261},{"x":58,"y":141.6577},{"x":59,"y":136.48470000000003},{"x":60,"y":140.7113},{"x":61,"y":149.9844},{"x":62,"y":138.97114285714287}],
+          }, {
+            pointRadius: 0,
+            fill: false,
+            backgroundColor: "rgb(0,255,0)",
+            borderColor: "rgb(0,255,0)",
+            borderWidth: 2,
+            label: 'Windows',
+            data: [{"x":0,"y":211.93},{"x":1,"y":205.3},{"x":2,"y":174.74},{"x":3,"y":169.90000000000003},{"x":4,"y":170.54},{"x":5,"y":171.61},{"x":6,"y":173.31},{"x":7,"y":176.36999999999995},{"x":8,"y":178.13},{"x":9,"y":177.24},{"x":10,"y":177.4},{"x":11,"y":181.18},{"x":12,"y":183.22},{"x":13,"y":180.72},{"x":14,"y":179.26},{"x":15,"y":185.14000000000004},{"x":16,"y":183.99},{"x":17,"y":180.65},{"x":18,"y":187.87},{"x":19,"y":196.28},{"x":20,"y":209.44},{"x":21,"y":217.36},{"x":22,"y":206},{"x":23,"y":204.73},{"x":24,"y":217.51},{"x":25,"y":218.16},{"x":26,"y":215.24},{"x":27,"y":211.48},{"x":28,"y":214.87000000000003},{"x":29,"y":216.62},{"x":30,"y":215.5},{"x":31,"y":218.80999999999997},{"x":32,"y":220.14},{"x":33,"y":215.72},{"x":34,"y":209.06},{"x":35,"y":208.69},{"x":36,"y":209.54},{"x":37,"y":198.46},{"x":38,"y":191.25},{"x":39,"y":184.02},{"x":40,"y":182.71},{"x":41,"y":175.69},{"x":42,"y":175.94},{"x":43,"y":180.75},{"x":44,"y":185.59000000000003},{"x":45,"y":185.02},{"x":46,"y":199.32},{"x":47,"y":200.3},{"x":48,"y":187.19},{"x":49,"y":180.48},{"x":50,"y":180.98},{"x":51,"y":177.09},{"x":52,"y":171.45999999999995},{"x":53,"y":169.35000000000005},{"x":54,"y":165.95000000000005},{"x":55,"y":162.77000000000004},{"x":56,"y":166.35},{"x":57,"y":172.15},{"x":58,"y":183.06},{"x":59,"y":194.24},{"x":60,"y":197.83},{"x":61,"y":203.22000000000003},{"x":62,"y":212.2}],
+          },
+        ]
+      },
+    options: {
+      title: {
+        display: true,
+        fontSize: 16,
+        text: 'FPS',
+      },
+      scales: {
+        xAxes: [{
+          type: 'linear',
+          scaleLabel: {
+            display: true,
+            labelString: ''
+          }
+        }],
+          yAxes: [{
+            type: 'linear',
+            scaleLabel: {
+              display: true,
+              labelString: ''
+            },
+            ticks: {
+              beginAtZero: true,
+            }
+          }]
+      }
+    }
+    });
+  </script>
+</div>
+
+
+<div>
+  <canvas id="diablo3_cpu" width="" height=""></canvas>
+  <script>
+    var ctx = document.getElementById("diablo3_cpu").getContext('2d');
+    var myChart = new Chart.Line(ctx, {
+      data: {
+        datasets: [
+   {
+            pointRadius: 0,
+            fill: false,
+            backgroundColor: "rgb(255,0,0)",
+            borderColor: "rgb(255,0,0)",
+            borderWidth: 2,
+            label: 'Linux',
+            data: [{"x":0,"y":29.4},{"x":1,"y":27.2},{"x":2,"y":26.3},{"x":3,"y":24.4},{"x":4,"y":25.2},{"x":5,"y":26.1},{"x":6,"y":28.7},{"x":7,"y":25.5},{"x":8,"y":26},{"x":9,"y":27.7},{"x":10,"y":24.8},{"x":11,"y":26.9},{"x":12,"y":26.4},{"x":13,"y":27.7},{"x":14,"y":27},{"x":15,"y":25.2},{"x":16,"y":28.6},{"x":17,"y":29.8},{"x":18,"y":25.7},{"x":19,"y":22.8},{"x":20,"y":24.6},{"x":21,"y":29.6},{"x":22,"y":23.4},{"x":23,"y":24.2},{"x":24,"y":26.4},{"x":25,"y":28},{"x":26,"y":25.8},{"x":27,"y":24.6},{"x":28,"y":25.2},{"x":29,"y":26.3},{"x":30,"y":26.5},{"x":31,"y":23.5},{"x":32,"y":28.5},{"x":33,"y":25},{"x":34,"y":26.5},{"x":35,"y":23.5},{"x":36,"y":25.5},{"x":37,"y":29},{"x":38,"y":29},{"x":39,"y":26},{"x":40,"y":27.5},{"x":41,"y":26},{"x":42,"y":25},{"x":43,"y":23.5},{"x":44,"y":27.5},{"x":45,"y":27.5},{"x":46,"y":26},{"x":47,"y":25.5},{"x":48,"y":30.6},{"x":49,"y":29.6},{"x":50,"y":26.9},{"x":51,"y":25.8},{"x":52,"y":27.4},{"x":53,"y":27},{"x":54,"y":26.8},{"x":55,"y":26.3},{"x":56,"y":27.2},{"x":57,"y":27.7},{"x":58,"y":25.8},{"x":59,"y":26.5},{"x":60,"y":26.9},{"x":61,"y":28.1},{"x":62,"y":27.42857142857143}],
+          }, {
+            pointRadius: 0,
+            fill: false,
+            backgroundColor: "rgb(0,255,0)",
+            borderColor: "rgb(0,255,0)",
+            borderWidth: 2,
+            label: 'Windows',
+            data: [{"x":0,"y":10.5239},{"x":1,"y":10.8442},{"x":2,"y":10.2306},{"x":3,"y":8.704199999999998},{"x":4,"y":8.586000000000002},{"x":5,"y":10.4167},{"x":6,"y":9.2068},{"x":7,"y":10.2402},{"x":8,"y":11.3303},{"x":9,"y":12.5769},{"x":10,"y":9.4048},{"x":11,"y":11.0318},{"x":12,"y":12.6724},{"x":13,"y":9.9548},{"x":14,"y":11.217000000000002},{"x":15,"y":10.9648},{"x":16,"y":12.0685},{"x":17,"y":11.2985},{"x":18,"y":10.4918},{"x":19,"y":12.5555},{"x":20,"y":11.7089},{"x":21,"y":9.384800000000002},{"x":22,"y":11.6834},{"x":23,"y":9.7288},{"x":24,"y":11.0014},{"x":25,"y":11.063},{"x":26,"y":11.3928},{"x":27,"y":10.1906},{"x":28,"y":11.3308},{"x":29,"y":10.3748},{"x":30,"y":10.449599999999998},{"x":31,"y":11.3922},{"x":32,"y":10.9487},{"x":33,"y":12.0218},{"x":34,"y":11.264800000000005},{"x":35,"y":8.8294},{"x":36,"y":10.0592},{"x":37,"y":10.2882},{"x":38,"y":9.968100000000002},{"x":39,"y":11.863499999999998},{"x":40,"y":10.2968},{"x":41,"y":9.5207},{"x":42,"y":9.3644},{"x":43,"y":9.4386},{"x":44,"y":9.1523},{"x":45,"y":9.428300000000002},{"x":46,"y":9.1525},{"x":47,"y":10.5731},{"x":48,"y":12.5408},{"x":49,"y":8.5696},{"x":50,"y":10.4713},{"x":51,"y":10.0915},{"x":52,"y":8.671800000000001},{"x":53,"y":8.8295},{"x":54,"y":7.689600000000001},{"x":55,"y":9.0218},{"x":56,"y":9.3957},{"x":57,"y":8.760900000000001},{"x":58,"y":9.8976},{"x":59,"y":8.113000000000001},{"x":60,"y":9.920799999999998},{"x":61,"y":10.5974},{"x":62,"y":9.067}],
+          },
+        ]
+      },
+    options: {
+      title: {
+        display: true,
+        fontSize: 16,
+        text: 'CPU load',
+      },
+      scales: {
+        xAxes: [{
+          type: 'linear',
+          scaleLabel: {
+            display: true,
+            labelString: ''
+          }
+        }],
+          yAxes: [{
+            type: 'linear',
+            scaleLabel: {
+              display: true,
+              labelString: ''
+            },
+            ticks: {
+              beginAtZero: true,
+              suggestedMax: 100,
+            }
+          }]
+      }
+    }
+    });
+  </script>
+</div>
+
+
+<div>
+  <canvas id="diablo3_gpu" width="" height=""></canvas>
+  <script>
+    var ctx = document.getElementById("diablo3_gpu").getContext('2d');
+    var myChart = new Chart.Line(ctx, {
+      data: {
+        datasets: [
+   {
+            pointRadius: 0,
+            fill: false,
+            backgroundColor: "rgb(255,0,0)",
+            borderColor: "rgb(255,0,0)",
+            borderWidth: 2,
+            label: 'Linux',
+            data: [{"x":0,"y":92},{"x":1,"y":82.6},{"x":2,"y":93.2},{"x":3,"y":94.4},{"x":4,"y":95.6},{"x":5,"y":93.6},{"x":6,"y":91.8},{"x":7,"y":89},{"x":8,"y":80.8},{"x":9,"y":79},{"x":10,"y":75.4},{"x":11,"y":76.2},{"x":12,"y":75},{"x":13,"y":82.2},{"x":14,"y":79.7},{"x":15,"y":86.2},{"x":16,"y":87.5},{"x":17,"y":83.5},{"x":18,"y":88.7},{"x":19,"y":94.9},{"x":20,"y":93.4},{"x":21,"y":88.3},{"x":22,"y":90.6},{"x":23,"y":86.4},{"x":24,"y":82.1},{"x":25,"y":91.9},{"x":26,"y":91},{"x":27,"y":90.5},{"x":28,"y":86.3},{"x":29,"y":88.8},{"x":30,"y":87},{"x":31,"y":87},{"x":32,"y":99},{"x":33,"y":99},{"x":34,"y":96},{"x":35,"y":99},{"x":36,"y":99},{"x":37,"y":100},{"x":38,"y":92},{"x":39,"y":94},{"x":40,"y":92},{"x":41,"y":93},{"x":42,"y":82},{"x":43,"y":78},{"x":44,"y":86},{"x":45,"y":93},{"x":46,"y":82},{"x":47,"y":88},{"x":48,"y":90},{"x":49,"y":94.5},{"x":50,"y":95.9},{"x":51,"y":91.5},{"x":52,"y":91},{"x":53,"y":86.5},{"x":54,"y":83.3},{"x":55,"y":83},{"x":56,"y":89.3},{"x":57,"y":85.5},{"x":58,"y":75.1},{"x":59,"y":79.4},{"x":60,"y":76.4},{"x":61,"y":77.8},{"x":62,"y":80.57142857142857}],
+          }, {
+            pointRadius: 0,
+            fill: false,
+            backgroundColor: "rgb(0,255,0)",
+            borderColor: "rgb(0,255,0)",
+            borderWidth: 2,
+            label: 'Windows',
+            data: [{"x":0,"y":99},{"x":1,"y":99},{"x":2,"y":95},{"x":3,"y":96.4},{"x":4,"y":97},{"x":5,"y":96.2},{"x":6,"y":97.6},{"x":7,"y":97.2},{"x":8,"y":97.8},{"x":9,"y":98.8},{"x":10,"y":98.2},{"x":11,"y":98},{"x":12,"y":98},{"x":13,"y":98.8},{"x":14,"y":97.4},{"x":15,"y":98.4},{"x":16,"y":99},{"x":17,"y":95.5},{"x":18,"y":93.3},{"x":19,"y":95.8},{"x":20,"y":97.7},{"x":21,"y":98.7},{"x":22,"y":99},{"x":23,"y":99},{"x":24,"y":99},{"x":25,"y":98.3},{"x":26,"y":98.7},{"x":27,"y":99},{"x":28,"y":99},{"x":29,"y":99},{"x":30,"y":99},{"x":31,"y":99},{"x":32,"y":99},{"x":33,"y":99},{"x":34,"y":99},{"x":35,"y":99},{"x":36,"y":99},{"x":37,"y":99},{"x":38,"y":98.4},{"x":39,"y":96.8},{"x":40,"y":97.8},{"x":41,"y":96.6},{"x":42,"y":94},{"x":43,"y":93},{"x":44,"y":94},{"x":45,"y":94},{"x":46,"y":93.5},{"x":47,"y":95.5},{"x":48,"y":97.5},{"x":49,"y":98},{"x":50,"y":98},{"x":51,"y":97.5},{"x":52,"y":95},{"x":53,"y":87.5},{"x":54,"y":82},{"x":55,"y":81.5},{"x":56,"y":81},{"x":57,"y":83},{"x":58,"y":88.8},{"x":59,"y":95},{"x":60,"y":98.4},{"x":61,"y":97.8},{"x":62,"y":96}],
+          },
+        ]
+      },
+    options: {
+      title: {
+        display: true,
+        fontSize: 16,
+        text: 'GPU load',
+      },
+      scales: {
+        xAxes: [{
+          type: 'linear',
+          scaleLabel: {
+            display: true,
+            labelString: ''
+          }
+        }],
+          yAxes: [{
+            type: 'linear',
+            scaleLabel: {
+              display: true,
+              labelString: ''
+            },
+            ticks: {
+              beginAtZero: true,
+              suggestedMax: 100,
+            }
+          }]
+      }
+    }
+    });
+  </script>
+</div></p>
+<h3 id="overwatch-epic-3440x1440p">Overwatch, Epic, 3440x1440p</h3>
+<p>Like Diablo III, I installed it using Lutris. The performance is slightly better on Windows.</p>
+<p>One thing to note is, that when you start the game it&rsquo;s going to compile some shaders and during that, the performance is much lower and there is a lot of clipping. You have to wait a few minutes, till this completes.</p>
+<p>
+
+<div>
+  <canvas id="ow_fps" width="" height=""></canvas>
+  <script>
+    var ctx = document.getElementById("ow_fps").getContext('2d');
+    var myChart = new Chart.Line(ctx, {
+      data: {
+        datasets: [
+   {
+            pointRadius: 0,
+            fill: false,
+            backgroundColor: "rgb(255,0,0)",
+            borderColor: "rgb(255,0,0)",
+            borderWidth: 2,
+            label: 'Linux',
+            data: [{"x":0,"y":122.02759999999998},{"x":1,"y":125.85930000000003},{"x":2,"y":134.0915},{"x":3,"y":137.2333},{"x":4,"y":138.5111},{"x":5,"y":138.60399999999998},{"x":6,"y":144.373},{"x":7,"y":141.66020000000003},{"x":8,"y":145.0004},{"x":9,"y":146.6678},{"x":10,"y":153.14349999999996},{"x":11,"y":132.6512},{"x":12,"y":134.58049999999997},{"x":13,"y":136.13420000000002},{"x":14,"y":136.05960000000002},{"x":15,"y":119.4641},{"x":16,"y":126.0025},{"x":17,"y":119.8431},{"x":18,"y":126.3112},{"x":19,"y":121.4564},{"x":20,"y":119.8689},{"x":21,"y":118.35119999999998},{"x":22,"y":124.242},{"x":23,"y":131.53140000000002},{"x":24,"y":130.7781},{"x":25,"y":138.1423},{"x":26,"y":133.5915},{"x":27,"y":127.8993},{"x":28,"y":123.5219},{"x":29,"y":125.86539999999998},{"x":30,"y":123.5024},{"x":31,"y":123.3768},{"x":32,"y":126.7253},{"x":33,"y":132.11299999999997},{"x":34,"y":127.8136},{"x":35,"y":131.0562},{"x":36,"y":123.169},{"x":37,"y":122.3315},{"x":38,"y":123.3693},{"x":39,"y":120.8109},{"x":40,"y":123.47059999999996},{"x":41,"y":120.08700000000002},{"x":42,"y":119.3692},{"x":43,"y":124.4021},{"x":44,"y":126.4717},{"x":45,"y":127.7897},{"x":46,"y":133.3882},{"x":47,"y":127.5841},{"x":48,"y":117.76270000000002},{"x":49,"y":118.64589999999998},{"x":50,"y":122.2599},{"x":51,"y":131.1184},{"x":52,"y":133.4535},{"x":53,"y":132.903},{"x":54,"y":132.89209999999997},{"x":55,"y":135.415},{"x":56,"y":131.0291},{"x":57,"y":126.12},{"x":58,"y":125.0287},{"x":59,"y":127.61179999999996},{"x":60,"y":124.6012},{"x":61,"y":125.07600000000001},{"x":62,"y":125.0602},{"x":63,"y":125.5025}],
+          }, {
+            pointRadius: 0,
+            fill: false,
+            backgroundColor: "rgb(0,255,0)",
+            borderColor: "rgb(0,255,0)",
+            borderWidth: 2,
+            label: 'Windows',
+            data: [{"x":0,"y":137.04000000000002},{"x":1,"y":144.48999999999995},{"x":2,"y":145.97},{"x":3,"y":145.22},{"x":4,"y":145.96999999999997},{"x":5,"y":153.57},{"x":6,"y":162.00000000000003},{"x":7,"y":167},{"x":8,"y":146.77000000000004},{"x":9,"y":140.7},{"x":10,"y":138.85},{"x":11,"y":162.8},{"x":12,"y":185.07},{"x":13,"y":185.84000000000003},{"x":14,"y":188.3},{"x":15,"y":184.7},{"x":16,"y":140.96},{"x":17,"y":135.23},{"x":18,"y":137.52},{"x":19,"y":139.26000000000002},{"x":20,"y":139.33999999999997},{"x":21,"y":140.42000000000002},{"x":22,"y":143.54000000000005},{"x":23,"y":147.51999999999995},{"x":24,"y":148.59999999999997},{"x":25,"y":145.26},{"x":26,"y":140.98},{"x":27,"y":132.41},{"x":28,"y":129.44},{"x":29,"y":133.48},{"x":30,"y":142.66000000000003},{"x":31,"y":141.29},{"x":32,"y":139.42000000000002},{"x":33,"y":140.29000000000002},{"x":34,"y":145.36000000000004},{"x":35,"y":145.04999999999995},{"x":36,"y":148.64},{"x":37,"y":138.86},{"x":38,"y":132.74999999999997},{"x":39,"y":131.32999999999998},{"x":40,"y":135.26999999999998},{"x":41,"y":144.32999999999996},{"x":42,"y":143.93},{"x":43,"y":140.51999999999998},{"x":44,"y":148.14},{"x":45,"y":147.10000000000005},{"x":46,"y":142.04000000000005},{"x":47,"y":139.98000000000002},{"x":48,"y":130.94},{"x":49,"y":120.66},{"x":50,"y":123.84},{"x":51,"y":142.14},{"x":52,"y":147.01999999999995},{"x":53,"y":146.87},{"x":54,"y":144.78},{"x":55,"y":133.41},{"x":56,"y":130.01},{"x":57,"y":142.02999999999997},{"x":58,"y":157.85},{"x":59,"y":153.22},{"x":60,"y":133.68},{"x":61,"y":135.92000000000002},{"x":62,"y":132.33},{"x":63,"y":131}],
+          },
+        ]
+      },
+    options: {
+      title: {
+        display: true,
+        fontSize: 16,
+        text: 'FPS',
+      },
+      scales: {
+        xAxes: [{
+          type: 'linear',
+          scaleLabel: {
+            display: true,
+            labelString: ''
+          }
+        }],
+          yAxes: [{
+            type: 'linear',
+            scaleLabel: {
+              display: true,
+              labelString: ''
+            },
+            ticks: {
+              beginAtZero: true,
+            }
+          }]
+      }
+    }
+    });
+  </script>
+</div>
+
+
+<div>
+  <canvas id="ow_cpu" width="" height=""></canvas>
+  <script>
+    var ctx = document.getElementById("ow_cpu").getContext('2d');
+    var myChart = new Chart.Line(ctx, {
+      data: {
+        datasets: [
+   {
+            pointRadius: 0,
+            fill: false,
+            backgroundColor: "rgb(255,0,0)",
+            borderColor: "rgb(255,0,0)",
+            borderWidth: 2,
+            label: 'Linux',
+            data: [{"x":0,"y":15.6},{"x":1,"y":17},{"x":2,"y":16.4},{"x":3,"y":16.1},{"x":4,"y":17},{"x":5,"y":15.1},{"x":6,"y":13},{"x":7,"y":16},{"x":8,"y":14.1},{"x":9,"y":13.9},{"x":10,"y":14},{"x":11,"y":14.5},{"x":12,"y":13.5},{"x":13,"y":14},{"x":14,"y":14.5},{"x":15,"y":14.5},{"x":16,"y":14.5},{"x":17,"y":14},{"x":18,"y":13.5},{"x":19,"y":12},{"x":20,"y":13},{"x":21,"y":15.2},{"x":22,"y":13.6},{"x":23,"y":13.4},{"x":24,"y":13.2},{"x":25,"y":14.3},{"x":26,"y":17.4},{"x":27,"y":13.3},{"x":28,"y":12.5},{"x":29,"y":11.9},{"x":30,"y":13.5},{"x":31,"y":14.2},{"x":32,"y":12.4},{"x":33,"y":11.1},{"x":34,"y":12.2},{"x":35,"y":14},{"x":36,"y":14.3},{"x":37,"y":13.1},{"x":38,"y":14.8},{"x":39,"y":16.6},{"x":40,"y":13.7},{"x":41,"y":14.4},{"x":42,"y":13},{"x":43,"y":13.5},{"x":44,"y":15.8},{"x":45,"y":14.1},{"x":46,"y":11.6},{"x":47,"y":14.5},{"x":48,"y":18.1},{"x":49,"y":16},{"x":50,"y":16},{"x":51,"y":14.4},{"x":52,"y":13},{"x":53,"y":13.2},{"x":54,"y":14.8},{"x":55,"y":14},{"x":56,"y":13.4},{"x":57,"y":15},{"x":58,"y":15.1},{"x":59,"y":14.9},{"x":60,"y":16.1},{"x":61,"y":15.7},{"x":62,"y":14.1},{"x":63,"y":15}],
+          }, {
+            pointRadius: 0,
+            fill: false,
+            backgroundColor: "rgb(0,255,0)",
+            borderColor: "rgb(0,255,0)",
+            borderWidth: 2,
+            label: 'Windows',
+            data: [{"x":0,"y":14.2452},{"x":1,"y":17.0413},{"x":2,"y":13.2671},{"x":3,"y":15.2611},{"x":4,"y":17.4838},{"x":5,"y":11.4517},{"x":6,"y":12.9776},{"x":7,"y":15.7356},{"x":8,"y":14.1979},{"x":9,"y":13.2601},{"x":10,"y":13.8561},{"x":11,"y":16.7026},{"x":12,"y":12.050999999999998},{"x":13,"y":11.0229},{"x":14,"y":7.117999999999999},{"x":15,"y":13.7179},{"x":16,"y":15.223000000000004},{"x":17,"y":12.0143},{"x":18,"y":13.278899999999998},{"x":19,"y":18.6992},{"x":20,"y":12.910099999999995},{"x":21,"y":12.3012},{"x":22,"y":12.1883},{"x":23,"y":10.7986},{"x":24,"y":11.7977},{"x":25,"y":14.0297},{"x":26,"y":14.5739},{"x":27,"y":10.9706},{"x":28,"y":9.9238},{"x":29,"y":11.951800000000002},{"x":30,"y":10.633200000000002},{"x":31,"y":11.5173},{"x":32,"y":11.729300000000002},{"x":33,"y":13.651},{"x":34,"y":10.0782},{"x":35,"y":12.1032},{"x":36,"y":10.011499999999998},{"x":37,"y":7.8690000000000015},{"x":38,"y":13.544999999999998},{"x":39,"y":12.6421},{"x":40,"y":12.7247},{"x":41,"y":11.7578},{"x":42,"y":11.9686},{"x":43,"y":10.711100000000002},{"x":44,"y":10.4987},{"x":45,"y":13.650900000000002},{"x":46,"y":12.4144},{"x":47,"y":14.5324},{"x":48,"y":17.282900000000005},{"x":49,"y":13.201},{"x":50,"y":10.6453},{"x":51,"y":10.5276},{"x":52,"y":9.8646},{"x":53,"y":10.9629},{"x":54,"y":9.004900000000003},{"x":55,"y":18.406},{"x":56,"y":15.775500000000005},{"x":57,"y":10.3145},{"x":58,"y":10.649800000000004},{"x":59,"y":7.3648},{"x":60,"y":12.859000000000002},{"x":61,"y":14.5193},{"x":62,"y":16.645400000000002},{"x":63,"y":7.0379999999999985}],
+          },
+        ]
+      },
+    options: {
+      title: {
+        display: true,
+        fontSize: 16,
+        text: 'CPU load',
+      },
+      scales: {
+        xAxes: [{
+          type: 'linear',
+          scaleLabel: {
+            display: true,
+            labelString: ''
+          }
+        }],
+          yAxes: [{
+            type: 'linear',
+            scaleLabel: {
+              display: true,
+              labelString: ''
+            },
+            ticks: {
+              beginAtZero: true,
+              suggestedMax: 100,
+            }
+          }]
+      }
+    }
+    });
+  </script>
+</div>
+
+
+<div>
+  <canvas id="ow_gpu" width="" height=""></canvas>
+  <script>
+    var ctx = document.getElementById("ow_gpu").getContext('2d');
+    var myChart = new Chart.Line(ctx, {
+      data: {
+        datasets: [
+   {
+            pointRadius: 0,
+            fill: false,
+            backgroundColor: "rgb(255,0,0)",
+            borderColor: "rgb(255,0,0)",
+            borderWidth: 2,
+            label: 'Linux',
+            data: [{"x":0,"y":100},{"x":1,"y":100},{"x":2,"y":100},{"x":3,"y":100},{"x":4,"y":100},{"x":5,"y":100},{"x":6,"y":100},{"x":7,"y":100},{"x":8,"y":100},{"x":9,"y":100},{"x":10,"y":100},{"x":11,"y":100},{"x":12,"y":100},{"x":13,"y":100},{"x":14,"y":100},{"x":15,"y":100},{"x":16,"y":100},{"x":17,"y":100},{"x":18,"y":100},{"x":19,"y":100},{"x":20,"y":100},{"x":21,"y":100},{"x":22,"y":100},{"x":23,"y":100},{"x":24,"y":100},{"x":25,"y":100},{"x":26,"y":100},{"x":27,"y":100},{"x":28,"y":100},{"x":29,"y":100},{"x":30,"y":100},{"x":31,"y":100},{"x":32,"y":100},{"x":33,"y":100},{"x":34,"y":100},{"x":35,"y":100},{"x":36,"y":100},{"x":37,"y":100},{"x":38,"y":100},{"x":39,"y":100},{"x":40,"y":100},{"x":41,"y":100},{"x":42,"y":100},{"x":43,"y":100},{"x":44,"y":100},{"x":45,"y":100},{"x":46,"y":100},{"x":47,"y":100},{"x":48,"y":100},{"x":49,"y":100},{"x":50,"y":100},{"x":51,"y":100},{"x":52,"y":100},{"x":53,"y":100},{"x":54,"y":100},{"x":55,"y":100},{"x":56,"y":100},{"x":57,"y":100},{"x":58,"y":100},{"x":59,"y":100},{"x":60,"y":100},{"x":61,"y":100},{"x":62,"y":100},{"x":63,"y":100}],
+          }, {
+            pointRadius: 0,
+            fill: false,
+            backgroundColor: "rgb(0,255,0)",
+            borderColor: "rgb(0,255,0)",
+            borderWidth: 2,
+            label: 'Windows',
+            data: [{"x":0,"y":97.7},{"x":1,"y":95.3},{"x":2,"y":98},{"x":3,"y":98},{"x":4,"y":98},{"x":5,"y":98},{"x":6,"y":98},{"x":7,"y":98},{"x":8,"y":98},{"x":9,"y":98},{"x":10,"y":98},{"x":11,"y":98},{"x":12,"y":97.9},{"x":13,"y":97.1},{"x":14,"y":97.8},{"x":15,"y":96},{"x":16,"y":98},{"x":17,"y":98},{"x":18,"y":98},{"x":19,"y":98},{"x":20,"y":97},{"x":21,"y":98},{"x":22,"y":98},{"x":23,"y":98},{"x":24,"y":98},{"x":25,"y":98},{"x":26,"y":98},{"x":27,"y":98},{"x":28,"y":98},{"x":29,"y":98},{"x":30,"y":99},{"x":31,"y":98},{"x":32,"y":98.9},{"x":33,"y":99},{"x":34,"y":99},{"x":35,"y":98.1},{"x":36,"y":98.9},{"x":37,"y":98.1},{"x":38,"y":98.9},{"x":39,"y":99},{"x":40,"y":98.1},{"x":41,"y":98},{"x":42,"y":98},{"x":43,"y":98},{"x":44,"y":98},{"x":45,"y":98},{"x":46,"y":98.8},{"x":47,"y":98.2},{"x":48,"y":98},{"x":49,"y":98},{"x":50,"y":98},{"x":51,"y":98},{"x":52,"y":98},{"x":53,"y":98},{"x":54,"y":98},{"x":55,"y":98},{"x":56,"y":98},{"x":57,"y":98},{"x":58,"y":98},{"x":59,"y":98.8},{"x":60,"y":98.3},{"x":61,"y":98},{"x":62,"y":98},{"x":63,"y":98}],
+          },
+        ]
+      },
+    options: {
+      title: {
+        display: true,
+        fontSize: 16,
+        text: 'GPU load',
+      },
+      scales: {
+        xAxes: [{
+          type: 'linear',
+          scaleLabel: {
+            display: true,
+            labelString: ''
+          }
+        }],
+          yAxes: [{
+            type: 'linear',
+            scaleLabel: {
+              display: true,
+              labelString: ''
+            },
+            ticks: {
+              beginAtZero: true,
+              suggestedMax: 100,
+            }
+          }]
+      }
+    }
+    });
+  </script>
+</div></p>
+<h3 id="company-of-heroes-2-highest-3440x1440p">Company of Heroes 2, Highest, 3440x1440p</h3>
+<p>This game has a few problems, but is playable. It has a Linux native version, but you can&rsquo;t play multiplayer with Windows gamers as the version number is different, so I had to use SteamPlay. I also had to set the audio quality to low, as it was clipping. The game sometimes crashed for me at the begging of a match, which is annoying in multiplayer.</p>
+<p>The framerate loss is huge, around 50%, but it&rsquo;s above 30 FPS, so playable for an RTS game.</p>
+<p>
+
+<div>
+  <canvas id="coh_fps" width="" height=""></canvas>
+  <script>
+    var ctx = document.getElementById("coh_fps").getContext('2d');
+    var myChart = new Chart.Line(ctx, {
+      data: {
+        datasets: [
+   {
+            pointRadius: 0,
+            fill: false,
+            backgroundColor: "rgb(255,0,0)",
+            borderColor: "rgb(255,0,0)",
+            borderWidth: 2,
+            label: 'Linux',
+            data: [{"x":0,"y":80.58135000000001},{"x":1,"y":80.57485},{"x":2,"y":76.66942},{"x":3,"y":70.34699},{"x":4,"y":72.15349},{"x":5,"y":71.09236999999997},{"x":6,"y":79.5883},{"x":7,"y":73.73424999999997},{"x":8,"y":79.44358000000003},{"x":9,"y":87.52218},{"x":10,"y":82.14846999999999},{"x":11,"y":89.88322000000002},{"x":12,"y":90.86655},{"x":13,"y":75.67152},{"x":14,"y":75.64986},{"x":15,"y":75.92307000000002},{"x":16,"y":72.75548},{"x":17,"y":59.20465},{"x":18,"y":50.59992},{"x":19,"y":44.25663},{"x":20,"y":46.29214},{"x":21,"y":45.86637},{"x":22,"y":46.34514},{"x":23,"y":44.69177},{"x":24,"y":49.308580000000006},{"x":25,"y":49.20107},{"x":26,"y":45.58742},{"x":27,"y":44.3189},{"x":28,"y":43.31024000000001},{"x":29,"y":39.93031000000001},{"x":30,"y":38.34863},{"x":31,"y":36.46452},{"x":32,"y":37.69306999999999},{"x":33,"y":40.15509},{"x":34,"y":37.71504},{"x":35,"y":30.62483},{"x":36,"y":33.177229999999994},{"x":37,"y":32.63905},{"x":38,"y":34.085170000000005},{"x":39,"y":34.079660000000004},{"x":40,"y":33.298950000000005},{"x":41,"y":34.48254000000001}],
+          }, {
+            pointRadius: 0,
+            fill: false,
+            backgroundColor: "rgb(0,255,0)",
+            borderColor: "rgb(0,255,0)",
+            borderWidth: 2,
+            label: 'Windows',
+            data: [{"x":0,"y":126.51999999999998},{"x":1,"y":149.75000000000003},{"x":2,"y":147.42000000000004},{"x":3,"y":141.08},{"x":4,"y":134.63000000000002},{"x":5,"y":137.07999999999998},{"x":6,"y":134.65},{"x":7,"y":143.51000000000005},{"x":8,"y":136.87999999999997},{"x":9,"y":145.94},{"x":10,"y":137.32},{"x":11,"y":136.32000000000002},{"x":12,"y":135.51},{"x":13,"y":120.16},{"x":14,"y":114.21},{"x":15,"y":110.18},{"x":16,"y":104.91},{"x":17,"y":95.34},{"x":18,"y":82.85000000000002},{"x":19,"y":77.45},{"x":20,"y":69.9},{"x":21,"y":67.17999999999999},{"x":22,"y":67.91},{"x":23,"y":69.76},{"x":24,"y":78.25999999999998},{"x":25,"y":90.08},{"x":26,"y":87.08000000000001},{"x":27,"y":86.52000000000002},{"x":28,"y":83.17},{"x":29,"y":76.53},{"x":30,"y":72.42},{"x":31,"y":70.84},{"x":32,"y":69.07000000000001},{"x":33,"y":71.23},{"x":34,"y":74.08999999999997},{"x":35,"y":64.02},{"x":36,"y":55.88},{"x":37,"y":57.67999999999999},{"x":38,"y":56.68000000000001},{"x":39,"y":57.51000000000001},{"x":40,"y":57.98},{"x":41,"y":58.78},{"x":42,"y":63.45},{"x":43,"y":72.42999999999998},{"x":44,"y":73.5}],
+          },
+        ]
+      },
+    options: {
+      title: {
+        display: true,
+        fontSize: 16,
+        text: 'FPS',
+      },
+      scales: {
+        xAxes: [{
+          type: 'linear',
+          scaleLabel: {
+            display: true,
+            labelString: ''
+          }
+        }],
+          yAxes: [{
+            type: 'linear',
+            scaleLabel: {
+              display: true,
+              labelString: ''
+            },
+            ticks: {
+              beginAtZero: true,
+            }
+          }]
+      }
+    }
+    });
+  </script>
+</div>
+
+
+<div>
+  <canvas id="coh_cpu" width="" height=""></canvas>
+  <script>
+    var ctx = document.getElementById("coh_cpu").getContext('2d');
+    var myChart = new Chart.Line(ctx, {
+      data: {
+        datasets: [
+   {
+            pointRadius: 0,
+            fill: false,
+            backgroundColor: "rgb(255,0,0)",
+            borderColor: "rgb(255,0,0)",
+            borderWidth: 2,
+            label: 'Linux',
+            data: [{"x":0,"y":21.7},{"x":1,"y":24.4},{"x":2,"y":24.2},{"x":3,"y":25.1},{"x":4,"y":24.4},{"x":5,"y":24.4},{"x":6,"y":23.4},{"x":7,"y":23.8},{"x":8,"y":24.7},{"x":9,"y":25},{"x":10,"y":25.8},{"x":11,"y":25.7},{"x":12,"y":24.3},{"x":13,"y":24.8},{"x":14,"y":24},{"x":15,"y":23.6},{"x":16,"y":23.4},{"x":17,"y":25.5},{"x":18,"y":24.5},{"x":19,"y":23},{"x":20,"y":24.5},{"x":21,"y":24.2},{"x":22,"y":23.5},{"x":23,"y":24.2},{"x":24,"y":26.9},{"x":25,"y":25.1},{"x":26,"y":25.1},{"x":27,"y":24.7},{"x":28,"y":24},{"x":29,"y":23.3},{"x":30,"y":25},{"x":31,"y":23.3},{"x":32,"y":23.8},{"x":33,"y":22.7},{"x":34,"y":23.8},{"x":35,"y":22.1},{"x":36,"y":22.1},{"x":37,"y":22.8},{"x":38,"y":23.5},{"x":39,"y":22.5},{"x":40,"y":22.5},{"x":41,"y":23.2}],
+          }, {
+            pointRadius: 0,
+            fill: false,
+            backgroundColor: "rgb(0,255,0)",
+            borderColor: "rgb(0,255,0)",
+            borderWidth: 2,
+            label: 'Windows',
+            data: [{"x":0,"y":19.0479},{"x":1,"y":26.9051},{"x":2,"y":28.3547},{"x":3,"y":27.4301},{"x":4,"y":23.855500000000006},{"x":5,"y":26.0306},{"x":6,"y":27.550899999999995},{"x":7,"y":24.8723},{"x":8,"y":25.1067},{"x":9,"y":23.4236},{"x":10,"y":22.9353},{"x":11,"y":23.528},{"x":12,"y":19.5662},{"x":13,"y":19.8936},{"x":14,"y":23.9385},{"x":15,"y":16.750700000000002},{"x":16,"y":18.1971},{"x":17,"y":23.929900000000004},{"x":18,"y":17.419599999999996},{"x":19,"y":22.8949},{"x":20,"y":18.3955},{"x":21,"y":21.478199999999994},{"x":22,"y":19.6152},{"x":23,"y":17.177},{"x":24,"y":23.8735},{"x":25,"y":20.385300000000004},{"x":26,"y":19.706800000000005},{"x":27,"y":19.2084},{"x":28,"y":21.7052},{"x":29,"y":21.9612},{"x":30,"y":18.5584},{"x":31,"y":22.5537},{"x":32,"y":20.5507},{"x":33,"y":21.3441},{"x":34,"y":21.9784},{"x":35,"y":23.847900000000006},{"x":36,"y":23.188000000000002},{"x":37,"y":18.5839},{"x":38,"y":21.158299999999997},{"x":39,"y":23.9187},{"x":40,"y":25.4246},{"x":41,"y":25.9379},{"x":42,"y":19.7398},{"x":43,"y":14.2576},{"x":44,"y":10.954}],
+          },
+        ]
+      },
+    options: {
+      title: {
+        display: true,
+        fontSize: 16,
+        text: 'CPU load',
+      },
+      scales: {
+        xAxes: [{
+          type: 'linear',
+          scaleLabel: {
+            display: true,
+            labelString: ''
+          }
+        }],
+          yAxes: [{
+            type: 'linear',
+            scaleLabel: {
+              display: true,
+              labelString: ''
+            },
+            ticks: {
+              beginAtZero: true,
+              suggestedMax: 100,
+            }
+          }]
+      }
+    }
+    });
+  </script>
+</div>
+
+
+<div>
+  <canvas id="coh_gpu" width="" height=""></canvas>
+  <script>
+    var ctx = document.getElementById("coh_gpu").getContext('2d');
+    var myChart = new Chart.Line(ctx, {
+      data: {
+        datasets: [
+   {
+            pointRadius: 0,
+            fill: false,
+            backgroundColor: "rgb(255,0,0)",
+            borderColor: "rgb(255,0,0)",
+            borderWidth: 2,
+            label: 'Linux',
+            data: [{"x":0,"y":40.2},{"x":1,"y":44.8},{"x":2,"y":45},{"x":3,"y":42.2},{"x":4,"y":40.3},{"x":5,"y":41.4},{"x":6,"y":39.9},{"x":7,"y":43.2},{"x":8,"y":40.1},{"x":9,"y":45.7},{"x":10,"y":51.4},{"x":11,"y":53.6},{"x":12,"y":59.4},{"x":13,"y":64.2},{"x":14,"y":66.2},{"x":15,"y":70},{"x":16,"y":72},{"x":17,"y":69},{"x":18,"y":63.5},{"x":19,"y":57.5},{"x":20,"y":54.5},{"x":21,"y":55.4},{"x":22,"y":55.6},{"x":23,"y":54.2},{"x":24,"y":49.4},{"x":25,"y":42.8},{"x":26,"y":40.2},{"x":27,"y":38.7},{"x":28,"y":38},{"x":29,"y":37.7},{"x":30,"y":35.8},{"x":31,"y":31.6},{"x":32,"y":36.8},{"x":33,"y":35.9},{"x":34,"y":36.8},{"x":35,"y":34.4},{"x":36,"y":30.2},{"x":37,"y":31.4},{"x":38,"y":32.5},{"x":39,"y":35},{"x":40,"y":36.5},{"x":41,"y":35}],
+          }, {
+            pointRadius: 0,
+            fill: false,
+            backgroundColor: "rgb(0,255,0)",
+            borderColor: "rgb(0,255,0)",
+            borderWidth: 2,
+            label: 'Windows',
+            data: [{"x":0,"y":70.8},{"x":1,"y":85.7},{"x":2,"y":86.9},{"x":3,"y":86},{"x":4,"y":83.9},{"x":5,"y":83},{"x":6,"y":80.9},{"x":7,"y":82.1},{"x":8,"y":80.2},{"x":9,"y":84.6},{"x":10,"y":86.3},{"x":11,"y":92.3},{"x":12,"y":95.7},{"x":13,"y":93.9},{"x":14,"y":97.2},{"x":15,"y":99},{"x":16,"y":99},{"x":17,"y":99},{"x":18,"y":99},{"x":19,"y":99},{"x":20,"y":99},{"x":21,"y":99},{"x":22,"y":99},{"x":23,"y":99},{"x":24,"y":98.4},{"x":25,"y":98},{"x":26,"y":97},{"x":27,"y":96},{"x":28,"y":95},{"x":29,"y":91.5},{"x":30,"y":86},{"x":31,"y":83},{"x":32,"y":82.5},{"x":33,"y":84.5},{"x":34,"y":90},{"x":35,"y":87.5},{"x":36,"y":77},{"x":37,"y":72},{"x":38,"y":70},{"x":39,"y":72},{"x":40,"y":76.5},{"x":41,"y":75},{"x":42,"y":75.5},{"x":43,"y":74.5},{"x":44,"y":71}],
+          },
+        ]
+      },
+    options: {
+      title: {
+        display: true,
+        fontSize: 16,
+        text: 'GPU load',
+      },
+      scales: {
+        xAxes: [{
+          type: 'linear',
+          scaleLabel: {
+            display: true,
+            labelString: ''
+          }
+        }],
+          yAxes: [{
+            type: 'linear',
+            scaleLabel: {
+              display: true,
+              labelString: ''
+            },
+            ticks: {
+              beginAtZero: true,
+              suggestedMax: 100,
+            }
+          }]
+      }
+    }
+    });
+  </script>
+</div></p>
+<h3 id="doom-ultra-3440x1440p">DOOM, Ultra, 3440x1440p</h3>
+<p>Although DOOM hasn&rsquo;t a native port, it uses Vulkan as the graphics library, which explains comparable framerates on Windows and Linux. Playable without any problems.</p>
+<p>
+
+<div>
+  <canvas id="doom_fps" width="" height=""></canvas>
+  <script>
+    var ctx = document.getElementById("doom_fps").getContext('2d');
+    var myChart = new Chart.Line(ctx, {
+      data: {
+        datasets: [
+   {
+            pointRadius: 0,
+            fill: false,
+            backgroundColor: "rgb(255,0,0)",
+            borderColor: "rgb(255,0,0)",
+            borderWidth: 2,
+            label: 'Linux',
+            data: [{"x":0,"y":177.5776},{"x":1,"y":159.51330000000004},{"x":2,"y":148.8035},{"x":3,"y":154.7409},{"x":4,"y":137.99290000000002},{"x":5,"y":143.7851},{"x":6,"y":161.7362},{"x":7,"y":169.67609999999996},{"x":8,"y":164.70409999999995},{"x":9,"y":162.48910000000004},{"x":10,"y":150.532},{"x":11,"y":158.69},{"x":12,"y":157.40210000000005},{"x":13,"y":142.13410000000005},{"x":14,"y":144.56619999999995},{"x":15,"y":154.8818},{"x":16,"y":144.53969999999995},{"x":17,"y":140.22679999999997},{"x":18,"y":156.91989999999996},{"x":19,"y":153.8873},{"x":20,"y":148.3675},{"x":21,"y":154.25619999999995},{"x":22,"y":155.941},{"x":23,"y":140.7523},{"x":24,"y":140.4342},{"x":25,"y":133.7738},{"x":26,"y":135.37239999999997},{"x":27,"y":138.86829999999998},{"x":28,"y":160.12449999999995},{"x":29,"y":150.1486},{"x":30,"y":143.28560000000004},{"x":31,"y":164.15810000000005},{"x":32,"y":159.5933},{"x":33,"y":149.5425},{"x":34,"y":149.1948},{"x":35,"y":152.2824},{"x":36,"y":152.18149999999997},{"x":37,"y":150.73899999999998},{"x":38,"y":141.9232},{"x":39,"y":140.2328},{"x":40,"y":134.3883},{"x":41,"y":135.35719999999998},{"x":42,"y":135.8598},{"x":43,"y":134.22590000000002},{"x":44,"y":142.2164},{"x":45,"y":142.326},{"x":46,"y":145.4172},{"x":47,"y":141.5953},{"x":48,"y":143.3634},{"x":49,"y":138.5543},{"x":50,"y":144.47330000000005},{"x":51,"y":141.40800000000004},{"x":52,"y":138.16819999999998},{"x":53,"y":167.56019999999995},{"x":54,"y":181.5091},{"x":55,"y":185.8234},{"x":56,"y":183.2297},{"x":57,"y":176.583},{"x":58,"y":162.98150000000004},{"x":59,"y":174.1154},{"x":60,"y":164.1569},{"x":61,"y":149.28109999999995},{"x":62,"y":155.37585714285714}],
+          }, {
+            pointRadius: 0,
+            fill: false,
+            backgroundColor: "rgb(0,255,0)",
+            borderColor: "rgb(0,255,0)",
+            borderWidth: 2,
+            label: 'Windows',
+            data: [{"x":0,"y":191.54},{"x":1,"y":182.7},{"x":2,"y":160.23999999999995},{"x":3,"y":147.49},{"x":4,"y":153.46},{"x":5,"y":142.41000000000003},{"x":6,"y":155.44},{"x":7,"y":158.93},{"x":8,"y":165.92000000000004},{"x":9,"y":166.44},{"x":10,"y":155.48000000000005},{"x":11,"y":160.46999999999997},{"x":12,"y":156.21999999999997},{"x":13,"y":155.4},{"x":14,"y":161.78},{"x":15,"y":159.24},{"x":16,"y":153.10000000000005},{"x":17,"y":146.95},{"x":18,"y":151.45000000000005},{"x":19,"y":137.35},{"x":20,"y":150.7},{"x":21,"y":183.42},{"x":22,"y":169.68},{"x":23,"y":156.86999999999995},{"x":24,"y":177.18},{"x":25,"y":177.98999999999995},{"x":26,"y":186.55},{"x":27,"y":181.46},{"x":28,"y":179.89},{"x":29,"y":175.89},{"x":30,"y":163.73999999999995},{"x":31,"y":161.57999999999996},{"x":32,"y":166.8},{"x":33,"y":166.23000000000005},{"x":34,"y":174.79000000000005},{"x":35,"y":188.29},{"x":36,"y":196.31},{"x":37,"y":187.45},{"x":38,"y":189.41},{"x":39,"y":194.38},{"x":40,"y":177.16},{"x":41,"y":162.34999999999997},{"x":42,"y":153.7},{"x":43,"y":147.85000000000005},{"x":44,"y":146.42000000000004},{"x":45,"y":141.63},{"x":46,"y":148.54000000000005},{"x":47,"y":150.34},{"x":48,"y":154.01000000000005},{"x":49,"y":157.98},{"x":50,"y":155.73},{"x":51,"y":153.38},{"x":52,"y":158.52},{"x":53,"y":160.03000000000003},{"x":54,"y":146.98000000000005},{"x":55,"y":145.05999999999997},{"x":56,"y":141.79000000000005},{"x":57,"y":142.50000000000003},{"x":58,"y":131.84},{"x":59,"y":138.57},{"x":60,"y":146.83},{"x":61,"y":145.2},{"x":62,"y":148.15}],
+          },
+        ]
+      },
+    options: {
+      title: {
+        display: true,
+        fontSize: 16,
+        text: 'FPS',
+      },
+      scales: {
+        xAxes: [{
+          type: 'linear',
+          scaleLabel: {
+            display: true,
+            labelString: ''
+          }
+        }],
+          yAxes: [{
+            type: 'linear',
+            scaleLabel: {
+              display: true,
+              labelString: ''
+            },
+            ticks: {
+              beginAtZero: true,
+            }
+          }]
+      }
+    }
+    });
+  </script>
+</div>
+
+
+<div>
+  <canvas id="doom_cpu" width="" height=""></canvas>
+  <script>
+    var ctx = document.getElementById("doom_cpu").getContext('2d');
+    var myChart = new Chart.Line(ctx, {
+      data: {
+        datasets: [
+   {
+            pointRadius: 0,
+            fill: false,
+            backgroundColor: "rgb(255,0,0)",
+            borderColor: "rgb(255,0,0)",
+            borderWidth: 2,
+            label: 'Linux',
+            data: [{"x":0,"y":42},{"x":1,"y":43.6},{"x":2,"y":44.6},{"x":3,"y":44.7},{"x":4,"y":41.2},{"x":5,"y":39.9},{"x":6,"y":43.6},{"x":7,"y":45.3},{"x":8,"y":44.8},{"x":9,"y":47.9},{"x":10,"y":50.1},{"x":11,"y":45.7},{"x":12,"y":44.5},{"x":13,"y":42.8},{"x":14,"y":39.7},{"x":15,"y":43.3},{"x":16,"y":44.7},{"x":17,"y":47.5},{"x":18,"y":50.5},{"x":19,"y":48.9},{"x":20,"y":46},{"x":21,"y":44.7},{"x":22,"y":46.2},{"x":23,"y":46.3},{"x":24,"y":43.9},{"x":25,"y":42.5},{"x":26,"y":43.5},{"x":27,"y":42.7},{"x":28,"y":45.1},{"x":29,"y":47},{"x":30,"y":45.3},{"x":31,"y":43.1},{"x":32,"y":44.9},{"x":33,"y":47.1},{"x":34,"y":45.6},{"x":35,"y":46.3},{"x":36,"y":44.2},{"x":37,"y":46.4},{"x":38,"y":45.5},{"x":39,"y":43.7},{"x":40,"y":43.5},{"x":41,"y":42.1},{"x":42,"y":44},{"x":43,"y":43.8},{"x":44,"y":44},{"x":45,"y":44.7},{"x":46,"y":42.9},{"x":47,"y":42.4},{"x":48,"y":49.5},{"x":49,"y":46.5},{"x":50,"y":47.5},{"x":51,"y":46},{"x":52,"y":45.5},{"x":53,"y":48},{"x":54,"y":51},{"x":55,"y":48.5},{"x":56,"y":51.5},{"x":57,"y":51},{"x":58,"y":48.5},{"x":59,"y":46},{"x":60,"y":51},{"x":61,"y":49.5},{"x":62,"y":50}],
+          }, {
+            pointRadius: 0,
+            fill: false,
+            backgroundColor: "rgb(0,255,0)",
+            borderColor: "rgb(0,255,0)",
+            borderWidth: 2,
+            label: 'Windows',
+            data: [{"x":0,"y":32.4201},{"x":1,"y":34.38719999999999},{"x":2,"y":30.039},{"x":3,"y":34.5948},{"x":4,"y":34.2531},{"x":5,"y":29.44370000000001},{"x":6,"y":30.1313},{"x":7,"y":32.0082},{"x":8,"y":31.9929},{"x":9,"y":38.2915},{"x":10,"y":37.7416},{"x":11,"y":36.3232},{"x":12,"y":33.3702},{"x":13,"y":33.0607},{"x":14,"y":33.032300000000006},{"x":15,"y":33.862100000000005},{"x":16,"y":29.550400000000003},{"x":17,"y":31.203700000000005},{"x":18,"y":32.102},{"x":19,"y":31.5216},{"x":20,"y":31.8423},{"x":21,"y":32.0223},{"x":22,"y":35.99939999999999},{"x":23,"y":31.677900000000005},{"x":24,"y":34.7215},{"x":25,"y":36.35340000000001},{"x":26,"y":36.7803},{"x":27,"y":45.3732},{"x":28,"y":35.46729999999999},{"x":29,"y":34.9953},{"x":30,"y":34.9446},{"x":31,"y":33.2406},{"x":32,"y":33.06999999999999},{"x":33,"y":36.67630000000001},{"x":34,"y":43.8736},{"x":35,"y":39.4429},{"x":36,"y":35.97459999999999},{"x":37,"y":42.672700000000006},{"x":38,"y":44.9347},{"x":39,"y":44.8072},{"x":40,"y":41.90040000000001},{"x":41,"y":45.6692},{"x":42,"y":40.6561},{"x":43,"y":35.8448},{"x":44,"y":36.0458},{"x":45,"y":30.6632},{"x":46,"y":35.3538},{"x":47,"y":42.46570000000001},{"x":48,"y":35.9313},{"x":49,"y":41.853},{"x":50,"y":35.058499999999995},{"x":51,"y":32.4184},{"x":52,"y":39.7098},{"x":53,"y":39.5604},{"x":54,"y":36.4593},{"x":55,"y":36.5422},{"x":56,"y":40.50809999999999},{"x":57,"y":35.6513},{"x":58,"y":31.5038},{"x":59,"y":30.5669},{"x":60,"y":37.94180000000001},{"x":61,"y":38.5807},{"x":62,"y":28.4355}],
+          },
+        ]
+      },
+    options: {
+      title: {
+        display: true,
+        fontSize: 16,
+        text: 'CPU load',
+      },
+      scales: {
+        xAxes: [{
+          type: 'linear',
+          scaleLabel: {
+            display: true,
+            labelString: ''
+          }
+        }],
+          yAxes: [{
+            type: 'linear',
+            scaleLabel: {
+              display: true,
+              labelString: ''
+            },
+            ticks: {
+              beginAtZero: true,
+              suggestedMax: 100,
+            }
+          }]
+      }
+    }
+    });
+  </script>
+</div>
+
+
+<div>
+  <canvas id="doom_gpu" width="" height=""></canvas>
+  <script>
+    var ctx = document.getElementById("doom_gpu").getContext('2d');
+    var myChart = new Chart.Line(ctx, {
+      data: {
+        datasets: [
+   {
+            pointRadius: 0,
+            fill: false,
+            backgroundColor: "rgb(255,0,0)",
+            borderColor: "rgb(255,0,0)",
+            borderWidth: 2,
+            label: 'Linux',
+            data: [{"x":0,"y":100},{"x":1,"y":100},{"x":2,"y":100},{"x":3,"y":100},{"x":4,"y":100},{"x":5,"y":100},{"x":6,"y":99.2},{"x":7,"y":99.8},{"x":8,"y":100},{"x":9,"y":99.2},{"x":10,"y":99},{"x":11,"y":99},{"x":12,"y":99.8},{"x":13,"y":100},{"x":14,"y":100},{"x":15,"y":99.3},{"x":16,"y":99},{"x":17,"y":99.7},{"x":18,"y":99.3},{"x":19,"y":99},{"x":20,"y":99},{"x":21,"y":99},{"x":22,"y":99},{"x":23,"y":99.7},{"x":24,"y":100},{"x":25,"y":100},{"x":26,"y":100},{"x":27,"y":99.3},{"x":28,"y":99.7},{"x":29,"y":99.3},{"x":30,"y":99.6},{"x":31,"y":99.4},{"x":32,"y":99.6},{"x":33,"y":100},{"x":34,"y":99.4},{"x":35,"y":99.6},{"x":36,"y":99.4},{"x":37,"y":99.6},{"x":38,"y":100},{"x":39,"y":99.4},{"x":40,"y":99.6},{"x":41,"y":100},{"x":42,"y":99.4},{"x":43,"y":99.6},{"x":44,"y":100},{"x":45,"y":99.4},{"x":46,"y":99.6},{"x":47,"y":100},{"x":48,"y":99},{"x":49,"y":98.5},{"x":50,"y":99},{"x":51,"y":99},{"x":52,"y":99},{"x":53,"y":99.5},{"x":54,"y":99.5},{"x":55,"y":99},{"x":56,"y":99},{"x":57,"y":99},{"x":58,"y":99},{"x":59,"y":99.5},{"x":60,"y":99.5},{"x":61,"y":99.5},{"x":62,"y":100}],
+          }, {
+            pointRadius: 0,
+            fill: false,
+            backgroundColor: "rgb(0,255,0)",
+            borderColor: "rgb(0,255,0)",
+            borderWidth: 2,
+            label: 'Windows',
+            data: [{"x":0,"y":97},{"x":1,"y":97},{"x":2,"y":97.4},{"x":3,"y":98},{"x":4,"y":98},{"x":5,"y":98},{"x":6,"y":98},{"x":7,"y":98},{"x":8,"y":98},{"x":9,"y":98},{"x":10,"y":98},{"x":11,"y":98},{"x":12,"y":98},{"x":13,"y":98},{"x":14,"y":98},{"x":15,"y":97.7},{"x":16,"y":97},{"x":17,"y":97.3},{"x":18,"y":98},{"x":19,"y":98},{"x":20,"y":98},{"x":21,"y":97.7},{"x":22,"y":97.3},{"x":23,"y":98},{"x":24,"y":97.8},{"x":25,"y":97},{"x":26,"y":97},{"x":27,"y":97},{"x":28,"y":97},{"x":29,"y":97.2},{"x":30,"y":97.8},{"x":31,"y":97.2},{"x":32,"y":97.8},{"x":33,"y":97},{"x":34,"y":97.2},{"x":35,"y":97.8},{"x":36,"y":97},{"x":37,"y":97},{"x":38,"y":97},{"x":39,"y":97},{"x":40,"y":97},{"x":41,"y":97.1},{"x":42,"y":98},{"x":43,"y":98},{"x":44,"y":98},{"x":45,"y":98},{"x":46,"y":98},{"x":47,"y":98},{"x":48,"y":98},{"x":49,"y":98},{"x":50,"y":98},{"x":51,"y":98},{"x":52,"y":98},{"x":53,"y":98},{"x":54,"y":98},{"x":55,"y":98},{"x":56,"y":98},{"x":57,"y":98},{"x":58,"y":98},{"x":59,"y":98},{"x":60,"y":98},{"x":61,"y":98},{"x":62,"y":98}],
+          },
+        ]
+      },
+    options: {
+      title: {
+        display: true,
+        fontSize: 16,
+        text: 'GPU load',
+      },
+      scales: {
+        xAxes: [{
+          type: 'linear',
+          scaleLabel: {
+            display: true,
+            labelString: ''
+          }
+        }],
+          yAxes: [{
+            type: 'linear',
+            scaleLabel: {
+              display: true,
+              labelString: ''
+            },
+            ticks: {
+              beginAtZero: true,
+              suggestedMax: 100,
+            }
+          }]
+      }
+    }
+    });
+  </script>
+</div></p>
+<h3 id="warhammer-2-total-war">Warhammer 2: Total War</h3>
+<p>This has a native Linux port. Performance in the benchmark is similar, with a slight advantage on Windows.</p>
+<p>
+
+<div>
+  <canvas id="wh2tw_fps" width="" height=""></canvas>
+  <script>
+    var ctx = document.getElementById("wh2tw_fps").getContext('2d');
+    var myChart = new Chart.Line(ctx, {
+      data: {
+        datasets: [
+   {
+            pointRadius: 0,
+            fill: false,
+            backgroundColor: "rgb(255,0,0)",
+            borderColor: "rgb(255,0,0)",
+            borderWidth: 2,
+            label: 'Linux',
+            data: [{"x":0,"y":66.56027000000002},{"x":1,"y":57.83341},{"x":2,"y":65.99379},{"x":3,"y":65.63298},{"x":4,"y":63.69556},{"x":5,"y":64.24186},{"x":6,"y":63.75854},{"x":7,"y":63.50858000000001},{"x":8,"y":64.38901999999999},{"x":9,"y":63.48398},{"x":10,"y":64.08169999999998},{"x":11,"y":63.57447},{"x":12,"y":63.51364000000001},{"x":13,"y":63.01715},{"x":14,"y":62.80094},{"x":15,"y":62.89957999999999},{"x":16,"y":65.53894999999999},{"x":17,"y":67.44601999999999},{"x":18,"y":68.88095000000001},{"x":19,"y":69.09037},{"x":20,"y":68.81339000000001},{"x":21,"y":69.30744000000001},{"x":22,"y":70.66462},{"x":23,"y":72.58233},{"x":24,"y":60.63977},{"x":25,"y":61.07403999999999},{"x":26,"y":61.00045},{"x":27,"y":60.27159},{"x":28,"y":60.48290000000001},{"x":29,"y":60.19105999999999},{"x":30,"y":59.51918000000001},{"x":31,"y":60.24324},{"x":32,"y":59.98724},{"x":33,"y":59.54861000000001},{"x":34,"y":59.93518},{"x":35,"y":60.51413},{"x":36,"y":60.95288000000001},{"x":37,"y":61.32994},{"x":38,"y":64.61515},{"x":39,"y":67.91489},{"x":40,"y":68.17742999999999},{"x":41,"y":64.63656999999999},{"x":42,"y":61.90221},{"x":43,"y":59.74036000000001},{"x":44,"y":57.39581999999999},{"x":45,"y":61.02986},{"x":46,"y":74.38127},{"x":47,"y":73.46481000000001},{"x":48,"y":67.13871},{"x":49,"y":54.26060000000001},{"x":50,"y":56.90825},{"x":51,"y":56.1322},{"x":52,"y":57.12145},{"x":53,"y":58.07479000000001},{"x":54,"y":58.01438999999999},{"x":55,"y":56.38943},{"x":56,"y":51.41634000000001},{"x":57,"y":58.47982999999999},{"x":58,"y":58.02829000000001},{"x":59,"y":59.21121000000001},{"x":60,"y":57.08669999999999},{"x":61,"y":59.21516}],
+          }, {
+            pointRadius: 0,
+            fill: false,
+            backgroundColor: "rgb(0,255,0)",
+            borderColor: "rgb(0,255,0)",
+            borderWidth: 2,
+            label: 'Windows',
+            data: [{"x":0,"y":73.65},{"x":1,"y":73.42999999999998},{"x":2,"y":72.80000000000003},{"x":3,"y":72.1},{"x":4,"y":72.00000000000001},{"x":5,"y":72.03636363636362},{"x":6,"y":71.88000000000002},{"x":7,"y":72.6},{"x":8,"y":72.25},{"x":9,"y":71.06},{"x":10,"y":70.72999999999998},{"x":11,"y":71.06666666666666},{"x":12,"y":71.07272727272729},{"x":13,"y":71.14000000000001},{"x":14,"y":71.63000000000002},{"x":15,"y":73.24999999999999},{"x":16,"y":75.64},{"x":17,"y":76.77000000000002},{"x":18,"y":76.30999999999997},{"x":19,"y":76.4},{"x":20,"y":75.43},{"x":21,"y":76.75},{"x":22,"y":76.17},{"x":23,"y":76.68},{"x":24,"y":73.78},{"x":25,"y":73.91999999999999},{"x":26,"y":72.69999999999997},{"x":27,"y":72.22},{"x":28,"y":72.41999999999999},{"x":29,"y":72.14000000000001},{"x":30,"y":72.06},{"x":31,"y":72.12},{"x":32,"y":72},{"x":33,"y":71.46},{"x":34,"y":71.6},{"x":35,"y":71.08000000000001},{"x":36,"y":70.48},{"x":37,"y":70.76000000000002},{"x":38,"y":71.66999999999999},{"x":39,"y":68.7},{"x":40,"y":67.76},{"x":41,"y":71.33000000000001},{"x":42,"y":72.60999999999999},{"x":43,"y":72.28},{"x":44,"y":66.60999999999999},{"x":45,"y":76.14},{"x":46,"y":83.94999999999997},{"x":47,"y":84.48},{"x":48,"y":70.71000000000002},{"x":49,"y":55.95},{"x":50,"y":54.18999999999998},{"x":51,"y":55.22000000000001},{"x":52,"y":55.41111111111112},{"x":53,"y":55.43636363636365},{"x":54,"y":54.1},{"x":55,"y":48.27},{"x":56,"y":52.744444444444454},{"x":57,"y":53.85454545454545},{"x":58,"y":55.08},{"x":59,"y":56.3},{"x":60,"y":52.54999999999999}],
+          },
+        ]
+      },
+    options: {
+      title: {
+        display: true,
+        fontSize: 16,
+        text: 'FPS',
+      },
+      scales: {
+        xAxes: [{
+          type: 'linear',
+          scaleLabel: {
+            display: true,
+            labelString: ''
+          }
+        }],
+          yAxes: [{
+            type: 'linear',
+            scaleLabel: {
+              display: true,
+              labelString: ''
+            },
+            ticks: {
+              beginAtZero: true,
+            }
+          }]
+      }
+    }
+    });
+  </script>
+</div>
+
+
+<div>
+  <canvas id="wh2tw_cpu" width="" height=""></canvas>
+  <script>
+    var ctx = document.getElementById("wh2tw_cpu").getContext('2d');
+    var myChart = new Chart.Line(ctx, {
+      data: {
+        datasets: [
+   {
+            pointRadius: 0,
+            fill: false,
+            backgroundColor: "rgb(255,0,0)",
+            borderColor: "rgb(255,0,0)",
+            borderWidth: 2,
+            label: 'Linux',
+            data: [{"x":0,"y":25},{"x":1,"y":21.4},{"x":2,"y":21},{"x":3,"y":22.5},{"x":4,"y":21.9},{"x":5,"y":22.5},{"x":6,"y":23.3},{"x":7,"y":23.7},{"x":8,"y":22.7},{"x":9,"y":22.5},{"x":10,"y":20.7},{"x":11,"y":21.8},{"x":12,"y":23.8},{"x":13,"y":23},{"x":14,"y":22.8},{"x":15,"y":23.3},{"x":16,"y":25.1},{"x":17,"y":24.7},{"x":18,"y":25.5},{"x":19,"y":25.7},{"x":20,"y":26},{"x":21,"y":25.3},{"x":22,"y":25},{"x":23,"y":25},{"x":24,"y":24},{"x":25,"y":23.8},{"x":26,"y":26.8},{"x":27,"y":26.5},{"x":28,"y":25.5},{"x":29,"y":26.5},{"x":30,"y":25.5},{"x":31,"y":25},{"x":32,"y":24.5},{"x":33,"y":24.5},{"x":34,"y":25},{"x":35,"y":26},{"x":36,"y":27.3},{"x":37,"y":25.6},{"x":38,"y":27.8},{"x":39,"y":26.8},{"x":40,"y":27.9},{"x":41,"y":26.7},{"x":42,"y":27.6},{"x":43,"y":26.1},{"x":44,"y":26.8},{"x":45,"y":24.1},{"x":46,"y":21.8},{"x":47,"y":20.2},{"x":48,"y":21.7},{"x":49,"y":23.8},{"x":50,"y":26},{"x":51,"y":26},{"x":52,"y":25.6},{"x":53,"y":25.3},{"x":54,"y":25.8},{"x":55,"y":25},{"x":56,"y":23.3},{"x":57,"y":24.8},{"x":58,"y":26.5},{"x":59,"y":25.9},{"x":60,"y":25.6},{"x":61,"y":23}],
+          }, {
+            pointRadius: 0,
+            fill: false,
+            backgroundColor: "rgb(0,255,0)",
+            borderColor: "rgb(0,255,0)",
+            borderWidth: 2,
+            label: 'Windows',
+            data: [{"x":0,"y":27.8982},{"x":1,"y":26.0905},{"x":2,"y":28.426777777777772},{"x":3,"y":25.9948},{"x":4,"y":29.1451},{"x":5,"y":29.22372727272727},{"x":6,"y":28.1137},{"x":7,"y":26.5644},{"x":8,"y":27.1597},{"x":9,"y":27.6706},{"x":10,"y":25.1925},{"x":11,"y":28.70922222222222},{"x":12,"y":26.87063636363636},{"x":13,"y":27.3949},{"x":14,"y":29.2312},{"x":15,"y":30.702200000000005},{"x":16,"y":28.86530000000001},{"x":17,"y":32.1357},{"x":18,"y":32.133900000000004},{"x":19,"y":31.7333},{"x":20,"y":36.2666},{"x":21,"y":31.6321},{"x":22,"y":29.4486},{"x":23,"y":31.868299999999994},{"x":24,"y":32.672200000000004},{"x":25,"y":31.790099999999995},{"x":26,"y":34.29940000000001},{"x":27,"y":32.325199999999995},{"x":28,"y":33.27929999999999},{"x":29,"y":32.9137},{"x":30,"y":29.6734},{"x":31,"y":31.0716},{"x":32,"y":34.3685},{"x":33,"y":30.065500000000004},{"x":34,"y":33.7351},{"x":35,"y":31.709700000000005},{"x":36,"y":35.0528},{"x":37,"y":35.1319},{"x":38,"y":33.488600000000005},{"x":39,"y":32.847500000000004},{"x":40,"y":36.4042},{"x":41,"y":29.1011},{"x":42,"y":29.158499999999997},{"x":43,"y":31.7222},{"x":44,"y":29.2968},{"x":45,"y":24.6176},{"x":46,"y":24.525800000000004},{"x":47,"y":23.6857},{"x":48,"y":27.4618},{"x":49,"y":27.937400000000004},{"x":50,"y":30.5293},{"x":51,"y":28.3767},{"x":52,"y":30.456777777777774},{"x":53,"y":28.05963636363636},{"x":54,"y":30.0996},{"x":55,"y":30.4472},{"x":56,"y":32.98188888888888},{"x":57,"y":27.17345454545455},{"x":58,"y":29.4212},{"x":59,"y":30.3526},{"x":60,"y":28.27666666666667}],
+          },
+        ]
+      },
+    options: {
+      title: {
+        display: true,
+        fontSize: 16,
+        text: 'CPU load',
+      },
+      scales: {
+        xAxes: [{
+          type: 'linear',
+          scaleLabel: {
+            display: true,
+            labelString: ''
+          }
+        }],
+          yAxes: [{
+            type: 'linear',
+            scaleLabel: {
+              display: true,
+              labelString: ''
+            },
+            ticks: {
+              beginAtZero: true,
+              suggestedMax: 100,
+            }
+          }]
+      }
+    }
+    });
+  </script>
+</div>
+
+
+<div>
+  <canvas id="wh2tw_gpu" width="" height=""></canvas>
+  <script>
+    var ctx = document.getElementById("wh2tw_gpu").getContext('2d');
+    var myChart = new Chart.Line(ctx, {
+      data: {
+        datasets: [
+   {
+            pointRadius: 0,
+            fill: false,
+            backgroundColor: "rgb(255,0,0)",
+            borderColor: "rgb(255,0,0)",
+            borderWidth: 2,
+            label: 'Linux',
+            data: [{"x":0,"y":100},{"x":1,"y":95.5},{"x":2,"y":99.5},{"x":3,"y":100},{"x":4,"y":100},{"x":5,"y":100},{"x":6,"y":100},{"x":7,"y":100},{"x":8,"y":100},{"x":9,"y":100},{"x":10,"y":100},{"x":11,"y":100},{"x":12,"y":100},{"x":13,"y":100},{"x":14,"y":100},{"x":15,"y":100},{"x":16,"y":100},{"x":17,"y":100},{"x":18,"y":100},{"x":19,"y":100},{"x":20,"y":100},{"x":21,"y":100},{"x":22,"y":100},{"x":23,"y":100},{"x":24,"y":100},{"x":25,"y":100},{"x":26,"y":100},{"x":27,"y":100},{"x":28,"y":100},{"x":29,"y":100},{"x":30,"y":100},{"x":31,"y":100},{"x":32,"y":100},{"x":33,"y":100},{"x":34,"y":100},{"x":35,"y":100},{"x":36,"y":100},{"x":37,"y":100},{"x":38,"y":100},{"x":39,"y":100},{"x":40,"y":100},{"x":41,"y":100},{"x":42,"y":100},{"x":43,"y":100},{"x":44,"y":100},{"x":45,"y":100},{"x":46,"y":100},{"x":47,"y":100},{"x":48,"y":100},{"x":49,"y":100},{"x":50,"y":100},{"x":51,"y":100},{"x":52,"y":100},{"x":53,"y":100},{"x":54,"y":100},{"x":55,"y":100},{"x":56,"y":100},{"x":57,"y":100},{"x":58,"y":100},{"x":59,"y":100},{"x":60,"y":100},{"x":61,"y":94}],
+          }, {
+            pointRadius: 0,
+            fill: false,
+            backgroundColor: "rgb(0,255,0)",
+            borderColor: "rgb(0,255,0)",
+            borderWidth: 2,
+            label: 'Windows',
+            data: [{"x":0,"y":98.2},{"x":1,"y":99},{"x":2,"y":99},{"x":3,"y":99},{"x":4,"y":99},{"x":5,"y":99},{"x":6,"y":99},{"x":7,"y":99},{"x":8,"y":99},{"x":9,"y":99},{"x":10,"y":99},{"x":11,"y":99},{"x":12,"y":99},{"x":13,"y":99},{"x":14,"y":99},{"x":15,"y":99},{"x":16,"y":98.3},{"x":17,"y":98.7},{"x":18,"y":99},{"x":19,"y":96.2},{"x":20,"y":94.3},{"x":21,"y":94},{"x":22,"y":91},{"x":23,"y":88.4},{"x":24,"y":90.4},{"x":25,"y":96.2},{"x":26,"y":99},{"x":27,"y":99},{"x":28,"y":99},{"x":29,"y":99},{"x":30,"y":97.8},{"x":31,"y":96.4},{"x":32,"y":96.6},{"x":33,"y":96.4},{"x":34,"y":95},{"x":35,"y":94},{"x":36,"y":94.5},{"x":37,"y":93},{"x":38,"y":90},{"x":39,"y":87},{"x":40,"y":85},{"x":41,"y":90},{"x":42,"y":97},{"x":43,"y":99},{"x":44,"y":96.2},{"x":45,"y":94.8},{"x":46,"y":99},{"x":47,"y":99},{"x":48,"y":99},{"x":49,"y":98.2},{"x":50,"y":94.6},{"x":51,"y":94.2},{"x":52,"y":98.33333333333331},{"x":53,"y":97.72727272727272},{"x":54,"y":99},{"x":55,"y":99},{"x":56,"y":98.55555555555556},{"x":57,"y":97.27272727272728},{"x":58,"y":98.3},{"x":59,"y":98.7},{"x":60,"y":98}],
+          },
+        ]
+      },
+    options: {
+      title: {
+        display: true,
+        fontSize: 16,
+        text: 'GPU load',
+      },
+      scales: {
+        xAxes: [{
+          type: 'linear',
+          scaleLabel: {
+            display: true,
+            labelString: ''
+          }
+        }],
+          yAxes: [{
+            type: 'linear',
+            scaleLabel: {
+              display: true,
+              labelString: ''
+            },
+            ticks: {
+              beginAtZero: true,
+              suggestedMax: 100,
+            }
+          }]
+      }
+    }
+    });
+  </script>
+</div></p>
+<h2 id="overall-experience">Overall experience</h2>
+<p>In general I&rsquo;m satisfied with gaming on Linux. Valve did a very good job with Proton and SteamPlay, which accelerated the progress in improving the overall gamer experience.
+In addition with Proton GE and the Lutris launcher I have a very nice gaming station based on Pop_OS!. This distribution has Nvidia graphics drivers in the repository, so installing them is easy.
+The performance is not the same like on Windows, the gap is in most cases a few percent, but that&rsquo;s OK for me.</p>
+<p>Still, not everything is working. If you looks at the <a href="https://www.protondb.com/explore?page=0&amp;sort=fixWanted">&ldquo;Fix Wanted&rdquo; list on ProtonDB</a>, you will see popular games like Valorant, Rainbox Six Siege, Destiny 2, PUBG and Black Desert not working. Recently GTA V broke and it was not playable for a few days. :(</p>
+<p>Some other pain points I see:</p>
+<ul>
+<li>some anti-cheat systems do not work, especially those, which are working on the kernel level. EAC and BattleEye are not supported in Wine. Riot announced it plans to introduce a kernel-level anti-cheat system in League of Legends. In this case, without support of the developer, I don&rsquo;t think we can do much. Putting the compatibility issue aside: I personally don&rsquo;t like the idea of such low-level anti-cheat systems</li>
+<li>missing &ldquo;gamer&rdquo; software - overclocking/motherboard applications, controlling RGB, etc. For streaming there is <a href="https://obsproject.com/">OBS</a>. For FPS meter there is <a href="https://github.com/flightlessmango/MangoHud">MangoHUD</a>. Still, CPU, GPU, motherboard manufacturers don&rsquo;t port their apps to Linux and it&rsquo;s hard to control the RGB or overclock your system. Personally, I don&rsquo;t think they will, because the user base is too small. Hopefully the community will come up will some programs for that.</li>
+</ul>
+<p><em>Edit 23.10.2020: for overclocking there is <a href="https://gitlab.com/corectrl/corectrl">CoreCtrl</a>. Thanks <a href="https://beko.famkos.net/">beko</a> for pointing me to the tool!</em></p>
+<p>If you want to try to switch to Linux, I recommend joining the Discord channel GamingOnLinux (<a href="https://discord.gg/PH66Gm">https://discord.gg/PH66Gm</a>) and following <a href="https://www.gamingonlinux.com/">https://www.gamingonlinux.com/</a>. You can seek there for help or find new mates for multiplayer games.</p>
+<h2 id="read-more">Read more</h2>
+<ul>
+<li><a href="https://store.steampowered.com/curator/33483305-Proton-Compatible/">List of Proton compatible games on Steam</a></li>
+<li><a href="https://flightlessmango.com/">Linux game benchmarks</a></li>
+<li><a href="https://www.protondb.com/">ProtonDB</a></li>
+<li><a href="https://lutris.net/">Lutris webpage</a></li>
+<li><a href="https://github.com/GloriousEggroll/proton-ge-custom">Glorious Eggroll Proton repository</a></li>
+</ul>
+</div>
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="tags/linux">linux</a></li>
+      <li><a href="tags/gaming">gaming</a></li>
+      <li><a href="tags/proton">proton</a></li>
+      <li><a href="tags/lutris">lutris</a></li>
+      <li><a href="tags/glorious-eggroll">glorious eggroll</a></li>
+      <li><a href="tags/steam">steam</a></li>
+    </ul>
+
+
+
+
+
+
+<div class="share-buttons">
+    <a target="_blank" rel="noopener noreferrer" aria-label="share Gaming on Linux? Is it possible in 2020? on twitter"
+        href="https://twitter.com/intent/tweet/?text=Gaming%20on%20Linux%3f%20Is%20it%20possible%20in%202020%3f&amp;url=%2fposts%2f20201012-gaming-on-linux%2f&amp;hashtags=linux%2cgaming%2cproton%2clutris%2cgloriouseggroll%2csteam">
+        <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve">
+            <path
+                d="M449.446,0c34.525,0 62.554,28.03 62.554,62.554l0,386.892c0,34.524 -28.03,62.554 -62.554,62.554l-386.892,0c-34.524,0 -62.554,-28.03 -62.554,-62.554l0,-386.892c0,-34.524 28.029,-62.554 62.554,-62.554l386.892,0Zm-253.927,424.544c135.939,0 210.268,-112.643 210.268,-210.268c0,-3.218 0,-6.437 -0.153,-9.502c14.406,-10.421 26.973,-23.448 36.935,-38.314c-13.18,5.824 -27.433,9.809 -42.452,11.648c15.326,-9.196 26.973,-23.602 32.49,-40.92c-14.252,8.429 -30.038,14.56 -46.896,17.931c-13.487,-14.406 -32.644,-23.295 -53.946,-23.295c-40.767,0 -73.87,33.104 -73.87,73.87c0,5.824 0.613,11.494 1.992,16.858c-61.456,-3.065 -115.862,-32.49 -152.337,-77.241c-6.284,10.881 -9.962,23.601 -9.962,37.088c0,25.594 13.027,48.276 32.95,61.456c-12.107,-0.307 -23.448,-3.678 -33.41,-9.196l0,0.92c0,35.862 25.441,65.594 59.311,72.49c-6.13,1.686 -12.72,2.606 -19.464,2.606c-4.751,0 -9.348,-0.46 -13.946,-1.38c9.349,29.426 36.628,50.728 68.965,51.341c-25.287,19.771 -57.164,31.571 -91.8,31.571c-5.977,0 -11.801,-0.306 -17.625,-1.073c32.337,21.15 71.264,33.41 112.95,33.41Z" />
+        </svg>
+    </a>
+    <a target="_blank" rel="noopener noreferrer" aria-label="share Gaming on Linux? Is it possible in 2020? on linkedin"
+        href="https://www.linkedin.com/shareArticle?mini=true&amp;url=%2fposts%2f20201012-gaming-on-linux%2f&amp;title=Gaming%20on%20Linux%3f%20Is%20it%20possible%20in%202020%3f&amp;summary=Gaming%20on%20Linux%3f%20Is%20it%20possible%20in%202020%3f&amp;source=%2fposts%2f20201012-gaming-on-linux%2f">
+        <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve">
+            <path
+                d="M449.446,0c34.525,0 62.554,28.03 62.554,62.554l0,386.892c0,34.524 -28.03,62.554 -62.554,62.554l-386.892,0c-34.524,0 -62.554,-28.03 -62.554,-62.554l0,-386.892c0,-34.524 28.029,-62.554 62.554,-62.554l386.892,0Zm-288.985,423.278l0,-225.717l-75.04,0l0,225.717l75.04,0Zm270.539,0l0,-129.439c0,-69.333 -37.018,-101.586 -86.381,-101.586c-39.804,0 -57.634,21.891 -67.617,37.266l0,-31.958l-75.021,0c0.995,21.181 0,225.717 0,225.717l75.02,0l0,-126.056c0,-6.748 0.486,-13.492 2.474,-18.315c5.414,-13.475 17.767,-27.434 38.494,-27.434c27.135,0 38.007,20.707 38.007,51.037l0,120.768l75.024,0Zm-307.552,-334.556c-25.674,0 -42.448,16.879 -42.448,39.002c0,21.658 16.264,39.002 41.455,39.002l0.484,0c26.165,0 42.452,-17.344 42.452,-39.002c-0.485,-22.092 -16.241,-38.954 -41.943,-39.002Z" />
+        </svg>
+    </a>
+    <a target="_blank" rel="noopener noreferrer" aria-label="share Gaming on Linux? Is it possible in 2020? on reddit"
+        href="https://reddit.com/submit?url=%2fposts%2f20201012-gaming-on-linux%2f&title=Gaming%20on%20Linux%3f%20Is%20it%20possible%20in%202020%3f">
+        <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve">
+            <path
+                d="M449.446,0c34.525,0 62.554,28.03 62.554,62.554l0,386.892c0,34.524 -28.03,62.554 -62.554,62.554l-386.892,0c-34.524,0 -62.554,-28.03 -62.554,-62.554l0,-386.892c0,-34.524 28.029,-62.554 62.554,-62.554l386.892,0Zm-3.446,265.638c0,-22.964 -18.616,-41.58 -41.58,-41.58c-11.211,0 -21.361,4.457 -28.841,11.666c-28.424,-20.508 -67.586,-33.757 -111.204,-35.278l18.941,-89.121l61.884,13.157c0.756,15.734 13.642,28.29 29.56,28.29c16.407,0 29.706,-13.299 29.706,-29.701c0,-16.403 -13.299,-29.702 -29.706,-29.702c-11.666,0 -21.657,6.792 -26.515,16.578l-69.105,-14.69c-1.922,-0.418 -3.939,-0.042 -5.585,1.036c-1.658,1.073 -2.811,2.761 -3.224,4.686l-21.152,99.438c-44.258,1.228 -84.046,14.494 -112.837,35.232c-7.468,-7.164 -17.589,-11.591 -28.757,-11.591c-22.965,0 -41.585,18.616 -41.585,41.58c0,16.896 10.095,31.41 24.568,37.918c-0.639,4.135 -0.99,8.328 -0.99,12.576c0,63.977 74.469,115.836 166.33,115.836c91.861,0 166.334,-51.859 166.334,-115.836c0,-4.218 -0.347,-8.387 -0.977,-12.493c14.564,-6.47 24.735,-21.034 24.735,-38.001Zm-119.474,108.193c-20.27,20.241 -59.115,21.816 -70.534,21.816c-11.428,0 -50.277,-1.575 -70.522,-21.82c-3.007,-3.008 -3.007,-7.882 0,-10.889c3.003,-2.999 7.882,-3.003 10.885,0c12.777,12.781 40.11,17.317 59.637,17.317c19.522,0 46.86,-4.536 59.657,-17.321c3.016,-2.999 7.886,-2.995 10.885,0.008c3.008,3.011 3.003,7.882 -0.008,10.889Zm-5.23,-48.781c-16.373,0 -29.701,-13.324 -29.701,-29.698c0,-16.381 13.328,-29.714 29.701,-29.714c16.378,0 29.706,13.333 29.706,29.714c0,16.374 -13.328,29.698 -29.706,29.698Zm-160.386,-29.702c0,-16.381 13.328,-29.71 29.714,-29.71c16.369,0 29.689,13.329 29.689,29.71c0,16.373 -13.32,29.693 -29.689,29.693c-16.386,0 -29.714,-13.32 -29.714,-29.693Z" />
+        </svg>
+    </a>
+    <a target="_blank" rel="noopener noreferrer" aria-label="share Gaming on Linux? Is it possible in 2020? on facebook"
+        href="https://facebook.com/sharer/sharer.php?u=%2fposts%2f20201012-gaming-on-linux%2f">
+        <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve">
+            <path
+                d="M449.446,0c34.525,0 62.554,28.03 62.554,62.554l0,386.892c0,34.524 -28.03,62.554 -62.554,62.554l-106.468,0l0,-192.915l66.6,0l12.672,-82.621l-79.272,0l0,-53.617c0,-22.603 11.073,-44.636 46.58,-44.636l36.042,0l0,-70.34c0,0 -32.71,-5.582 -63.982,-5.582c-65.288,0 -107.96,39.569 -107.96,111.204l0,62.971l-72.573,0l0,82.621l72.573,0l0,192.915l-191.104,0c-34.524,0 -62.554,-28.03 -62.554,-62.554l0,-386.892c0,-34.524 28.029,-62.554 62.554,-62.554l386.892,0Z" />
+        </svg>
+    </a>
+    <a target="_blank" rel="noopener noreferrer" aria-label="share Gaming on Linux? Is it possible in 2020? on whatsapp"
+        href="https://api.whatsapp.com/send?text=Gaming%20on%20Linux%3f%20Is%20it%20possible%20in%202020%3f%20-%20%2fposts%2f20201012-gaming-on-linux%2f">
+        <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve">
+            <path
+                d="M449.446,0c34.525,0 62.554,28.03 62.554,62.554l0,386.892c0,34.524 -28.03,62.554 -62.554,62.554l-386.892,0c-34.524,0 -62.554,-28.03 -62.554,-62.554l0,-386.892c0,-34.524 28.029,-62.554 62.554,-62.554l386.892,0Zm-58.673,127.703c-33.842,-33.881 -78.847,-52.548 -126.798,-52.568c-98.799,0 -179.21,80.405 -179.249,179.234c-0.013,31.593 8.241,62.428 23.927,89.612l-25.429,92.884l95.021,-24.925c26.181,14.28 55.659,21.807 85.658,21.816l0.074,0c98.789,0 179.206,-80.413 179.247,-179.243c0.018,-47.895 -18.61,-92.93 -52.451,-126.81Zm-126.797,275.782l-0.06,0c-26.734,-0.01 -52.954,-7.193 -75.828,-20.767l-5.441,-3.229l-56.386,14.792l15.05,-54.977l-3.542,-5.637c-14.913,-23.72 -22.791,-51.136 -22.779,-79.287c0.033,-82.142 66.867,-148.971 149.046,-148.971c39.793,0.014 77.199,15.531 105.329,43.692c28.128,28.16 43.609,65.592 43.594,105.4c-0.034,82.149 -66.866,148.983 -148.983,148.984Zm81.721,-111.581c-4.479,-2.242 -26.499,-13.075 -30.604,-14.571c-4.105,-1.495 -7.091,-2.241 -10.077,2.241c-2.986,4.483 -11.569,14.572 -14.182,17.562c-2.612,2.988 -5.225,3.364 -9.703,1.12c-4.479,-2.241 -18.91,-6.97 -36.017,-22.23c-13.314,-11.876 -22.304,-26.542 -24.916,-31.026c-2.612,-4.484 -0.279,-6.908 1.963,-9.14c2.016,-2.007 4.48,-5.232 6.719,-7.847c2.24,-2.615 2.986,-4.484 4.479,-7.472c1.493,-2.99 0.747,-5.604 -0.374,-7.846c-1.119,-2.241 -10.077,-24.288 -13.809,-33.256c-3.635,-8.733 -7.327,-7.55 -10.077,-7.688c-2.609,-0.13 -5.598,-0.158 -8.583,-0.158c-2.986,0 -7.839,1.121 -11.944,5.604c-4.105,4.484 -15.675,15.32 -15.675,37.364c0,22.046 16.048,43.342 18.287,46.332c2.24,2.99 31.582,48.227 76.511,67.627c10.685,4.615 19.028,7.371 25.533,9.434c10.728,3.41 20.492,2.929 28.209,1.775c8.605,-1.285 26.499,-10.833 30.231,-21.295c3.732,-10.464 3.732,-19.431 2.612,-21.298c-1.119,-1.869 -4.105,-2.99 -8.583,-5.232Z" />
+        </svg>
+    </a>
+    <a target="_blank" rel="noopener noreferrer" aria-label="share Gaming on Linux? Is it possible in 2020? on telegram"
+        href="https://telegram.me/share/url?text=Gaming%20on%20Linux%3f%20Is%20it%20possible%20in%202020%3f&amp;url=%2fposts%2f20201012-gaming-on-linux%2f">
+        <svg version="1.1" xml:space="preserve" viewBox="2 2 28 28">
+            <path
+                d="M26.49,29.86H5.5a3.37,3.37,0,0,1-2.47-1,3.35,3.35,0,0,1-1-2.47V5.48A3.36,3.36,0,0,1,3,3,3.37,3.37,0,0,1,5.5,2h21A3.38,3.38,0,0,1,29,3a3.36,3.36,0,0,1,1,2.46V26.37a3.35,3.35,0,0,1-1,2.47A3.38,3.38,0,0,1,26.49,29.86Zm-5.38-6.71a.79.79,0,0,0,.85-.66L24.73,9.24a.55.55,0,0,0-.18-.46.62.62,0,0,0-.41-.17q-.08,0-16.53,6.11a.59.59,0,0,0-.41.59.57.57,0,0,0,.43.52l4,1.24,1.61,4.83a.62.62,0,0,0,.63.43.56.56,0,0,0,.4-.17L16.54,20l4.09,3A.9.9,0,0,0,21.11,23.15ZM13.8,20.71l-1.21-4q8.72-5.55,8.78-5.55c.15,0,.23,0,.23.16a.18.18,0,0,1,0,.06s-2.51,2.3-7.52,6.8Z" />
+        </svg>
+    </a>
+</div>
+
+  </footer><div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "myhightech-blog" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</article>
+    </main><footer class="footer">
+    <span>&copy; 2021 <a href="">myhightech.org</a></span>
+    <span>&middot;</span>
+    <span>Powered by <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo️️</a>️</span>
+    <span>&middot;</span>
+    <span>Theme️ <a href="https://git.io/hugopapermod" rel="noopener" target="_blank">PaperMod</a></span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top">
+    <button class="top-link" id="top-link" type="button">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6">
+            <path d="M12 6H0l6-6z" /></svg>
+    </button>
+</a>
+
+
+<script src="/assets/js/highlight.min.727bc06f35142445e1ca4dbf0c258372d440dfd30ea831e99dbe7bf9e54d11da.js" integrity="sha256-cnvAbzUUJEXhyk2/DCWDctRA39MOqDHpnb57&#43;eVNEdo="></script>
+<script>hljs.initHighlightingOnLoad();</script>
+<script>
+    window.onload = function () {
+        if (localStorage.getItem("menu-scroll-position")) {
+            document.getElementById('menu').scrollLeft = localStorage.getItem("menu-scroll-position");
+        }
+    }
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+
+            document.querySelector(this.getAttribute("href")).scrollIntoView({
+                behavior: "smooth"
+            });
+        });
+    });
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+    function menu_on_scroll() {
+        localStorage.setItem("menu-scroll-position", document.getElementById('menu').scrollLeft);
+    }
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+</script>
+
+</body>
+
+</html>

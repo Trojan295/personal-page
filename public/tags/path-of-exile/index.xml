@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>path of exile on myhightech.org</title>
+    <link>/tags/path-of-exile/</link>
+    <description>Recent content in path of exile on myhightech.org</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 31 Oct 2020 00:00:00 +0000</lastBuildDate><atom:link href="/tags/path-of-exile/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Pre-compile shader cache in Steam. How to improve performance for some games</title>
+      <link>/posts/20201031-steam-shader-precompile/</link>
+      <pubDate>Sat, 31 Oct 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/20201031-steam-shader-precompile/</guid>
+      <description>In some shader heavy OpenGL and Vulkan games you can experience shuttering, when running the game for the first time. An example is Overwatch or Path of Exile.
+What&amp;rsquo;s happening in the first minutes of the game is shader cache pre-compilation. It&amp;rsquo;s a process of compiling shader code into GPU instructions .The final cache code is dependent on the specific GPU you have, so this cannot be baked into the game files.</description>
+    </item>
+    
+  </channel>
+</rss>

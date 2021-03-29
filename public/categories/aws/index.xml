@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>AWS on myhightech.org</title>
+    <link>/categories/aws/</link>
+    <description>Recent content in AWS on myhightech.org</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 24 Sep 2020 00:00:00 +0000</lastBuildDate><atom:link href="/categories/aws/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Build a static web page with Hugo and Amplify</title>
+      <link>/posts/build-page-with-hugo/</link>
+      <pubDate>Thu, 24 Sep 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/build-page-with-hugo/</guid>
+      <description>Static website hosting You most probably heard about static website hosting, static website generators and Github Pages or Netlify. After the boom of web technologies the backends got heavier and heavier, page loading times increased multiple times. You wanted to create a blog or portfolio website and you had to:
+ buy a server/VPS buy/install a database buy a domain install the required backend software and configure it ensure the system is patched make backups  You either made this by yourself or bought a managed solution from some provider.</description>
+    </item>
+    
+    <item>
+      <title>Using AWS SAM and CodeDeploy to deploy serverless applications</title>
+      <link>/posts/aws-sam-codedeploy/</link>
+      <pubDate>Fri, 18 Sep 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/aws-sam-codedeploy/</guid>
+      <description>AWS Serverless Application Model I was recently preparing for my AWS DevOps Engineer exam and I wanted to give AWS Serverless Application Model a try. AWS Serverless Application Model is a framework to build and deploy serverless application on AWS using Lambda, API Gateway and DynamoDB.
+Under the hood it is a AWS CloudFormation transform, which expands the CloudFormation syntax and adds additional resources under the AWS::Serverless namespace. During the template provisioning those resources get expanded to basic CloudFormation resources.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>steam on myhightech.org</title>
+    <link>/tags/steam/</link>
+    <description>Recent content in steam on myhightech.org</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 31 Oct 2020 00:00:00 +0000</lastBuildDate><atom:link href="/tags/steam/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Pre-compile shader cache in Steam. How to improve performance for some games</title>
+      <link>/posts/20201031-steam-shader-precompile/</link>
+      <pubDate>Sat, 31 Oct 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/20201031-steam-shader-precompile/</guid>
+      <description>In some shader heavy OpenGL and Vulkan games you can experience shuttering, when running the game for the first time. An example is Overwatch or Path of Exile.
+What&amp;rsquo;s happening in the first minutes of the game is shader cache pre-compilation. It&amp;rsquo;s a process of compiling shader code into GPU instructions .The final cache code is dependent on the specific GPU you have, so this cannot be baked into the game files.</description>
+    </item>
+    
+    <item>
+      <title>Gaming on Linux? Is it possible in 2020?</title>
+      <link>/posts/20201012-gaming-on-linux/</link>
+      <pubDate>Mon, 19 Oct 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/20201012-gaming-on-linux/</guid>
+      <description>Is gaming on Linux possible? tldr; Yes, it is! In many cases the user experience is like on Windows!
+The biggest issue I had with switching completely to a Linux based OS were games. Game studios do not really care about Linux support, as the market share for this OS is around 2%. Moreover, OpenGL, the graphics library supported in Linux, is not developer friendly, so they did not want to use it.</description>
+    </item>
+    
+  </channel>
+</rss>
