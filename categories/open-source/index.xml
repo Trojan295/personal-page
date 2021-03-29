@@ -1,32 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Open source on myhightech.org</title>
-    <link>/categories/open-source/</link>
-    <description>Recent content in Open source on myhightech.org</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <lastBuildDate>Mon, 28 Dec 2020 00:00:00 +0000</lastBuildDate><atom:link href="/categories/open-source/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>My simple The Elder Scrolls Online addon manager in Rust</title>
-      <link>/posts/20201228-eso-addon-manager/</link>
-      <pubDate>Mon, 28 Dec 2020 00:00:00 +0000</pubDate>
-      
-      <guid>/posts/20201228-eso-addon-manager/</guid>
-      <description>I was missing a addon manager for ESO UI on Linux. There is Minion, which I tried to run in the Wine prefix of my ESO installation, but it crashed too often.
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Open source on myhightech.org</title><link>/categories/open-source/</link><description>Recent content in Open source on myhightech.org</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Mon, 28 Dec 2020 00:00:00 +0000</lastBuildDate><atom:link href="/categories/open-source/index.xml" rel="self" type="application/rss+xml"/><item><title>My simple The Elder Scrolls Online addon manager in Rust</title><link>/posts/20201228-eso-addon-manager/</link><pubDate>Mon, 28 Dec 2020 00:00:00 +0000</pubDate><guid>/posts/20201228-eso-addon-manager/</guid><description>I was missing a addon manager for ESO UI on Linux. There is Minion, which I tried to run in the Wine prefix of my ESO installation, but it crashed too often.
 What I expected from the addon manager was:
- working on Linux command line interface easy to backup the addon configuration  So I created eso-addons. It uses a single configuration file for storing the addon configuration, so I can just backup this config file and use it to restore my addons.</description>
-    </item>
-    
-    <item>
-      <title>Build a static web page with Hugo and Amplify</title>
-      <link>/posts/build-page-with-hugo/</link>
-      <pubDate>Thu, 24 Sep 2020 00:00:00 +0000</pubDate>
-      
-      <guid>/posts/build-page-with-hugo/</guid>
-      <description>Static website hosting You most probably heard about static website hosting, static website generators and Github Pages or Netlify. After the boom of web technologies the backends got heavier and heavier, page loading times increased multiple times. You wanted to create a blog or portfolio website and you had to:
- buy a server/VPS buy/install a database buy a domain install the required backend software and configure it ensure the system is patched make backups  You either made this by yourself or bought a managed solution from some provider.</description>
-    </item>
-    
-  </channel>
-</rss>
+working on Linux command line interface easy to backup the addon configuration So I created eso-addons. It uses a single configuration file for storing the addon configuration, so I can just backup this config file and use it to restore my addons.</description></item><item><title>Build a static web page with Hugo and Amplify</title><link>/posts/build-page-with-hugo/</link><pubDate>Thu, 24 Sep 2020 00:00:00 +0000</pubDate><guid>/posts/build-page-with-hugo/</guid><description>Static website hosting You most probably heard about static website hosting, static website generators and Github Pages or Netlify. After the boom of web technologies the backends got heavier and heavier, page loading times increased multiple times. You wanted to create a blog or portfolio website and you had to:
+buy a server/VPS buy/install a database buy a domain install the required backend software and configure it ensure the system is patched make backups You either made this by yourself or bought a managed solution from some provider.</description></item></channel></rss>

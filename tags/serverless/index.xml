@@ -1,21 +1,2 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>serverless on myhightech.org</title>
-    <link>/tags/serverless/</link>
-    <description>Recent content in serverless on myhightech.org</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <lastBuildDate>Fri, 18 Sep 2020 00:00:00 +0000</lastBuildDate><atom:link href="/tags/serverless/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Using AWS SAM and CodeDeploy to deploy serverless applications</title>
-      <link>/posts/aws-sam-codedeploy/</link>
-      <pubDate>Fri, 18 Sep 2020 00:00:00 +0000</pubDate>
-      
-      <guid>/posts/aws-sam-codedeploy/</guid>
-      <description>AWS Serverless Application Model I was recently preparing for my AWS DevOps Engineer exam and I wanted to give AWS Serverless Application Model a try. AWS Serverless Application Model is a framework to build and deploy serverless application on AWS using Lambda, API Gateway and DynamoDB.
-Under the hood it is a AWS CloudFormation transform, which expands the CloudFormation syntax and adds additional resources under the AWS::Serverless namespace. During the template provisioning those resources get expanded to basic CloudFormation resources.</description>
-    </item>
-    
-  </channel>
-</rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>serverless on myhightech.org</title><link>/tags/serverless/</link><description>Recent content in serverless on myhightech.org</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Fri, 18 Sep 2020 00:00:00 +0000</lastBuildDate><atom:link href="/tags/serverless/index.xml" rel="self" type="application/rss+xml"/><item><title>Using AWS SAM and CodeDeploy to deploy serverless applications</title><link>/posts/aws-sam-codedeploy/</link><pubDate>Fri, 18 Sep 2020 00:00:00 +0000</pubDate><guid>/posts/aws-sam-codedeploy/</guid><description>AWS Serverless Application Model I was recently preparing for my AWS DevOps Engineer exam and I wanted to give AWS Serverless Application Model a try. AWS Serverless Application Model is a framework to build and deploy serverless application on AWS using Lambda, API Gateway and DynamoDB.
+Under the hood it is a AWS CloudFormation transform, which expands the CloudFormation syntax and adds additional resources under the AWS::Serverless namespace. During the template provisioning those resources get expanded to basic CloudFormation resources.</description></item></channel></rss>
