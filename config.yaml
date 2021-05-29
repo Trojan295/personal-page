@@ -1,0 +1,66 @@
+languageCode: "en-us"
+title: "myhightech.org"
+theme: "papermod"
+staticDir: ["static"]
+googleAnalytics: "UA-44256981-9"
+disqusShortname: "myhightech-blog"
+
+outputs:
+  home:
+    - HTML
+    - JSON
+
+markup:
+  goldmark:
+    renderer:
+      unsafe: true
+
+params:
+  comments: true
+  ShowShareButtons: true
+  ShowReadingTime: true
+  ShowToc: true
+  TocOpen: true
+
+  homeInfoParams:
+    Title: "My name is Damian Czaja"
+    Content: "A blog about PCs, programming, open source and more"
+
+  socialIcons:
+    - name: github
+      url: https://github.com/trojan295/
+    - name: linkedin
+      url: https://www.linkedin.com/in/damian-czaja-01418a104/
+    - name: steam
+      url: https://steamcommunity.com/id/trojan295/
+    - name: email
+      url: mailto://trojan295@protonmail.com
+
+menu:
+  main:
+    - name: Blog
+      weight: 1
+      url: /posts/
+    - name: Categories
+      weight: 5
+      url: /categories/
+    - name: Search
+      weight: 8
+      url: /search
+    - name: About me
+      weight: 10
+      url: /about/
+
+markup:
+  highlight:
+    anchorLineNos: false
+    codeFences: true
+    guessSyntax: false
+    hl_Lines: ""
+    lineAnchors: ""
+    lineNoStart: 1
+    lineNos: false
+    lineNumbersInTable: true
+    noClasses: true
+    style: "monokai"
+    tabWidth: 2

@@ -13,6 +13,7 @@ categories = [
     "Linux",
     "Gaming",
 ]
+ShowToc = false
 +++
 
 In some shader heavy OpenGL and Vulkan games you can experience shuttering, when running the game for the first time. An example is Overwatch or Path of Exile.

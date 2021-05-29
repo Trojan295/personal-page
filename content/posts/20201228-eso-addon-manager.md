@@ -12,6 +12,7 @@ categories = [
     "Gaming",
     "Open source",
 ]
+ShowToc = false
 +++
 
 <script id="asciicast-381564" src="https://asciinema.org/a/381564.js" async></script>

@@ -73,7 +73,7 @@ hugo
 ```
 This will create a directory `public` with all the output files, which can be uploaded to a static website hosting.
 
-# Hosting using AWS Amplify
+## Hosting using AWS Amplify
 
 AWS Amplify is a framework to build web and mobile apps, similar to Google Firebase. In my case I just used it's ability to host static sites and provide a simple CI/CD pipeline to deploy new static files in case a new commit is made.
 

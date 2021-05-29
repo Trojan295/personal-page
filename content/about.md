@@ -4,6 +4,8 @@ slug = "about"
 hideMeta = true
 disableShare = true
 comments = false
+searchHidden = true
+ShowToc = false
 +++
 
 {{<
