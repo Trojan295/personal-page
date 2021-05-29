@@ -127,34 +127,34 @@ My PC specs are:
 
 I'm playing ESO on Lutris. It works without problems, there is a significant frame drop of around 20-30%, but the game is still enjoyable.
 
-{{< chart id="eso_fps" title="FPS" data_file="eso_ultra_w1440p_fps" >}}
-{{< chart id="eso_cpu" title="CPU load" data_file="eso_ultra_w1440p_cpu_load" ymax="100">}}
-{{< chart id="eso_gpu" title="GPU load" data_file="eso_ultra_w1440p_gpu_load" ymax="100">}}
+{{< chart id="eso_fps" xlabel="Time" ylabel="Framerate" title="FPS" dir="20201012-gaming-on-linux" file="eso_ultra_w1440p_fps" >}}
+{{< chart id="eso_cpu" xlabel="Time" ylabel="%" title="CPU load" dir="20201012-gaming-on-linux" file="eso_ultra_w1440p_cpu_load" ymax="100">}}
+{{< chart id="eso_gpu" xlabel="Time" ylabel="%" title="GPU load" dir="20201012-gaming-on-linux" file="eso_ultra_w1440p_gpu_load" ymax="100">}}
 
 ### Assassins Creed: Odyssey, Ultra, 3440x1440p
 
 This one was surprising for me! On my PC the built-in benchmark shows 10% higher framerates on Linux! I verified the graphics setting and they were the same on both OSes. I'm not really sure how this is possible.
 
-{{< chart id="aso_fps" title="FPS" data_file="assassins_creed_odyssey_ultra_w1440p_fps" >}}
-{{< chart id="aso_cpu" title="CPU load" data_file="assassins_creed_odyssey_ultra_w1440p_cpu_load" ymax="100">}}
-{{< chart id="aso_gpu" title="GPU load" data_file="assassins_creed_odyssey_ultra_w1440p_gpu_load" ymax="100">}}
+{{< chart id="aso_fps" xlabel="Time" ylabel="Framerate" title="FPS" color="#ffffff" dir="20201012-gaming-on-linux" file="assassins_creed_odyssey_ultra_w1440p_fps" >}}
+{{< chart id="aso_cpu" xlabel="Time" ylabel="%" title="CPU load" dir="20201012-gaming-on-linux" file="assassins_creed_odyssey_ultra_w1440p_cpu_load" ymax="100">}}
+{{< chart id="aso_gpu" xlabel="Time" ylabel="%" title="GPU load" dir="20201012-gaming-on-linux" file="assassins_creed_odyssey_ultra_w1440p_gpu_load" ymax="100">}}
 
 ### Shadow of the Tomb Raider, Ultra, 3440x1440p
 
 This one has actually a native Linux port. When playing, I get a few more frames compared to running on Windows with DirectX 11. What I noticed here, the available display settings are different in each systems. On Linux there are no HDR and stereoscopy. IMO, nothing really important.
 
-{{< chart id="sottr_fps" title="FPS" data_file="sottd_ultra_w1440p_fps" >}}
-{{< chart id="sottr_cpu" title="CPU load" data_file="sottd_ultra_w1440p_cpu_load" ymax="100">}}
-{{< chart id="sottr_gpu" title="GPU load" data_file="sottd_ultra_w1440p_gpu_load" ymax="100">}}
+{{< chart id="sottr_fps" xlabel="Time" ylabel="Framerate" title="FPS" dir="20201012-gaming-on-linux" file="sottd_ultra_w1440p_fps" >}}
+{{< chart id="sottr_cpu" xlabel="Time" ylabel="%" title="CPU load" dir="20201012-gaming-on-linux" file="sottd_ultra_w1440p_cpu_load" ymax="100">}}
+{{< chart id="sottr_gpu" xlabel="Time" ylabel="%" title="GPU load" dir="20201012-gaming-on-linux" file="sottd_ultra_w1440p_gpu_load" ymax="100">}}
 
 ### Diablo III, Highest, 3440x1440p
 
 Works without any problems, with a 20% FPS loss to Windows.
 I installed Battle.net through Lutris and then Diablo III in the launcher.
 
-{{< chart id="diablo3_fps" title="FPS" data_file="diablo_iii_ultra_w1440p_fps" >}}
-{{< chart id="diablo3_cpu" title="CPU load" data_file="diablo_iii_ultra_w1440p_cpu_load" ymax="100">}}
-{{< chart id="diablo3_gpu" title="GPU load" data_file="diablo_iii_ultra_w1440p_gpu_load" ymax="100">}}
+{{< chart id="diablo3_fps" xlabel="Time" ylabel="Framerate" title="FPS" dir="20201012-gaming-on-linux" file="diablo_iii_ultra_w1440p_fps" >}}
+{{< chart id="diablo3_cpu" xlabel="Time" ylabel="%" title="CPU load" dir="20201012-gaming-on-linux" file="diablo_iii_ultra_w1440p_cpu_load" ymax="100">}}
+{{< chart id="diablo3_gpu" xlabel="Time" ylabel="%" title="GPU load" dir="20201012-gaming-on-linux" file="diablo_iii_ultra_w1440p_gpu_load" ymax="100">}}
 
 ### Overwatch, Epic, 3440x1440p
 
@@ -162,9 +162,9 @@ Like Diablo III, I installed it using Lutris. The performance is slightly better
 
 One thing to note is, that when you start the game it's going to compile some shaders and during that, the performance is much lower and there is a lot of clipping. You have to wait a few minutes, till this completes.
 
-{{< chart id="ow_fps" title="FPS" data_file="overwatch_epic_w1440p_fps" >}}
-{{< chart id="ow_cpu" title="CPU load" data_file="overwatch_epic_w1440p_cpu_load" ymax="100">}}
-{{< chart id="ow_gpu" title="GPU load" data_file="overwatch_epic_w1440p_gpu_load" ymax="100">}}
+{{< chart id="ow_fps" xlabel="Time" ylabel="Framerate" title="FPS" dir="20201012-gaming-on-linux" file="overwatch_epic_w1440p_fps" >}}
+{{< chart id="ow_cpu" xlabel="Time" ylabel="%" title="CPU load" dir="20201012-gaming-on-linux" file="overwatch_epic_w1440p_cpu_load" ymax="100">}}
+{{< chart id="ow_gpu" xlabel="Time" ylabel="%" title="GPU load" dir="20201012-gaming-on-linux" file="overwatch_epic_w1440p_gpu_load" ymax="100">}}
 
 ### Company of Heroes 2, Highest, 3440x1440p
 
@@ -172,25 +172,25 @@ This game has a few problems, but is playable. It has a Linux native version, bu
 
 The framerate loss is huge, around 50%, but it's above 30 FPS, so playable for an RTS game.
 
-{{< chart id="coh_fps" title="FPS" data_file="company_of_heroes_2_ultra_w1440p_fps" >}}
-{{< chart id="coh_cpu" title="CPU load" data_file="company_of_heroes_2_ultra_w1440p_cpu_load" ymax="100">}}
-{{< chart id="coh_gpu" title="GPU load" data_file="company_of_heroes_2_ultra_w1440p_gpu_load" ymax="100">}}
+{{< chart id="coh_fps" xlabel="Time" ylabel="Framerate" title="FPS" dir="20201012-gaming-on-linux" file="company_of_heroes_2_ultra_w1440p_fps" >}}
+{{< chart id="coh_cpu" xlabel="Time" ylabel="%" title="CPU load" dir="20201012-gaming-on-linux" file="company_of_heroes_2_ultra_w1440p_cpu_load" ymax="100">}}
+{{< chart id="coh_gpu" xlabel="Time" ylabel="%" title="GPU load" dir="20201012-gaming-on-linux" file="company_of_heroes_2_ultra_w1440p_gpu_load" ymax="100">}}
 
 ### DOOM, Ultra, 3440x1440p
 
 Although DOOM hasn't a native port, it uses Vulkan as the graphics library, which explains comparable framerates on Windows and Linux. Playable without any problems.
 
-{{< chart id="doom_fps" title="FPS" data_file="doom_ultra_w1440p_fps" >}}
-{{< chart id="doom_cpu" title="CPU load" data_file="doom_ultra_w1440p_cpu_load" ymax="100">}}
-{{< chart id="doom_gpu" title="GPU load" data_file="doom_ultra_w1440p_gpu_load" ymax="100">}}
+{{< chart id="doom_fps" xlabel="Time" ylabel="Framerate" title="FPS" dir="20201012-gaming-on-linux" file="doom_ultra_w1440p_fps" >}}
+{{< chart id="doom_cpu" xlabel="Time" ylabel="%" title="CPU load" dir="20201012-gaming-on-linux" file="doom_ultra_w1440p_cpu_load" ymax="100">}}
+{{< chart id="doom_gpu" xlabel="Time" ylabel="%" title="GPU load" dir="20201012-gaming-on-linux" file="doom_ultra_w1440p_gpu_load" ymax="100">}}
 
 ### Warhammer 2: Total War
 
 This has a native Linux port. Performance in the benchmark is similar, with a slight advantage on Windows.
 
-{{< chart id="wh2tw_fps" title="FPS" data_file="whiitw_ultra_w1440p_fps" >}}
-{{< chart id="wh2tw_cpu" title="CPU load" data_file="whiitw_ultra_w1440p_cpu_load" ymax="100">}}
-{{< chart id="wh2tw_gpu" title="GPU load" data_file="whiitw_ultra_w1440p_gpu_load" ymax="100">}}
+{{< chart id="wh2tw_fps" xlabel="Time" ylabel="Framerate" title="FPS" dir="20201012-gaming-on-linux" file="whiitw_ultra_w1440p_fps" >}}
+{{< chart id="wh2tw_cpu" xlabel="Time" ylabel="%" title="CPU load" dir="20201012-gaming-on-linux" file="whiitw_ultra_w1440p_cpu_load" ymax="100">}}
+{{< chart id="wh2tw_gpu" xlabel="Time" ylabel="%" title="GPU load" dir="20201012-gaming-on-linux" file="whiitw_ultra_w1440p_gpu_load" ymax="100">}}
 
 ## Overall experience
 
