@@ -1,5 +1,6 @@
 languageCode: "en-us"
 title: "myhightech.org"
+absLangURL: "https://myhightech.org"
 theme: "papermod"
 staticDir: ["static"]
 googleAnalytics: "UA-44256981-9"
