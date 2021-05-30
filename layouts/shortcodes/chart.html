@@ -4,7 +4,8 @@
   <canvas id="{{ .Get "id"}}" width="{{ .Get "width" }}" height="{{ .Get "height" }}"></canvas>
   <script>
     var ctx = document.getElementById({{ .Get "id" }}).getContext('2d');
-    var myChart = new Chart.Line(ctx, {
+    var myChart = new Chart(ctx, {
+      {{ if .Params.type}}type: '{{ .Params.type}}',{{ else }}type: 'line',{{ end }}
       data: {
         datasets: [
   {{range (index $data.datasets)}} {
@@ -19,30 +20,30 @@
         ]
       },
     options: {
-      title: {
-        display: true,
-        fontSize: 16,
-        text: '{{ .Params.title }}',
+      plugins: {
+        title: {
+          display: true,
+          fontSize: 16,
+          text: '{{ .Params.title }}',
+        },
       },
       scales: {
-        xAxes: [{
+        xAsix: {
           type: 'linear',
-          scaleLabel: {
+          title: {
             display: true,
-            labelString: '{{ .Params.xlabel }}'
+            text: '{{ .Params.xlabel }}'
           }
-        }],
-          yAxes: [{
-            type: 'linear',
-            scaleLabel: {
-              display: true,
-              labelString: '{{ .Params.ylabel }}'
-            },
-            ticks: {
-              beginAtZero: true,{{ if .Params.ymax }}
-              suggestedMax: 100,{{ end }}
-            }
-          }]
+        },
+        yAxis: {
+          type: 'linear',
+          title: {
+            display: true,
+            text: '{{ .Params.ylabel }}'
+          },
+          min: 0,
+          {{ if .Params.ymax }}suggestedMax: {{ .Params.ymax }},{{ end }}
+        }
       }
     }
     });

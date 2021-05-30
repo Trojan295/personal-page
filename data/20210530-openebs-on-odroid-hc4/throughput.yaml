@@ -1,0 +1,27 @@
+type: bar
+data:
+  labels:
+    - Rand read/write
+    - Sequential read
+  datasets:
+    - label: Local PV Device
+      backgroundColor: rgb(255, 51, 0)
+      data: [8.11, 131.6]
+    - label: Jiva
+      backgroundColor: rgb(51, 153, 255)
+      data: [5.04, 21.3]
+    - label: cStor
+      backgroundColor: rgb(153, 255, 51)
+      data: [4.98, 6.94]
+
+options:
+  plugins:
+    title:
+      display: true
+      text: Throughput
+
+  scales:
+    yAxis:
+      title:
+        display: true
+        text: "MB/s"

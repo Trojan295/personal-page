@@ -1,0 +1,21 @@
+type: bar
+data:
+  labels:
+    - Rand read/write
+    - Sequential read
+  datasets:
+    - label: Local PV Device
+      backgroundColor: rgb(255, 51, 0)
+      data: [130, 6707]
+    - label: Jiva
+      backgroundColor: rgb(51, 153, 255)
+      data: [130,703]
+    - label: cStor
+      backgroundColor: rgb(153, 255, 51)
+      data: [237, 481]
+
+options:
+  plugins:
+    title:
+      display: true
+      text: IOPS
