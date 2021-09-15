@@ -28,7 +28,9 @@ Languages supported currently are TypeScript, JavaScript, Python and Go. This ma
 
 I tried to deploy a few common infrastructure parts, so I can compare Pulumi to Terraform and CloudFormation.
  
-## Deploying a simple AWS VPC
+## Cases
+
+### Deploying a simple AWS VPC
 
 To start off, I always need a VPC on AWS. So I need to create:
 - VPC
@@ -61,7 +63,7 @@ To my surprise, I was not able to find anything in Go! I found [Pulumi Crosswalk
 
 I decided to try to modularize the code on my own.
 
-# Creating an AWS VPC Pulumi module
+### Creating an AWS VPC Pulumi module
 
 As I was not able to find any library, which would simplify my VPC code, I prepared a Go package for a complete VPC module. The code is [here](https://github.com/Trojan295/pulumi-poc/blob/master/pkg/vpc/vpc.go). It creates a VPC, subnets, Internet gateway and NAT gateway and can be used the following way:
 
@@ -90,7 +92,7 @@ func main() {
 That looks a lot better to me and is kinda similar to how modules are used in Terraform.
 I updated my VPC project to use my VPC module. It's available [here](https://github.com/Trojan295/pulumi-poc/tree/master/projects/vpc-modular).
 
-## Host an application in the VPC
+### Host an application in the VPC
 
 Having a VPC I can move to the next part: deploying some application. I took a really basic example: EC2 instances in an Autoscaling Group behind an Elastic LoadBalancer. I wanted to use this exercise to try out another feature of Pulumi: Stack references.
 Such pattern is very common in Terraform and CloudFormation. You keep a VPC in one Terraform state and then use a remote state data source to use it in another. It makes it easier to manage large cloud deployments.
