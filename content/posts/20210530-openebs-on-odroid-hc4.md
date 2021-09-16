@@ -10,7 +10,8 @@ tags = [
 ]
 categories = [
     "Kubernetes",
-    "Open source"
+    "Open source",
+    "DevOps"
 ]
 +++
 

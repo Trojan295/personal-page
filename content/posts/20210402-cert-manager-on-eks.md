@@ -11,7 +11,8 @@ tags = [
 ]
 categories = [
     "AWS",
-    "Kubernetes"
+    "Kubernetes",
+    "DevOps"
 ]
 +++
 

@@ -7,11 +7,13 @@ tags = [
   "iac",
   "aws",
   "cloud",
-  "golang"
+  "golang",
+	"terraform"
 ]
 categories = [
   "Open source",
-  "AWS"
+  "AWS",
+	"DevOps"
 ]
 +++
 

@@ -22,6 +22,7 @@ params:
   ShowReadingTime: true
   ShowToc: true
   TocOpen: true
+  ShowPostNavLinks: true
 
   homeInfoParams:
     Title: "My name is Damian Czaja"
