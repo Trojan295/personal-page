@@ -3,11 +3,11 @@
 <meta http-equiv=x-ua-compatible content="IE=edge">
 <meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no">
 <meta name=robots content="index, follow">
-<title>Categories | myhightech.org</title>
+<title>DevOps | myhightech.org</title>
 <meta name=keywords content>
 <meta name=description content>
 <meta name=author content>
-<link rel=canonical href=https://myhightech.org/categories/>
+<link rel=canonical href=https://myhightech.org/categories/devops/>
 <link href=/assets/css/stylesheet.min.2f1d1532323fdd4bcf6378d93a8930530619e0bba93019043bd8378671faf049.css integrity="sha256-Lx0VMjI/3UvPY3jZOokwUwYZ4LupMBkEO9g3hnH68Ek=" rel="preload stylesheet" as=style>
 <link rel=icon href=https://myhightech.org/favicon.ico>
 <link rel=icon type=image/png sizes=16x16 href=https://myhightech.org/favicon-16x16.png>
@@ -17,16 +17,16 @@
 <meta name=theme-color content="#2e2e33">
 <meta name=msapplication-TileColor content="#2e2e33">
 <meta name=generator content="Hugo 0.88.1">
-<link rel=alternate type=application/rss+xml href=https://myhightech.org/categories/index.xml>
+<link rel=alternate type=application/rss+xml href=https://myhightech.org/categories/devops/index.xml>
 <script src=/js/chart.3.3.1.min.js></script>
 <script type=application/javascript>var doNotTrack=!1;doNotTrack||(window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga('create','UA-44256981-9','auto'),ga('send','pageview'))</script>
 <script async src=https://www.google-analytics.com/analytics.js></script>
-<meta property="og:title" content="Categories">
+<meta property="og:title" content="DevOps">
 <meta property="og:description" content>
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://myhightech.org/categories/">
+<meta property="og:url" content="https://myhightech.org/categories/devops/">
 <meta name=twitter:card content="summary">
-<meta name=twitter:title content="Categories">
+<meta name=twitter:title content="DevOps">
 <meta name=twitter:description content>
 </head>
 <body class=list id=top>
@@ -52,7 +52,7 @@
 </li>
 <li>
 <a href=https://myhightech.org/categories/ title=Categories>
-<span class=active>Categories</span>
+<span>Categories</span>
 </a>
 </li>
 <li>
@@ -69,28 +69,49 @@
 </header>
 <main class=main>
 <header class=page-header>
-<h1>Categories</h1>
+<h1>DevOps</h1>
 </header>
-<ul class=terms-tags>
-<li>
-<a href=https://myhightech.org/categories/aws/>AWS <sup><strong><sup>4</sup></strong></sup> </a>
-</li>
-<li>
-<a href=https://myhightech.org/categories/devops/>DevOps <sup><strong><sup>3</sup></strong></sup> </a>
-</li>
-<li>
-<a href=https://myhightech.org/categories/gaming/>Gaming <sup><strong><sup>3</sup></strong></sup> </a>
-</li>
-<li>
-<a href=https://myhightech.org/categories/kubernetes/>Kubernetes <sup><strong><sup>2</sup></strong></sup> </a>
-</li>
-<li>
-<a href=https://myhightech.org/categories/linux/>Linux <sup><strong><sup>2</sup></strong></sup> </a>
-</li>
-<li>
-<a href=https://myhightech.org/categories/open-source/>Open source <sup><strong><sup>4</sup></strong></sup> </a>
-</li>
-</ul>
+<article class="post-entry tag-entry">
+<header class=entry-header>
+<h2>
+Learning stuff: Pulumi for AWS
+</h2>
+</header>
+<section class=entry-content>
+<p>I decided to make a habit of learning at least one new tool, technology every month and prepare a blog post about it. In recent months I focused mostly on the stuff I was dealing at work. Right now I’m reading “Atomic Habits” by James Clear, so that’s the first habit I would like to create. :)
+What is Pulumi This month I decided to check out Pulumi. Pulumi is an open-source infrastructure as code tool....</p>
+</section>
+<footer class=entry-footer>September 15, 2021&nbsp;·&nbsp;6 min
+</footer>
+<a class=entry-link aria-label="post link to Learning stuff: Pulumi for AWS" href=https://myhightech.org/posts/20210915-pulumi-check/></a>
+</article>
+<article class="post-entry tag-entry">
+<header class=entry-header>
+<h2>
+Running OpenEBS on a Odroid HC4 cluster
+</h2>
+</header>
+<section class=entry-content>
+<p>I bought recently two Odroid HC4 microcomputers and 4 Seagate Barracuda 2 TB HDD with the intention to farm Chia on them. The HC4 platform used on ARM64 processor and has two SATA 3, which can be used to plug HDD or SSD drive to it. At work, we are checking out currently the OpenEBS project, which allows to build a Container Attached Storage for Kubernetes using local disks. I was curious, if I could use OpenEBS on those HC4 devices and create a CAS for a Kubernetes home lab....</p>
+</section>
+<footer class=entry-footer>May 30, 2021&nbsp;·&nbsp;8 min
+</footer>
+<a class=entry-link aria-label="post link to Running OpenEBS on a Odroid HC4 cluster" href=https://myhightech.org/posts/20210530-openebs-on-odroid-hc4/></a>
+</article>
+<article class="post-entry tag-entry">
+<header class=entry-header>
+<h2>
+Integrating Cert Manager with Route53 on EKS
+</h2>
+</header>
+<section class=entry-content>
+<p>Integrating Cert Manager with Route53 on EKS In this article I will show, how you can automatically get Let’s Encrypt SSL certificates using Cert Manager. We will leverage the DNS01 challenge and use a Route53 Hosted Zone to answer the challenge. The Cert Manager will use an EKS IAM Role Service Account, which follows AWS best practices for security.
+Set up the EKS cluster with Terraform We will use this EKS module to provision our EKS cluster....</p>
+</section>
+<footer class=entry-footer>April 2, 2021&nbsp;·&nbsp;5 min
+</footer>
+<a class=entry-link aria-label="post link to Integrating Cert Manager with Route53 on EKS" href=https://myhightech.org/posts/20210402-cert-manager-on-eks/></a>
+</article>
 </main><footer class=footer>
 <span>&copy; 2021 <a href=https://myhightech.org>myhightech.org</a></span>
 <span>&#183;</span>
