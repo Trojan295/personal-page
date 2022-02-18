@@ -11,11 +11,11 @@ ShowToc = false
 {{<
     figure
     src="/images/my-photo.jpg"
-    width="320px"
-    class="margin-8"
 >}}
 
+I am a dedicated software engineer and open-source enthusiast focusing on cloud-native technologies.
 
-Damian Czaja. Geek. Metal music. Guitar. Jogging. Running. Coffee. PC enthusiast. #pcmasterrace. Science. Programming. Open source.
+I work as a software developer—mainly with Python and Go—and DevOps engineer.
 
-I'm a computer programmer fascinated in open source and Linux, who some time ago removed his Windows installation and switched completely to Pop_OS!
+Currently, I help companies to create reliable software systems in the cloud. I am an AWS-certified DevOps engineer and willing to contribute to DevOps consulting with Kubernetes and AWS and Golang programming projects.
+

@@ -3,7 +3,7 @@ title: "myhightech.org"
 theme: "papermod"
 baseURL: "https://myhightech.org"
 staticDir: ["static"]
-googleAnalytics: "UA-44256981-9"
+googleAnalytics: "G-4QTBMDK7P1"
 disqusShortname: "myhightech-blog"
 
 outputs:
@@ -24,19 +24,25 @@ params:
   TocOpen: true
   ShowPostNavLinks: true
 
-  homeInfoParams:
-    Title: "My name is Damian Czaja"
-    Content: "A blog about PCs, programming, open source and more"
+  profileMode:
+    enabled: true
+    title: "Damian Czaja"
+    subtitle: "💻 DevOps Engineer ⛅ Cloud-Native geek"
+    imageUrl: "/images/my-face.png"
+    imageWidth: 240
+    imageHeight: 240
 
   socialIcons:
     - name: github
       url: https://github.com/trojan295/
     - name: linkedin
       url: https://www.linkedin.com/in/damian-czaja-01418a104/
+    - name: toptal
+      url: https://www.toptal.com/resume/damian-czaja
+    - name: email
+      url: mailto://damian.czaja@cloudkon.net
     - name: steam
       url: https://steamcommunity.com/id/trojan295/
-    - name: email
-      url: mailto://trojan295@protonmail.com
 
 menu:
   main:
